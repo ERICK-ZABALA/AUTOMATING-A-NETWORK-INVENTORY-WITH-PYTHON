@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'CiscoSansTT-Thin';
+  src: url('CiscoSansTT-Thin.woff') format('woff'),
+       url('CiscoSansTT-Thin.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CiscoSansTTThin';
+  src: url('CiscoSansTTThin.eot');
+  src: url('CiscoSansTTThin.woff2') format('woff2'),
+       url('CiscoSansTTThin.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+

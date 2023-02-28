@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'CiscoSansTT-Heavy';
+  src: url('CiscoSansTT-Heavy.woff') format('woff'),
+       url('CiscoSansTT-Heavy.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CiscoSansTTHeavy';
+  src: url('CiscoSansTTHeavy.eot');
+  src: url('CiscoSansTTHeavy.woff2') format('woff2'),
+       url('CiscoSansTTHeavy.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+

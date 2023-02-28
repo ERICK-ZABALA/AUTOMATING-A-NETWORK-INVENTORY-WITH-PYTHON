@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head lang='en'>
+<meta charset='UTF-8'>
+{% block head %}{% endblock %}
+{% raw %}
+<style>
+p, td{{
+font-size: 9px;
+font-family: Arial, sans-serif;
+color: #376A94;
+}}
+</style>
+{% endraw %}
+</head>
+<body>
+<div bgcolor='#eeeeee' style='font-family:Arial,Helvetica,sans-serif'>
+<table align='center' height='100%' width='100%' border='0' cellspacing='0' cellpadding='0' bgcolor='#eeeeee'>
+<tbody>
+<tr>
+<td>
+<table width='690' align='center' border='0' cellspacing='0' cellpadding='0' bgcolor='#eeeeee'>
+<tbody>
+<tr>
+<td colspan='3' height='110' align='center' border='0' cellspacing='0' cellpadding='0' bgcolor='#eeeeee' style='padding:0;margin:0;font-size:1;line-height:0;height: 67px;'>
+<table width='690' align='center' border='0' cellspacing='0' cellpadding='0'>
+<tbody>
+<tr>
+<td width='20'></td>
+<td align='left' valign='middle' style='padding:0;margin:0;font-size:1;line-height:0'>
+<td align='right' valign='middle' style='padding:0;margin:0;font-size:1;line-height:0'>
+<table>
+<tbody>
+<tr>
+<td>
+<table>
+<tbody>
+<tr>
+<td>
+<table>
+<tbody>
+<tr>
+<td>
+<p style='font-weight:bold;text-transform:uppercase;font-size:14px;color:#376A94;line-height: 14px'>
+&nbsp;<a href="http://wwwin-pyats.cisco.com/documentation/html/" style="text-decoration:none; color:#376A94">Documentation</a>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table align='center' height='100%' width='100%' border='0' cellspacing='0' cellpadding='0' bgcolor='#eeeeee'>
+<tbody>
+<tr>
+<td>
+<table align='center' height='100%' width='750px' border='0' cellspacing='0' cellpadding='0' bgcolor='#eeeeee' style='width:750px!important'>
+<tbody>
+<tr>
+<td style='background: #376A94;'>
+<table width='100%' align='center' cellspacing='0' cellpadding='0' bgcolor='#eeeeee' style='border:1px solid #376A94;border-radius: 8px!important;'>
+<tbody>
+<tr bgcolor='#FFFFFF'>
+<td width='100%' colspan='3' style='padding: 5px 5px 5px 15px'>
+<table width='100%'>
+<tbody>
+<tr>
+<td>
+<table>
+<tbody>
+<tr>
+<td height='10px'>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td width='100%' style='padding: 5px 5px 5px 15px;border-left: 6px solid #376A94;border-radius: 18px;'>
+<table style='width: 100%'>
+<tbody>
+<tr>
+<td width='100%'>
+<table cellspacing='0' cellpadding='0' width='100%' >
+<tbody>
+<tr style='font-size: 14px'>
+<td style='font-size: 14px;font-weight: bold; border-bottom: 1px solid #376A94;padding: 11px 12px;width: 43%;background: #ffd343;color: #376A94;border-left: 3px solid #376A94;border-right: 2px solid #fff;border-radius: 8px'>
+&nbsp;Trade URL
+</td>
+</tr>
+<tr style='font-size: 12px;color: #000;'>
+<td style='font-weight: bold; border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>Result Viewer:</td>
+<td style='border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'><a href="{{runtime.runinfo.log_url}}">{{runtime.runinfo.log_url}}</a></td>
+</tr>
+<tr style='font-size: 12px;color: #000;'>
+<td style='font-weight: bold; border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>Diagnostics Report:</td>
+<td style='border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'><a href="">{{runtime.runinfo.diags_url}}</a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td width='100%' style='padding: 5px 5px 5px 15px;border-left: 6px solid #376A94;border-radius: 18px;'>
+<table style='width: 100%'>
+<tbody>
+<tr>
+<td width='100%'>
+<table cellspacing='0' cellpadding='0' width='100%' >
+<tbody>
+<tr style='font-size: 14px'>
+<td style='font-size: 14px;font-weight: bold; border-bottom: 1px solid #376A94;padding: 11px 12px;width: 43%;background: #ffd343;color: #376A94;border-left: 3px solid #376A94;border-right: 2px solid #fff;border-radius: 8px'>
+&nbsp;Easypy Report
+</td>
+</tr>
+<tr style='font-size: 12px;color: #000;'>
+<td style='font-weight: bold; border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>pyATS Instance:</td>
+<td style='border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>{{runtime.env.prefix}}</td>
+</tr>
+<tr style='font-size: 12px;color: #000;'>
+<td style='font-weight: bold;border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>Tcl-ATS Tree:</td>
+<td style='border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>{{runtime.env.ats}}</td>
+</tr>
+<tr style='font-size: 12px;color: #000;'>
+<td style='font-weight: bold;border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>Python Version:</td>
+<td style='border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>{{runtime.env.python.name}}-{{runtime.env.python.version}} ({{runtime.env.python.architecture}})</td>
+</tr>
+<tr style='font-size: 12px;color: #000;'>
+<td style='font-weight: bold;border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>CLI Arguments:</td>
+<td style='border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>{{runtime.env.argv}}</td>
+</tr>
+<tr style='font-size: 12px;color: #000;'>
+<td style='font-weight: bold;border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>User:</td>
+<td style='border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>{{runtime.env.user}}</td>
+</tr>
+<tr style='font-size: 12px;color: #000;'>
+<td style='font-weight: bold;border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>Host Server:</td>
+<td style='border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>{{runtime.env.host.name}}</td>
+</tr>
+<tr style='font-size: 12px;color: #000;'>
+<td style='font-weight: bold;border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>Host OS Version:</td>
+<td style='border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>{{runtime.env.host.distro}} ({{runtime.env.host.architecture}})</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td width='100%' style='padding: 5px 5px 5px 15px;border-left: 6px solid #376A94;border-radius: 18px;'>
+<table style='width: 100%'>
+<tbody>
+<tr>
+<td width='100%'>
+<table cellspacing='0' cellpadding='0' width='100%' >
+
+<tbody>
+<tr style='font-size: 14px'>
+<td style='font-size: 14px;font-weight: bold; border-bottom: 1px solid #376A94;padding: 11px 12px;width: 43%;background: #ffd343;color: #376A94;border-left: 3px solid #376A94;border-right: 2px solid #fff;border-radius: 8px'>
+&nbsp;Job Information
+</td>
+</tr>
+<tr style='font-size: 12px;color: #000;'>
+<td style='font-weight: bold; border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>Name:</td>
+<td style='border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>{{runtime.job.name}}</td>
+</tr>
+<tr style='font-size: 12px;color: #000;'>
+<td style='font-weight: bold;border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>Start time:</td>
+<td style='border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>{{runtime.job.starttime}}</td>
+</tr>
+<tr style='font-size: 12px;color: #000;'>
+<td style='font-weight: bold;border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>Stop time:</td>
+<td style='border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>{{runtime.job.stoptime}}</td>
+</tr>
+<tr style='font-size: 12px;color: #000;'>
+<td style='font-weight: bold;border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>Elapsed Time:</td>
+<td style='border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>{{runtime.job.elapsedtime}}</td>
+</tr>
+<tr style='font-size: 12px;color: #000;'>
+<td style='font-weight: bold;border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>Archive:</td>
+<td style='border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>{{runtime.archive}}</td>
+</tr>
+<tr style='font-size: 12px;color: #000;'>
+<td style='font-weight: bold;border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>Total Tasks:</td>
+<td style='border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>{{runtime.tasks.count}}</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td width='100%' style='padding: 5px 5px 5px 15px;border-left: 6px solid #376A94;border-radius: 18px;'>
+<table style='width: 100%'>
+<tbody>
+<tr>
+<td width='100%'>
+<table cellspacing='0' cellpadding='0' width='100%' >
+<tbody>
+<tr style='font-size: 14px'>
+<td style='font-size: 14px;font-weight: bold; border-bottom: 1px solid #376A94;padding: 11px 12px;width: 43%;background: #ffd343;color: #376A94;border-left: 3px solid #376A94;border-right: 2px solid #fff;border-radius: 8px'>
+&nbsp;Overall Stats
+</td>
+</tr>
+<tr style='font-size: 12px;color: #000;'>
+<td style='font-weight: bold; border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>Passed:</td>
+<td style='border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>{{runtime.job.results.passed}}</td>
+</tr>
+<tr style='font-size: 12px;color: #000;'>
+<td style='font-weight: bold;border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>Passx:</td>
+<td style='border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>{{runtime.job.results.passx}}</td>
+</tr>
+<tr style='font-size: 12px;color: #000;'>
+<td style='font-weight: bold;border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>Failed:</td>
+<td style='border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>{{runtime.job.results.failed}}</td>
+</tr>
+<tr style='font-size: 12px;color: #000;'>
+<td style='font-weight: bold;border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>Aborted:</td>
+<td style='border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>{{runtime.job.results.aborted}}</td>
+</tr>
+<tr style='font-size: 12px;color: #000;'>
+<td style='font-weight: bold;border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>Blocked:</td>
+<td style='border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>{{runtime.job.results.blocked}}</td>
+</tr>
+<tr style='font-size: 12px;color: #000;'>
+<td style='font-weight: bold;border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>Skipped:</td>
+<td style='border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>{{runtime.job.results.skipped}}</td>
+</tr>
+<tr style='font-size: 12px;color: #000;'>
+<td style='font-weight: bold;border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>Errored:</td>
+<td style='border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>{{runtime.job.results.errored}}</td>
+</tr>
+<tr style='font-size: 12px;color: #000;'>
+<td style='font-weight: bold;border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>TOTAL:</td>
+<td style='border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>{{runtime.job.results.total}}</td>
+</tr>
+<tr style='font-size: 12px;color: #000;'>
+<td style='font-weight: bold;border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>Success Rate:</td>
+<td style='border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'>{{runtime.job.results.success_rate}} %</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td width='100%' style='padding: 5px 5px 5px 15px;border-left: 6px solid #376A94;border-radius: 18px;'>
+<table style='width: 100%'>
+<tbody>
+<tr>
+<td width='100%'>
+<table cellspacing='0' cellpadding='0' width='100%' >
+<tbody>
+<tr style='font-size: 6px'>
+<td style='font-size: 14px;font-weight: bold; border-bottom: 1px solid #376A94;padding: 11px 12px;width: 43%;background: #ffd343;color: #376A94;border-left: 3px solid #376A94;border-right: 2px solid #fff;border-radius: 8px'>
+&nbsp;Task Result Summary
+</td>
+</tr>
+<tr style='font-size: 6px;color: #000;'>
+<td style='font-size: 6px;border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'><pre><span style="font-size: 9px;">{{runtime.job.task_summary}}</span></pre></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td width='100%' style='padding: 5px 5px 5px 15px;border-left: 6px solid #376A94;border-radius: 18px;'>
+<table style='width: 100%'>
+<tbody>
+<tr>
+<td width='100%'>
+<table cellspacing='0' cellpadding='0' width='100%' >
+<tbody>
+<tr style='font-size: 6px'>
+<td style='font-size: 14px;font-weight: bold; border-bottom: 1px solid #376A94;padding: 11px 12px;width: 43%;background: #ffd343;color: #376A94;border-left: 3px solid #376A94;border-right: 2px solid #fff;border-radius: 8px'>
+&nbsp;Task Result Details
+</td>
+</tr>
+<tr style='font-size: 6px;color: #000;'>
+<td style='font-size: 6px; border-bottom: 1px solid #ffd343;padding: 11px 2px;width: 43%;'><pre><span style="font-size: 9px;">{{runtime.job.task_details}}</span></pre></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<!--^-->
+<tr bgcolor='#FFFFFF'>
+<td height='20px' bgcolor='#FFFFFF' colspan='3'>
+{% block custom_content %}
+
+{% endblock %}
+</td>
+</tr>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>
+
+<!--extend base template-->

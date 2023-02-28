@@ -1,0 +1,2164 @@
+openapi: 3.0.0
+info:
+  version: 1.1-oas3
+  title: RESULTS
+  description: Xpresso Results Micro-service
+tags:
+  - name: results
+    description: results operations
+  - name: sections
+    description: sections operations
+paths:
+  /results:
+    get:
+      tags:
+        - results
+      description: retrieve results bulk actions
+      deprecated: false
+      parameters:
+        - name: limit
+          in: query
+          required: false
+          description: ''
+          schema:
+            type: integer
+            default: 20
+        - name: offset
+          in: query
+          required: false
+          description: ''
+          schema:
+            type: integer
+            default: 0
+      responses:
+        '200':
+          description: passed
+          content:
+            application/json:
+              schema:
+                type: object
+              examples:
+                response:
+                  value:
+                    count: 21
+                    next: >-
+                      http://localhost:63103/private/v1/standalone/results?offset=10&limit=10
+                    previous: null
+                    results:
+                      - result_id: LOG0000001
+                        status: completed
+                        job: job_virl
+                        testbed: testbed
+                        start_time: '2020-04-30T13:16:19.000000Z'
+                        stop_time: '2020-04-30T13:16:25.000000Z'
+                        run_time: '00:00:05'
+                        submitter: tahigash
+                        result_format: yaml
+                        related_id: REQ0006867-1
+                        component: N/A
+                        branch: N/A
+                        exec_host: pyats-training.cisco.com
+                        ats_tree: /ws/tahigash-sjc/genie_phase1
+                        summary:
+                          passed: 0
+                          passx: 0
+                          fail: 0
+                          abort: 0
+                          block: 0
+                          skip: 0
+                          error: 0
+                          unknown: 0
+                          success_rate: 0
+                        date_created: '2020-04-30T20:06:21.327414Z'
+                        created_by: ''
+                        meta_info: '{}'
+                      - result_id: LOG0000002
+                        status: completed
+                        job: job_virl
+                        testbed: testbed
+                        start_time: '2020-04-29T13:33:01.000000Z'
+                        stop_time: '2020-04-29T13:33:07.000000Z'
+                        run_time: '00:00:06'
+                        submitter: tahigash
+                        result_format: yaml
+                        related_id: REQ0006864-1
+                        component: N/A
+                        branch: N/A
+                        exec_host: pyats-training.cisco.com
+                        ats_tree: /ws/tahigash-sjc/genie_phase1
+                        summary:
+                          passed: 0
+                          passx: 0
+                          fail: 0
+                          abort: 0
+                          block: 0
+                          skip: 0
+                          error: 0
+                          unknown: 0
+                          success_rate: 0
+                        date_created: '2020-04-29T20:23:08.467405Z'
+                        created_by: ''
+                        meta_info: '{}'
+                      - result_id: LOG0000003
+                        status: completed
+                        job: job_virl
+                        testbed: testbed
+                        start_time: '2020-04-28T12:40:40.000000Z'
+                        stop_time: '2020-04-28T12:40:47.000000Z'
+                        run_time: '00:00:06'
+                        submitter: tahigash
+                        result_format: yaml
+                        related_id: REQ0006860-1
+                        component: N/A
+                        branch: N/A
+                        exec_host: pyats-training.cisco.com
+                        ats_tree: /ws/tahigash-sjc/genie_phase1
+                        summary:
+                          passed: 0
+                          passx: 0
+                          fail: 0
+                          abort: 0
+                          block: 0
+                          skip: 0
+                          error: 0
+                          unknown: 0
+                          success_rate: 0
+                        date_created: '2020-04-28T19:30:55.845866Z'
+                        created_by: ''
+                        meta_info: '{}'
+                      - result_id: LOG0000004
+                        status: completed
+                        job: job_virl
+                        testbed: testbed
+                        start_time: '2020-04-27T12:56:53.000000Z'
+                        stop_time: '2020-04-27T12:56:59.000000Z'
+                        run_time: '00:00:06'
+                        submitter: tahigash
+                        result_format: yaml
+                        related_id: REQ0006855-1
+                        component: N/A
+                        branch: N/A
+                        exec_host: pyats-training.cisco.com
+                        ats_tree: /ws/tahigash-sjc/genie_phase1
+                        summary:
+                          passed: 0
+                          passx: 0
+                          fail: 0
+                          abort: 0
+                          block: 0
+                          skip: 0
+                          error: 0
+                          unknown: 0
+                          success_rate: 0
+                        date_created: '2020-04-27T19:47:14.560870Z'
+                        created_by: ''
+                        meta_info: '{}'
+                      - result_id: LOG0000005
+                        status: completed
+                        job: job_virl
+                        testbed: testbed
+                        start_time: '2020-04-26T12:43:19.000000Z'
+                        stop_time: '2020-04-26T12:43:24.000000Z'
+                        run_time: '00:00:05'
+                        submitter: tahigash
+                        result_format: yaml
+                        related_id: REQ0006853-1
+                        component: N/A
+                        branch: N/A
+                        exec_host: pyats-training.cisco.com
+                        ats_tree: /ws/tahigash-sjc/genie_phase1
+                        summary:
+                          passed: 0
+                          passx: 0
+                          fail: 0
+                          abort: 0
+                          block: 0
+                          skip: 0
+                          error: 0
+                          unknown: 0
+                          success_rate: 0
+                        date_created: '2020-04-26T19:33:47.220455Z'
+                        created_by: ''
+                        meta_info: '{}'
+                      - result_id: LOG0000006
+                        status: completed
+                        job: job_virl
+                        testbed: testbed
+                        start_time: '2020-04-25T14:12:33.000000Z'
+                        stop_time: '2020-04-25T14:12:44.000000Z'
+                        run_time: '00:00:11'
+                        submitter: tahigash
+                        result_format: yaml
+                        related_id: REQ0006850-1
+                        component: N/A
+                        branch: N/A
+                        exec_host: pyats-training.cisco.com
+                        ats_tree: /ws/tahigash-sjc/genie_phase1
+                        summary:
+                          passed: 0
+                          passx: 0
+                          fail: 0
+                          abort: 0
+                          block: 0
+                          skip: 0
+                          error: 0
+                          unknown: 0
+                          success_rate: 0
+                        date_created: '2020-04-25T21:03:14.359963Z'
+                        created_by: ''
+                        meta_info: '{}'
+                      - result_id: LOG0000007
+                        status: completed
+                        job: LiveViewDemoJob
+                        testbed: testbed
+                        start_time: '2020-04-24T19:47:54.000000Z'
+                        stop_time: '2020-04-24T19:49:35.000000Z'
+                        run_time: '00:01:41'
+                        submitter: root
+                        result_format: yaml
+                        related_id: REQ0006848-1
+                        component: N/A
+                        branch: N/A
+                        exec_host: 12f1ad10fbf7
+                        ats_tree: /venv
+                        summary:
+                          passed: 6
+                          passx: 0
+                          fail: 0
+                          abort: 1
+                          block: 0
+                          skip: 0
+                          error: 1
+                          unknown: 0
+                          success_rate: 75
+                        date_created: '2020-04-24T19:49:54.175894Z'
+                        created_by: ''
+                        meta_info: '{}'
+                      - result_id: LOG0000008
+                        status: completed
+                        job: job_virl
+                        testbed: testbed
+                        start_time: '2020-04-24T12:44:52.000000Z'
+                        stop_time: '2020-04-24T12:44:58.000000Z'
+                        run_time: '00:00:05'
+                        submitter: tahigash
+                        result_format: yaml
+                        related_id: REQ0006847-1
+                        component: N/A
+                        branch: N/A
+                        exec_host: pyats-training.cisco.com
+                        ats_tree: /ws/tahigash-sjc/genie_phase1
+                        summary:
+                          passed: 0
+                          passx: 0
+                          fail: 0
+                          abort: 0
+                          block: 0
+                          skip: 0
+                          error: 0
+                          unknown: 0
+                          success_rate: 0
+                        date_created: '2020-04-24T19:35:34.060032Z'
+                        created_by: ''
+                        meta_info: '{}'
+                      - result_id: LOG0000009
+                        status: completed
+                        job: job_virl
+                        testbed: testbed
+                        start_time: '2020-04-23T21:27:01.000000Z'
+                        stop_time: '2020-04-23T22:22:53.000000Z'
+                        run_time: '00:55:52'
+                        submitter: root
+                        result_format: yaml
+                        related_id: REQ0006845-1
+                        component: N/A
+                        branch: N/A
+                        exec_host: b9a11cff9299
+                        ats_tree: /venv
+                        summary:
+                          passed: 37
+                          passx: 0
+                          fail: 7
+                          abort: 0
+                          block: 0
+                          skip: 0
+                          error: 3
+                          unknown: 0
+                          success_rate: 78.72
+                        date_created: '2020-04-23T22:59:04.449656Z'
+                        created_by: ''
+                        meta_info: '{}'
+                      - result_id: LOG0000010
+                        status: completed
+                        job: job_virl
+                        testbed: testbed
+                        start_time: '2020-04-23T13:10:44.000000Z'
+                        stop_time: '2020-04-23T13:10:50.000000Z'
+                        run_time: '00:00:05'
+                        submitter: tahigash
+                        result_format: yaml
+                        related_id: REQ0006843-1
+                        component: N/A
+                        branch: N/A
+                        exec_host: pyats-training.cisco.com
+                        ats_tree: /ws/tahigash-sjc/genie_phase1
+                        summary:
+                          passed: 0
+                          passx: 0
+                          fail: 0
+                          abort: 0
+                          block: 0
+                          skip: 0
+                          error: 0
+                          unknown: 0
+                          success_rate: 0
+                        date_created: '2020-04-23T20:01:34.527908Z'
+                        created_by: ''
+                        meta_info: '{}'
+  '/results/{result_id}':
+    get:
+      tags:
+        - results
+      description: retrieve detail result data for a result
+      deprecated: false
+      parameters:
+        - name: result_id
+          in: path
+          description: id of the result
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: passed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+              examples:
+                response:
+                  value:
+                    meta:
+                      stop_time: '2020-04-30T17:16:50Z'
+                      run_time: '2.0'
+                      created_by: ''
+                      job: bigolmulti
+                      suite_name: bigolmulti
+                      exec_host: LINGYHUA-M-3484
+                      ats_tree: /Users/lingyhua/test2
+                      date_created: '2020-05-03T21:41:46.591998Z'
+                      result_format: yaml
+                      id: 178
+                      component: N/A
+                      archive_location: >-
+                        /Users/lingyhua/Documents/development/py37/users/lingyhua/archive/1970/1/19/REQ0000002-1-run.zip
+                      submitter: lingyhua
+                      last_accessed: '2020-05-03T23:03:00.290554Z'
+                      related_id: REQ0000002
+                      meta_info: {}
+                      testbed: testbed
+                      status: completed
+                      result_id: LOG0000002
+                      branch: N/A
+                      start_time: '2020-04-30T17:16:47Z'
+                    status: completed
+                    summary:
+                      fail: 0
+                      error: 2
+                      pass: 6
+                      block: 0
+                      success_rate: 75
+                      applicable_tasks: 8
+                      passx: 0
+                      total_tasks: 8
+                      abort: 0
+                      skip: 0
+                      unknown: 0
+                    scripts:
+                      - meta:
+                          - stoptime: '2020-04-30T17:16:47'
+                            starttime: '2020-04-30T17:16:47'
+                            extra:
+                              clean_files:
+                                - cleanstuff/cleanfile.yaml
+                            plugin_id: 0
+                            name: KleenexPlugin
+                            task_id: pre_plugin-1
+                        summary:
+                          fail: 0
+                          pass: 2
+                          success_rate: 100
+                          total_tasks: 2
+                          abort: 0
+                          error: 0
+                          applicable_tasks: 2
+                          passx: 0
+                          unknown: 0
+                          block: 0
+                          skip: 0
+                          never_run: 0
+                          run_time: '0:00:00'
+                          type: prejobplugin
+                        sections:
+                          - section_type: device
+                            result: passed
+                            stop_time: '2020-04-30T17:16:47'
+                            run_time: 0
+                            child_start: 1
+                            section_name: device-1
+                            description: ''
+                            log_file: Kleenex.device-1.log
+                            parents: []
+                            log_start: 147
+                            id: 141fc77e-9107-4f14-abb8-335c4c36b015
+                            child_end: 9
+                            result_data: null
+                            extra:
+                              device_clean:
+                                b: 3
+                                images:
+                                  - /etc/hosts
+                                  - /etc/shadow
+                                a: 1
+                              cleaner: MyClean
+                            parent_id: null
+                            sequence_number: 1
+                            details: null
+                            log_size: 5123
+                            result_reason: null
+                            section_id: device-1
+                            start_time: '2020-04-30T17:16:47'
+                          - section_type: testcase
+                            result: passed
+                            stop_time: '2020-04-30T17:16:47'
+                            run_time: 0
+                            child_start: 2
+                            source_line: 12
+                            section_name: CleanTestcase
+                            description: ''
+                            log_file: Kleenex.device-1.log
+                            parents:
+                              - 1
+                            log_start: 147
+                            id: b11965bd-e3d3-4e90-ab38-463fe5b469c9
+                            child_end: 11
+                            result_data: null
+                            extra: null
+                            parent_id: 2c37c960-37dd-41f9-8259-6aaaa59fa245
+                            sequence_number: 2
+                            details: null
+                            log_size: 4974
+                            source_file: >-
+                              /Users/lingyhua/Documents/development/example_jobs/cleanjob/cleanstuff/cleanmodule/myclean/mycleaner.py
+                            result_reason: null
+                            section_id: CleanTestcase
+                            start_time: '2020-04-30T17:16:47'
+                          - section_type: testsection
+                            result: passed
+                            stop_time: '2020-04-30T17:16:47'
+                            run_time: 0
+                            child_start: 3
+                            source_line: 14
+                            section_name: clean_one
+                            description: ''
+                            log_file: Kleenex.device-1.log
+                            parents:
+                              - 1
+                              - 2
+                            log_start: 147
+                            id: 5fe47a50-9f74-11ea-bb37-0242ac130002
+                            child_end: 3
+                            result_data: null
+                            extra: null
+                            parent_id: 141fc77e-9107-4f14-abb8-335c4c36b015
+                            sequence_number: 3
+                            details: null
+                            log_size: 874
+                            source_file: >-
+                              /Users/lingyhua/Documents/development/example_jobs/cleanjob/cleanstuff/cleanmodule/myclean/mycleaner.py
+                            result_reason: null
+                            section_id: clean_one
+                            start_time: '2020-04-30T17:16:47'
+                          - section_type: testsection
+                            result: passed
+                            stop_time: '2020-04-30T17:16:47'
+                            run_time: 0
+                            child_start: 4
+                            source_line: 18
+                            section_name: clean_two
+                            description: ''
+                            log_file: Kleenex.device-1.log
+                            parents:
+                              - 1
+                              - 2
+                            log_start: 1021
+                            id: 771e5344-9f74-11ea-bb37-0242ac130002
+                            child_end: 12
+                            result_data: null
+                            extra: null
+                            parent_id: 141fc77e-9107-4f14-abb8-335c4c36b015
+                            sequence_number: 4
+                            details: null
+                            log_size: 4100
+                            source_file: >-
+                              /Users/lingyhua/Documents/development/example_jobs/cleanjob/cleanstuff/cleanmodule/myclean/mycleaner.py
+                            result_reason: null
+                            section_id: clean_two
+                            start_time: '2020-04-30T17:16:47'
+                          - section_type: step
+                            result: passed
+                            stop_time: '2020-04-30T17:16:47'
+                            run_time: 0
+                            child_start: 5
+                            source_line: 21
+                            section_name: clean_two_step_one
+                            description: ''
+                            log_file: Kleenex.device-1.log
+                            parents:
+                              - 1
+                              - 2
+                              - 4
+                            log_start: 1696
+                            id: 7fc21990-9f74-11ea-bb37-0242ac130002
+                            child_end: 14
+                            result_data: null
+                            extra:
+                              index: '1'
+                              continue_: false
+                            parent_id: 5fe47a50-9f74-11ea-bb37-0242ac130002
+                            sequence_number: 5
+                            details: null
+                            log_size: 2154
+                            source_file: >-
+                              /Users/lingyhua/Documents/development/example_jobs/cleanjob/cleanstuff/cleanmodule/myclean/mycleaner.py
+                            result_reason: null
+                            section_id: STEP 1
+                            start_time: '2020-04-30T17:16:47'
+                          - section_type: step
+                            result: passed
+                            stop_time: '2020-04-30T17:16:47'
+                            run_time: 0
+                            child_start: 6
+                            source_line: 22
+                            section_name: clean_two_step_two
+                            description: ''
+                            log_file: Kleenex.device-1.log
+                            parents:
+                              - 1
+                              - 2
+                              - 4
+                              - 5
+                            log_start: 2263
+                            id: 885250de-9f74-11ea-bb37-0242ac130002
+                            child_end: 6
+                            result_data: null
+                            extra:
+                              index: '1.1'
+                              continue_: false
+                            parent_id: 771e5344-9f74-11ea-bb37-0242ac130002
+                            sequence_number: 6
+                            details: null
+                            log_size: 718
+                            source_file: >-
+                              /Users/lingyhua/Documents/development/example_jobs/cleanjob/cleanstuff/cleanmodule/myclean/mycleaner.py
+                            result_reason: null
+                            section_id: STEP 1.1
+                            start_time: '2020-04-30T17:16:47'
+                          - section_type: step
+                            result: passed
+                            stop_time: '2020-04-30T17:16:47'
+                            run_time: 0
+                            child_start: 7
+                            source_line: 24
+                            section_name: clean_two_step_three
+                            description: ''
+                            log_file: Kleenex.device-1.log
+                            parents:
+                              - 1
+                              - 2
+                              - 4
+                              - 5
+                            log_start: 2981
+                            id: 91491a4c-9f74-11ea-bb37-0242ac130002
+                            child_end: 7
+                            result_data: null
+                            extra:
+                              index: '1.2'
+                              continue_: false
+                            parent_id: 771e5344-9f74-11ea-bb37-0242ac130002
+                            sequence_number: 7
+                            details: null
+                            log_size: 720
+                            source_file: >-
+                              /Users/lingyhua/Documents/development/example_jobs/cleanjob/cleanstuff/cleanmodule/myclean/mycleaner.py
+                            result_reason: null
+                            section_id: STEP 1.2
+                            start_time: '2020-04-30T17:16:47'
+                          - section_type: device
+                            result: passed
+                            stop_time: '2020-04-30T17:16:47'
+                            run_time: 0
+                            child_start: 8
+                            section_name: device-2
+                            description: ''
+                            log_file: Kleenex.device-2.log
+                            parents: []
+                            log_start: 147
+                            id: 9863e064-9f74-11ea-bb37-0242ac130002
+                            child_end: 8
+                            result_data: null
+                            extra:
+                              device_clean:
+                                something: thing
+                                b: 3
+                                images:
+                                  - /etc/shadow
+                                a: 1
+                              cleaner: MyClean
+                            parent_id: null
+                            sequence_number: 8
+                            details: null
+                            log_size: 5123
+                            result_reason: null
+                            section_id: device-2
+                            start_time: '2020-04-30T17:16:47'
+                          - section_type: testcase
+                            result: passed
+                            stop_time: '2020-04-30T17:16:47'
+                            run_time: 0
+                            child_start: 9
+                            source_line: 12
+                            section_name: CleanTestcase
+                            description: ''
+                            log_file: Kleenex.device-2.log
+                            parents:
+                              - 8
+                            log_start: 147
+                            id: a2f696f2-9f74-11ea-bb37-0242ac130002
+                            child_end: 9
+                            result_data: null
+                            extra: null
+                            parent_id: 2c37c960-37dd-41f9-8259-6aaaa59fa245
+                            sequence_number: 9
+                            details: null
+                            log_size: 4974
+                            source_file: >-
+                              /Users/lingyhua/Documents/development/example_jobs/cleanjob/cleanstuff/cleanmodule/myclean/mycleaner.py
+                            result_reason: null
+                            section_id: CleanTestcase
+                            start_time: '2020-04-30T17:16:47'
+                          - section_type: testsection
+                            result: passed
+                            stop_time: '2020-04-30T17:16:47'
+                            run_time: 0
+                            child_start: 10
+                            source_line: 14
+                            section_name: clean_one
+                            description: ''
+                            log_file: Kleenex.device-2.log
+                            parents:
+                              - 8
+                              - 9
+                            log_start: 147
+                            id: ad63b03e-9f74-11ea-bb37-0242ac130002
+                            child_end: 10
+                            result_data: null
+                            extra: null
+                            parent_id: 141fc77e-9107-4f14-abb8-335c4c36b015
+                            sequence_number: 10
+                            details: null
+                            log_size: 874
+                            source_file: >-
+                              /Users/lingyhua/Documents/development/example_jobs/cleanjob/cleanstuff/cleanmodule/myclean/mycleaner.py
+                            result_reason: null
+                            section_id: clean_one
+                            start_time: '2020-04-30T17:16:47'
+                          - section_type: testsection
+                            result: passed
+                            stop_time: '2020-04-30T17:16:47'
+                            run_time: 0
+                            child_start: 11
+                            source_line: 18
+                            section_name: clean_two
+                            description: ''
+                            log_file: Kleenex.device-2.log
+                            parents:
+                              - 8
+                              - 9
+                            log_start: 1021
+                            id: 06bb53c6-9f75-11ea-bb37-0242ac130002
+                            child_end: 11
+                            result_data: null
+                            extra: null
+                            parent_id: 141fc77e-9107-4f14-abb8-335c4c36b015
+                            sequence_number: 11
+                            details: null
+                            log_size: 4100
+                            source_file: >-
+                              /Users/lingyhua/Documents/development/example_jobs/cleanjob/cleanstuff/cleanmodule/myclean/mycleaner.py
+                            result_reason: null
+                            section_id: clean_two
+                            start_time: '2020-04-30T17:16:47'
+                          - section_type: step
+                            result: passed
+                            stop_time: '2020-04-30T17:16:47'
+                            run_time: 0
+                            child_start: 12
+                            source_line: 21
+                            section_name: clean_two_step_one
+                            description: ''
+                            log_file: Kleenex.device-2.log
+                            parents:
+                              - 8
+                              - 9
+                              - 11
+                            log_start: 1696
+                            id: 10646e58-9f75-11ea-bb37-0242ac130002
+                            child_end: 12
+                            result_data: null
+                            extra:
+                              index: '1'
+                              continue_: false
+                            parent_id: 5fe47a50-9f74-11ea-bb37-0242ac130002
+                            sequence_number: 12
+                            details: null
+                            log_size: 2154
+                            source_file: >-
+                              /Users/lingyhua/Documents/development/example_jobs/cleanjob/cleanstuff/cleanmodule/myclean/mycleaner.py
+                            result_reason: null
+                            section_id: STEP 1
+                            start_time: '2020-04-30T17:16:47'
+                          - section_type: step
+                            result: passed
+                            stop_time: '2020-04-30T17:16:47'
+                            run_time: 0
+                            child_start: 13
+                            source_line: 22
+                            section_name: clean_two_step_two
+                            description: ''
+                            log_file: Kleenex.device-2.log
+                            parents:
+                              - 8
+                              - 9
+                              - 11
+                              - 12
+                            log_start: 2263
+                            id: 1c180a3e-9f75-11ea-bb37-0242ac130002
+                            child_end: 13
+                            result_data: null
+                            extra:
+                              index: '1.1'
+                              continue_: false
+                            parent_id: 771e5344-9f74-11ea-bb37-0242ac130002
+                            sequence_number: 13
+                            details: null
+                            log_size: 718
+                            source_file: >-
+                              /Users/lingyhua/Documents/development/example_jobs/cleanjob/cleanstuff/cleanmodule/myclean/mycleaner.py
+                            result_reason: null
+                            section_id: STEP 1.1
+                            start_time: '2020-04-30T17:16:47'
+                          - section_type: step
+                            result: passed
+                            stop_time: '2020-04-30T17:16:47'
+                            run_time: 0
+                            child_start: 14
+                            source_line: 24
+                            section_name: clean_two_step_three
+                            description: ''
+                            log_file: Kleenex.device-2.log
+                            parents:
+                              - 8
+                              - 9
+                              - 11
+                              - 12
+                            log_start: 2981
+                            id: 3100c3d2-9f75-11ea-bb37-0242ac130002
+                            child_end: 14
+                            result_data: null
+                            extra:
+                              index: '1.2'
+                              continue_: false
+                            parent_id: 771e5344-9f74-11ea-bb37-0242ac130002
+                            sequence_number: 14
+                            details: null
+                            log_size: 720
+                            source_file: >-
+                              /Users/lingyhua/Documents/development/example_jobs/cleanjob/cleanstuff/cleanmodule/myclean/mycleaner.py
+                            result_reason: null
+                            section_id: STEP 1.2
+                            start_time: '2020-04-30T17:16:47'
+                      - meta:
+                          name: script.py
+                          task_id: Task-1
+                          path: >-
+                            /Users/lingyhua/Documents/development/example_jobs/cleanjob/bigoljob
+                        summary:
+                          fail: 0
+                          pass: 3
+                          success_rate: 75
+                          total_tasks: 4
+                          abort: 0
+                          error: 1
+                          applicable_tasks: 4
+                          passx: 0
+                          unknown: 0
+                          block: 0
+                          skip: 0
+                          never_run: 0
+                        sections:
+                          - section_type: testscript
+                            result: ''
+                            params: null
+                            stop_time: '2020-04-30T17:16:50'
+                            run_time: 2
+                            child_start: 1
+                            source_line: 0
+                            section_name: script
+                            description: ''
+                            log_file: TaskLog.Task-1
+                            parents: []
+                            log_start: 0
+                            id: 4fd4f59e-9f75-11ea-bb37-0242ac130002
+                            child_end: 10
+                            steps: []
+                            extra: null
+                            parent_id: null
+                            sequence_number: 1
+                            log_size: -1
+                            source_file: >-
+                              /Users/lingyhua/Documents/development/example_jobs/cleanjob/bigoljob/script.py
+                            section_id: Task-1
+                            start_time: '2020-04-30T17:16:47'
+                          - section_type: commonsetup
+                            result: passed
+                            stop_time: '2020-04-30T17:16:47'
+                            run_time: 0
+                            child_start: 2
+                            source_line: 12
+                            section_name: common_setup
+                            description: ' Common Setup section '
+                            log_file: TaskLog.Task-1
+                            parents:
+                              - 1
+                            log_start: 0
+                            result_data: null
+                            id: 5b110ce0-9f75-11ea-bb37-0242ac130002
+                            child_end: 4
+                            steps: []
+                            extra: null
+                            parent_id: 4fd4f59e-9f75-11ea-bb37-0242ac130002
+                            sequence_number: 2
+                            details: null
+                            log_size: 2364
+                            source_file: >-
+                              /Users/lingyhua/Documents/development/example_jobs/cleanjob/bigoljob/script.py
+                            result_reason: null
+                            section_id: common_setup
+                            start_time: '2020-04-30T17:16:47'
+                          - section_type: subsection
+                            result: passed
+                            stop_time: '2020-04-30T17:16:47'
+                            run_time: 0
+                            child_start: 3
+                            source_line: 20
+                            section_name: sample_subsection_1
+                            description: ' Common Setup subsection '
+                            log_file: TaskLog.Task-1
+                            parents:
+                              - 1
+                              - 2
+                            log_start: 534
+                            result_data: null
+                            id: d243aa84-9f75-11ea-bb37-0242ac130002
+                            child_end: 3
+                            steps: []
+                            extra: null
+                            parent_id: 5b110ce0-9f75-11ea-bb37-0242ac130002
+                            sequence_number: 3
+                            details: null
+                            log_size: 784
+                            source_file: >-
+                              /Users/lingyhua/Documents/development/example_jobs/cleanjob/bigoljob/script.py
+                            result_reason: null
+                            section_id: sample_subsection_1
+                            start_time: '2020-04-30T17:16:47'
+                          - section_type: subsection
+                            result: passed
+                            stop_time: '2020-04-30T17:16:47'
+                            run_time: 0
+                            child_start: 4
+                            source_line: 29
+                            section_name: sample_subsection_2
+                            description: ' Common Setup subsection '
+                            log_file: TaskLog.Task-1
+                            parents:
+                              - 1
+                              - 2
+                            log_start: 1318
+                            result_data: null
+                            id: e0ebb004-9f75-11ea-bb37-0242ac130002
+                            child_end: 4
+                            steps: []
+                            extra: null
+                            parent_id: 5b110ce0-9f75-11ea-bb37-0242ac130002
+                            sequence_number: 4
+                            details: null
+                            log_size: 920
+                            source_file: >-
+                              /Users/lingyhua/Documents/development/example_jobs/cleanjob/bigoljob/script.py
+                            result_reason: null
+                            section_id: sample_subsection_2
+                            start_time: '2020-04-30T17:16:47'
+                          - section_type: testcase
+                            result: passed
+                            stop_time: '2020-04-30T17:16:50'
+                            run_time: 2
+                            child_start: 5
+                            source_line: 41
+                            section_name: MyTestcase1
+                            description: ''
+                            log_file: TaskLog.Task-1
+                            parents:
+                              - 1
+                            log_start: 2364
+                            result_data: null
+                            id: f39106e6-9f75-11ea-bb37-0242ac130002
+                            child_end: 6
+                            steps: []
+                            extra: null
+                            parent_id: 4fd4f59e-9f75-11ea-bb37-0242ac130002
+                            sequence_number: 5
+                            details: null
+                            log_size: 3920
+                            source_file: >-
+                              /Users/lingyhua/Documents/development/example_jobs/cleanjob/bigoljob/script.py
+                            result_reason: null
+                            section_id: MyTestcase1
+                            start_time: '2020-04-30T17:16:47'
+                          - section_type: testsection
+                            result: passed
+                            stop_time: '2020-04-30T17:16:50'
+                            run_time: 2
+                            child_start: 6
+                            source_line: 42
+                            section_name: my_section
+                            description: ''
+                            log_file: TaskLog.Task-1
+                            parents:
+                              - 1
+                              - 5
+                            log_start: 2904
+                            result_data: oezaoqryudonblewysznswmqnrpfudhnbdeqdjtserkjzdvkgt
+                            id: fd56960a-9f75-11ea-bb37-0242ac130002
+                            child_end: 6
+                            steps:
+                              - result_data: null
+                                result: passed
+                                extra:
+                                  index: '1'
+                                  continue_: false
+                                stop_time: '2020-04-30T17:16:49'
+                                run_time: 1.02
+                                details: null
+                                log_size: 760
+                                source_line: 44
+                                step_id: STEP 1
+                                source_file: >-
+                                  /Users/lingyhua/Documents/development/example_jobs/cleanjob/bigoljob/script.py
+                                result_reason: null
+                                description: ''
+                                log_file: TaskLog.Task-1
+                                parents:
+                                  - 1
+                                  - 5
+                                  - 6
+                                log_start: 3444
+                                start_time: '2020-04-30T17:16:48'
+                                step_name: step1
+                              - result_data: null
+                                result: passed
+                                extra:
+                                  index: '2'
+                                  continue_: false
+                                stop_time: '2020-04-30T17:16:50'
+                                run_time: 1.01
+                                details: null
+                                log_size: 766
+                                source_line: 47
+                                step_id: STEP 2
+                                source_file: >-
+                                  /Users/lingyhua/Documents/development/example_jobs/cleanjob/bigoljob/script.py
+                                result_reason: null
+                                description: ''
+                                log_file: TaskLog.Task-1
+                                parents:
+                                  - 1
+                                  - 5
+                                  - 6
+                                log_start: 4204
+                                start_time: '2020-04-30T17:16:49'
+                                step_name: step2
+                            extra: null
+                            parent_id: f39106e6-9f75-11ea-bb37-0242ac130002
+                            sequence_number: 6
+                            details: null
+                            log_size: 3246
+                            source_file: >-
+                              /Users/lingyhua/Documents/development/example_jobs/cleanjob/bigoljob/script.py
+                            result_reason: vzpujuqeuwyzlrjnzztjivbfp
+                            section_id: my_section
+                            start_time: '2020-04-30T17:16:47'
+                          - section_type: testcase
+                            result: errored
+                            stop_time: '2020-04-30T17:16:50'
+                            run_time: 0
+                            child_start: 7
+                            source_line: 53
+                            section_name: MyTestcase2
+                            description: ''
+                            log_file: TaskLog.Task-1
+                            parents:
+                              - 1
+                            log_start: 6284
+                            result_data: null
+                            id: 07ad7592-9f76-11ea-bb37-0242ac130002
+                            child_end: 8
+                            steps: []
+                            extra: null
+                            parent_id: 4fd4f59e-9f75-11ea-bb37-0242ac130002
+                            sequence_number: 7
+                            details: null
+                            log_size: 2173
+                            source_file: >-
+                              /Users/lingyhua/Documents/development/example_jobs/cleanjob/bigoljob/script.py
+                            result_reason: null
+                            section_id: MyTestcase2
+                            start_time: '2020-04-30T17:16:50'
+                          - section_type: testsection
+                            result: errored
+                            stop_time: '2020-04-30T17:16:50'
+                            run_time: 0
+                            child_start: 8
+                            source_line: 54
+                            section_name: test_custom_exception
+                            description: ''
+                            log_file: TaskLog.Task-1
+                            parents:
+                              - 1
+                              - 7
+                            log_start: 6824
+                            result_data:
+                              traceback: |
+                                Traceback (most recent call last):
+                                  File "/Users/lingyhua/Documents/development/example_jobs/cleanjob/bigoljob/script.py", line 56, in test_custom_exception
+                                    raise SimpleException('some error')
+                                NameError: name 'SimpleException' is not defined
+                            id: 1c756e6c-9f76-11ea-bb37-0242ac130002
+                            child_end: 8
+                            steps: []
+                            extra: null
+                            parent_id: 07ad7592-9f76-11ea-bb37-0242ac130002
+                            sequence_number: 8
+                            details:
+                              - >
+                                Caught an exception while executing section
+                                test_custom_exception:
+
+                                Traceback (most recent call last):
+                                  File "/Users/lingyhua/Documents/development/example_jobs/cleanjob/bigoljob/script.py", line 56, in test_custom_exception
+                                    raise SimpleException('some error')
+                                NameError: name 'SimpleException' is not defined
+                            log_size: 1498
+                            source_file: >-
+                              /Users/lingyhua/Documents/development/example_jobs/cleanjob/bigoljob/script.py
+                            result_reason: >-
+                              Caught an exception while executing section
+                              test_custom_exception
+                            section_id: test_custom_exception
+                            start_time: '2020-04-30T17:16:50'
+                          - section_type: commoncleanup
+                            result: passed
+                            stop_time: '2020-04-30T17:16:50'
+                            run_time: 0
+                            child_start: 9
+                            source_line: 61
+                            section_name: common_cleanup
+                            description: ' Common Cleanup for Sample Test '
+                            log_file: TaskLog.Task-1
+                            parents:
+                              - 1
+                            log_start: 8457
+                            result_data: null
+                            id: 26e31b24-9f76-11ea-bb37-0242ac130002
+                            child_end: 10
+                            steps: []
+                            extra: null
+                            parent_id: 4fd4f59e-9f75-11ea-bb37-0242ac130002
+                            sequence_number: 9
+                            details: null
+                            log_size: 1458
+                            source_file: >-
+                              /Users/lingyhua/Documents/development/example_jobs/cleanjob/bigoljob/script.py
+                            result_reason: null
+                            section_id: common_cleanup
+                            start_time: '2020-04-30T17:16:50'
+                          - section_type: subsection
+                            result: passed
+                            stop_time: '2020-04-30T17:16:50'
+                            run_time: 0
+                            child_start: 10
+                            source_line: 69
+                            section_name: clean_everything
+                            description: ' Common Cleanup Subsection '
+                            log_file: TaskLog.Task-1
+                            parents:
+                              - 1
+                              - 9
+                            log_start: 8997
+                            result_data: null
+                            id: 32908fba-9f76-11ea-bb37-0242ac130002
+                            child_end: 10
+                            steps: []
+                            extra: null
+                            parent_id: 26e31b24-9f76-11ea-bb37-0242ac130002
+                            sequence_number: 10
+                            details: null
+                            log_size: 790
+                            source_file: >-
+                              /Users/lingyhua/Documents/development/example_jobs/cleanjob/bigoljob/script.py
+                            result_reason: null
+                            section_id: clean_everything
+                            start_time: '2020-04-30T17:16:50'
+                      - meta:
+                          name: script.py
+                          task_id: Task-2
+                          path: >-
+                            /Users/lingyhua/Documents/development/example_jobs/cleanjob/bigoljob
+                        summary:
+                          fail: 0
+                          pass: 3
+                          success_rate: 75
+                          total_tasks: 4
+                          abort: 0
+                          error: 1
+                          applicable_tasks: 4
+                          passx: 0
+                          unknown: 0
+                          block: 0
+                          skip: 0
+                          never_run: 0
+                        sections:
+                          - section_type: testscript
+                            result: ''
+                            params: null
+                            stop_time: '2020-04-30T17:16:50'
+                            run_time: 2
+                            child_start: 11
+                            source_line: 0
+                            section_name: script
+                            description: ''
+                            log_file: TaskLog.Task-2
+                            parents: []
+                            log_start: 0
+                            id: 4efa760c-9f76-11ea-bb37-0242ac130002
+                            child_end: 20
+                            steps: []
+                            extra: null
+                            parent_id: null
+                            sequence_number: 11
+                            log_size: -1
+                            source_file: >-
+                              /Users/lingyhua/Documents/development/example_jobs/cleanjob/bigoljob/script.py
+                            section_id: Task-2
+                            start_time: '2020-04-30T17:16:47'
+                          - section_type: commonsetup
+                            result: passed
+                            stop_time: '2020-04-30T17:16:47'
+                            run_time: 0
+                            child_start: 12
+                            source_line: 12
+                            section_name: common_setup
+                            description: ' Common Setup section '
+                            log_file: TaskLog.Task-2
+                            parents:
+                              - 11
+                            log_start: 0
+                            result_data: null
+                            id: 9cc2fe54-9f76-11ea-bb37-0242ac130002
+                            child_end: 14
+                            steps: []
+                            extra: null
+                            parent_id: 4efa760c-9f76-11ea-bb37-0242ac130002
+                            sequence_number: 12
+                            details: null
+                            log_size: 2364
+                            source_file: >-
+                              /Users/lingyhua/Documents/development/example_jobs/cleanjob/bigoljob/script.py
+                            result_reason: null
+                            section_id: common_setup
+                            start_time: '2020-04-30T17:16:47'
+                          - section_type: subsection
+                            result: passed
+                            stop_time: '2020-04-30T17:16:47'
+                            run_time: 0
+                            child_start: 13
+                            source_line: 20
+                            section_name: sample_subsection_1
+                            description: ' Common Setup subsection '
+                            log_file: TaskLog.Task-2
+                            parents:
+                              - 11
+                              - 12
+                            log_start: 534
+                            result_data: null
+                            id: a9ea51a4-9f76-11ea-bb37-0242ac130002
+                            child_end: 13
+                            steps: []
+                            extra: null
+                            parent_id: 9cc2fe54-9f76-11ea-bb37-0242ac130002
+                            sequence_number: 13
+                            details: null
+                            log_size: 784
+                            source_file: >-
+                              /Users/lingyhua/Documents/development/example_jobs/cleanjob/bigoljob/script.py
+                            result_reason: null
+                            section_id: sample_subsection_1
+                            start_time: '2020-04-30T17:16:47'
+                          - section_type: subsection
+                            result: passed
+                            stop_time: '2020-04-30T17:16:47'
+                            run_time: 0
+                            child_start: 14
+                            source_line: 29
+                            section_name: sample_subsection_2
+                            description: ' Common Setup subsection '
+                            log_file: TaskLog.Task-2
+                            parents:
+                              - 11
+                              - 12
+                            log_start: 1318
+                            result_data: null
+                            id: b5f944a0-9f76-11ea-bb37-0242ac130002
+                            child_end: 14
+                            steps: []
+                            extra: null
+                            parent_id: 9cc2fe54-9f76-11ea-bb37-0242ac130002
+                            sequence_number: 14
+                            details: null
+                            log_size: 920
+                            source_file: >-
+                              /Users/lingyhua/Documents/development/example_jobs/cleanjob/bigoljob/script.py
+                            result_reason: null
+                            section_id: sample_subsection_2
+                            start_time: '2020-04-30T17:16:47'
+                          - section_type: testcase
+                            result: passed
+                            stop_time: '2020-04-30T17:16:50'
+                            run_time: 2
+                            child_start: 15
+                            source_line: 41
+                            section_name: MyTestcase1
+                            description: ''
+                            log_file: TaskLog.Task-2
+                            parents:
+                              - 11
+                            log_start: 2364
+                            result_data: null
+                            id: 81cc888a-9f77-11ea-bb37-0242ac130002
+                            child_end: 16
+                            steps: []
+                            extra: null
+                            parent_id: 4efa760c-9f76-11ea-bb37-0242ac130002
+                            sequence_number: 15
+                            details: null
+                            log_size: 3920
+                            source_file: >-
+                              /Users/lingyhua/Documents/development/example_jobs/cleanjob/bigoljob/script.py
+                            result_reason: null
+                            section_id: MyTestcase1
+                            start_time: '2020-04-30T17:16:47'
+                          - section_type: testsection
+                            result: passed
+                            stop_time: '2020-04-30T17:16:50'
+                            run_time: 2
+                            child_start: 16
+                            source_line: 42
+                            section_name: my_section
+                            description: ''
+                            log_file: TaskLog.Task-2
+                            parents:
+                              - 11
+                              - 15
+                            log_start: 2904
+                            result_data: mpnvmguuiuegfjpajmnllsmkvwyvmemazmrihpuwuwjugmviye
+                            id: 81cc888a-9f77-11ea-bb37-0242ac130002
+                            child_end: 16
+                            steps:
+                              - result_data: null
+                                result: passed
+                                extra:
+                                  index: '1'
+                                  continue_: false
+                                stop_time: '2020-04-30T17:16:49'
+                                run_time: 1.02
+                                details: null
+                                log_size: 760
+                                source_line: 44
+                                step_id: STEP 1
+                                source_file: >-
+                                  /Users/lingyhua/Documents/development/example_jobs/cleanjob/bigoljob/script.py
+                                result_reason: null
+                                description: ''
+                                log_file: TaskLog.Task-2
+                                parents:
+                                  - 11
+                                  - 15
+                                  - 16
+                                log_start: 3444
+                                start_time: '2020-04-30T17:16:48'
+                                step_name: step1
+                              - result_data: null
+                                result: passed
+                                extra:
+                                  index: '2'
+                                  continue_: false
+                                stop_time: '2020-04-30T17:16:50'
+                                run_time: 1.01
+                                details: null
+                                log_size: 766
+                                source_line: 47
+                                step_id: STEP 2
+                                source_file: >-
+                                  /Users/lingyhua/Documents/development/example_jobs/cleanjob/bigoljob/script.py
+                                result_reason: null
+                                description: ''
+                                log_file: TaskLog.Task-2
+                                parents:
+                                  - 11
+                                  - 15
+                                  - 16
+                                log_start: 4204
+                                start_time: '2020-04-30T17:16:49'
+                                step_name: step2
+                            extra: null
+                            parent_id: 81cc888a-9f77-11ea-bb37-0242ac130002
+                            sequence_number: 16
+                            details: null
+                            log_size: 3246
+                            source_file: >-
+                              /Users/lingyhua/Documents/development/example_jobs/cleanjob/bigoljob/script.py
+                            result_reason: kflkntjvymohoerygdvnawspo
+                            section_id: my_section
+                            start_time: '2020-04-30T17:16:47'
+                          - section_type: testcase
+                            result: errored
+                            stop_time: '2020-04-30T17:16:50'
+                            run_time: 0
+                            child_start: 17
+                            source_line: 53
+                            section_name: MyTestcase2
+                            description: ''
+                            log_file: TaskLog.Task-2
+                            parents:
+                              - 11
+                            log_start: 6284
+                            result_data: null
+                            id: ac651d46-9f77-11ea-bb37-0242ac130002
+                            child_end: 18
+                            steps: []
+                            extra: null
+                            parent_id: 4efa760c-9f76-11ea-bb37-0242ac130002
+                            sequence_number: 17
+                            details: null
+                            log_size: 2173
+                            source_file: >-
+                              /Users/lingyhua/Documents/development/example_jobs/cleanjob/bigoljob/script.py
+                            result_reason: null
+                            section_id: MyTestcase2
+                            start_time: '2020-04-30T17:16:50'
+                          - section_type: testsection
+                            result: errored
+                            stop_time: '2020-04-30T17:16:50'
+                            run_time: 0
+                            child_start: 18
+                            source_line: 54
+                            section_name: test_custom_exception
+                            description: ''
+                            log_file: TaskLog.Task-2
+                            parents:
+                              - 11
+                              - 17
+                            log_start: 6824
+                            result_data:
+                              traceback: |
+                                Traceback (most recent call last):
+                                  File "/Users/lingyhua/Documents/development/example_jobs/cleanjob/bigoljob/script.py", line 56, in test_custom_exception
+                                    raise SimpleException('some error')
+                                NameError: name 'SimpleException' is not defined
+                            id: cb33d866-9f77-11ea-bb37-0242ac130002
+                            child_end: 18
+                            steps: []
+                            extra: null
+                            parent_id: ac651d46-9f77-11ea-bb37-0242ac130002
+                            sequence_number: 18
+                            details:
+                              - >
+                                Caught an exception while executing section
+                                test_custom_exception:
+
+                                Traceback (most recent call last):
+                                  File "/Users/lingyhua/Documents/development/example_jobs/cleanjob/bigoljob/script.py", line 56, in test_custom_exception
+                                    raise SimpleException('some error')
+                                NameError: name 'SimpleException' is not defined
+                            log_size: 1498
+                            source_file: >-
+                              /Users/lingyhua/Documents/development/example_jobs/cleanjob/bigoljob/script.py
+                            result_reason: >-
+                              Caught an exception while executing section
+                              test_custom_exception
+                            section_id: test_custom_exception
+                            start_time: '2020-04-30T17:16:50'
+                          - section_type: commoncleanup
+                            result: passed
+                            stop_time: '2020-04-30T17:16:50'
+                            run_time: 0
+                            child_start: 19
+                            source_line: 61
+                            section_name: common_cleanup
+                            description: ' Common Cleanup for Sample Test '
+                            log_file: TaskLog.Task-2
+                            parents:
+                              - 11
+                            log_start: 8457
+                            result_data: null
+                            id: dd661a94-9f77-11ea-bb37-0242ac130002
+                            child_end: 20
+                            steps: []
+                            extra: null
+                            parent_id: 4efa760c-9f76-11ea-bb37-0242ac130002
+                            sequence_number: 19
+                            details: null
+                            log_size: 1458
+                            source_file: >-
+                              /Users/lingyhua/Documents/development/example_jobs/cleanjob/bigoljob/script.py
+                            result_reason: null
+                            section_id: common_cleanup
+                            start_time: '2020-04-30T17:16:50'
+                          - section_type: subsection
+                            result: passed
+                            stop_time: '2020-04-30T17:16:50'
+                            run_time: 0
+                            child_start: 20
+                            source_line: 69
+                            section_name: clean_everything
+                            description: ' Common Cleanup Subsection '
+                            log_file: TaskLog.Task-2
+                            parents:
+                              - 11
+                              - 19
+                            log_start: 8997
+                            result_data: null
+                            id: f3e0db7e-9f77-11ea-bb37-0242ac130002
+                            child_end: 20
+                            steps: []
+                            extra: null
+                            parent_id: dd661a94-9f77-11ea-bb37-0242ac130002
+                            sequence_number: 20
+                            details: null
+                            log_size: 790
+                            source_file: >-
+                              /Users/lingyhua/Documents/development/example_jobs/cleanjob/bigoljob/script.py
+                            result_reason: null
+                            section_id: clean_everything
+                            start_time: '2020-04-30T17:16:50'
+                    result_id: REQ0000002-1-run
+  '/results/{result_id}/files':
+    get:
+      tags:
+        - results
+      description: list of the files in a result archive
+      deprecated: false
+      parameters:
+        - name: result_id
+          in: path
+          description: id of the result
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: passed
+          content:
+            application/json:
+              examples:
+                response:
+                  value:
+                    results:
+                      - parent_id: 0
+                        file_size: 584
+                        file_name: bigolmulti.py
+                        is_dir: false
+                        id: 0-0
+                      - parent_id: 0
+                        file_size: 4080
+                        file_name: bigolmulti.report
+                        is_dir: false
+                        id: 0-1
+                      - parent_id: 0
+                        file_size: 6682
+                        file_name: bigolmulti.results
+                        is_dir: false
+                        id: 0-2
+                      - parent_id: 0
+                        file_size: 3228
+                        file_name: easypy.configuration.yaml
+                        is_dir: false
+                        id: 0-3
+                      - parent_id: 0
+                        file_size: 23429
+                        file_name: env.txt
+                        is_dir: false
+                        id: 0-4
+                      - parent_id: 0
+                        file_size: 4145
+                        file_name: JobLog.bigolmulti
+                        is_dir: false
+                        id: 0-5
+                      - parent_id: 0
+                        file_size: 5270
+                        file_name: Kleenex.device-1.log
+                        is_dir: false
+                        id: 0-6
+                      - parent_id: 0
+                        file_size: 5270
+                        file_name: Kleenex.device-2.log
+                        is_dir: false
+                        id: 0-7
+                      - parent_id: 0
+                        file_size: 28195
+                        file_name: parsed_script.json
+                        is_dir: false
+                        id: 0-8
+                      - parent_id: 0
+                        file_size: 81
+                        file_name: pyats.configuration.yaml
+                        is_dir: false
+                        id: 0-9
+                      - parent_id: 0
+                        file_size: 43485
+                        file_name: reporter.log
+                        is_dir: false
+                        id: 0-10
+                      - parent_id: 0
+                        file_size: 843
+                        file_name: rerun.results
+                        is_dir: false
+                        id: 0-11
+                      - parent_id: 0
+                        file_size: 30938
+                        file_name: results.yaml
+                        is_dir: false
+                        id: 0-12
+                      - parent_id: 0
+                        file_size: 20596
+                        file_name: ResultsDetails.xml
+                        is_dir: false
+                        id: 0-13
+                      - parent_id: 0
+                        file_size: 763
+                        file_name: ResultsSummary.xml
+                        is_dir: false
+                        id: 0-14
+                      - parent_id: 0
+                        file_size: 9915
+                        file_name: TaskLog.Task-1
+                        is_dir: false
+                        id: 0-15
+                      - parent_id: 0
+                        file_size: 9915
+                        file_name: TaskLog.Task-2
+                        is_dir: false
+                        id: 0-16
+                      - parent_id: 0
+                        file_size: 463
+                        file_name: testbed.clean.yaml
+                        is_dir: false
+                        id: 0-17
+                      - parent_id: 0
+                        file_size: 670
+                        file_name: testbed.static.yaml
+                        is_dir: false
+                        id: 0-18
+  '/results/{result_id}/download':
+    get:
+      tags:
+        - results
+      description: download the entire archive of a result
+      deprecated: false
+      parameters:
+        - name: result_id
+          in: path
+          description: id of the result
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: passed
+          headers:
+            content-type:
+              schema:
+                type: string
+                default: application/force-download
+            Content-Disposition:
+              schema:
+                type: string
+                default: attachment; filename=xxx.zip
+        '400':
+          description: failed
+          content:
+            application/json:
+              examples:
+                response:
+                  value:
+                    detail: result example_001 is in uploading status
+  '/results/{result_id}/download/{file_name}':
+    get:
+      tags:
+        - results
+      description: download the file with the file name from a result
+      deprecated: false
+      parameters:
+        - name: result_id
+          in: path
+          description: id of the result
+          required: true
+          schema:
+            type: string
+        - name: file_name
+          in: path
+          description: file name
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: passed
+          headers:
+            content-type:
+              schema:
+                type: string
+                default: application/force-download
+            Content-Disposition:
+              schema:
+                type: string
+                default: attachment; filename=env.txt
+  '/results/{result_id}/fileline/{file_name}':
+    get:
+      tags:
+        - results
+      description: read file by lines
+      deprecated: false
+      parameters:
+        - name: result_id
+          in: path
+          description: id of the result
+          required: true
+          schema:
+            type: string
+        - name: file_name
+          in: path
+          description: file name
+          required: true
+          schema:
+            type: string
+        - name: offset
+          in: query
+          required: false
+          description: line number that read start
+          schema:
+            type: integer
+            format: int32
+            default: 0
+        - name: limit
+          in: query
+          required: false
+          description: number of lines to read
+          schema:
+            type: integer
+            format: int32
+            default: 100
+        - name: raw
+          in: query
+          required: false
+          description: raw text/string output if applied
+          schema:
+            type: boolean
+        - name: traditional
+          in: query
+          required: false
+          description: for file diff
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: passed
+          content:
+            application/json:
+              examples:
+                response:
+                  value:
+                    file_content: |-
+                      Runtime Values
+                      ==============
+                      ...
+                    content_type: text/plain
+                    file_name: env.txt
+  '/results/{result_id}/sections/{secion_uuid}':
+    get:
+      tags:
+        - sections
+      description: retrieve the generic info for this section
+      deprecated: false
+      parameters:
+        - name: result_id
+          in: path
+          description: id of the result
+          required: true
+          schema:
+            type: string
+        - name: secion_uuid
+          in: path
+          description: id of the section/plugin section. Step is not supported.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              examples:
+                response:
+                  value:
+                    id: 5b110ce0-9f75-11ea-bb37-0242ac130002
+                    sequence_number: 2
+                    section_type: commonsetup
+                    section_id: common_setup
+                    section_name: common_setup
+                    result: passed
+                    result_reason: null
+                    result_data: null
+                    start_time: '2020-04-30T17:16:47'
+                    stop_time: '2020-04-30T17:16:47'
+                    run_time: 0
+                    description: ' Common Setup section '
+                    log_file: TaskLog.Task-1
+                    log_start: 0
+                    log_size: 2364
+                    parent_id: 4fd4f59e-9f75-11ea-bb37-0242ac130002
+                    parents:
+                      - 1
+                    child_start: 2
+                    child_end: 4
+                    steps: []
+                    extra: null
+                    details: null
+                    source_file: >-
+                      /Users/lingyhua/Documents/development/example_jobs/cleanjob/bigoljob/script.py
+                    source_line: 12
+  '/results/{result_id}/sections/{section_uuid}/log':
+    get:
+      tags:
+        - sections
+      description: read a section log by bytes with the unique section id
+      deprecated: false
+      parameters:
+        - name: result_id
+          in: path
+          description: id of the result
+          required: true
+          schema:
+            type: string
+        - name: section_uuid
+          in: path
+          description: >-
+            id of the section/step/plugin section. For step, the id format is
+            step-{log_start}-{log_size}-{result_id}
+          required: true
+          schema:
+            type: string
+        - name: raw
+          in: query
+          required: false
+          description: get the raw output of the log
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: passed
+          content:
+            application/json:
+              examples:
+                response:
+                  value:
+                    section_name: my_section
+                    start: 3444
+                    end: 4204
+                    section_result: passed
+                    count: 760
+                    previous: null
+                    next: null
+                    file_name: TaskLog.Task-1
+                    file_content: >
+                      24: LINGYHUA-M-3484: 2020-04-30T17:16:48: %AETEST-6-INFO:
+                      %[part=24.1/3][pid=58554][pname=Task-1]:
+                      +..............................................................................+
+
+                      25: LINGYHUA-M-3484: 2020-04-30T17:16:48: %AETEST-6-INFO:
+                      %[part=24.2/3][pid=58554][pname=Task-1]:
+                      :                            Starting STEP 1:
+                      step1                            :
+
+                      26: LINGYHUA-M-3484: 2020-04-30T17:16:48: %AETEST-6-INFO:
+                      %[part=24.3/3][pid=58554][pname=Task-1]:
+                      +..............................................................................+
+
+                      27: LINGYHUA-M-3484: 2020-04-30T17:16:48: %SCRIPT-6-INFO:
+                      %[pid=58554][pname=Task-1]: a step
+
+                      28: LINGYHUA-M-3484: 2020-04-30T17:16:49: %AETEST-6-INFO:
+                      %[pid=58554][pname=Task-1]: The result of STEP 1: step1 is
+                      => PASSED
+                    result_id: REQ0000002-1-run
+  '/results/{result_id}/sections/{section_uuid}/logline':
+    get:
+      tags:
+        - sections
+      description: read a section log by lines with the unique section id
+      deprecated: false
+      parameters:
+        - name: result_id
+          in: path
+          description: id of the result
+          required: true
+          schema:
+            type: string
+        - name: section_uuid
+          in: path
+          description: id of the section/step/plugin section. Step is not supported.
+          required: true
+          schema:
+            type: string
+        - name: offset
+          in: query
+          required: true
+          description: starting line number
+          schema:
+            type: integer
+            format: int32
+        - name: limit
+          in: query
+          required: true
+          description: total lines to read
+          schema:
+            type: integer
+            format: int32
+        - name: raw
+          in: query
+          required: false
+          description: raw text output
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              examples:
+                response:
+                  value:
+                    count: 83
+                    previous: null
+                    next: null
+                    file_content: >-
+                      1: LINGYHUA-M-3484: 2020-04-30T17:16:47: %KLEENEX-6-INFO:
+                      %[pid=58544][pname=KleenexWorker-3]: Starting to clean
+                      device 'device-1' using 'MyClean'
+
+                      2: ...
+                    section_name: clean_two
+                    file_name: Kleenex.device-1.log
+                    section_result: passed
+  '/results/{result_id}/sections/{section_uuid}/commands':
+    get:
+      tags:
+        - sections
+      description: parse section log to get a list of commands
+      deprecated: false
+      parameters:
+        - name: result_id
+          in: path
+          description: id of the result
+          required: true
+          schema:
+            type: string
+        - name: section_uuid
+          in: path
+          description: section id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              examples:
+                response:
+                  value:
+                    - device: csr1000v-1
+                      execute_id: '12133_20598_4_223'
+                      execute_type: execute
+                      title: show running-config
+                      start_time: '09:38:48'
+                    - device: nx-osv-1
+                      execute_id: '12133_20598_225_980'
+                      execute_type: execute
+                      title: show running-config
+                      start_time: '09:38:48'
+  '/results/{result_id}/sections/{section_uuid}/commands/{command_id}/log':
+    get:
+      tags:
+        - sections
+      description: read command log content by bytes
+      deprecated: false
+      parameters:
+        - name: result_id
+          in: path
+          description: id of the result
+          required: true
+          schema:
+            type: string
+        - name: section_uuid
+          in: path
+          description: section id
+          required: true
+          schema:
+            type: string
+        - name: command_id
+          in: path
+          description: >-
+            execute_id 
+          required: true
+          schema:
+            type: string
+        - name: offset
+          in: query
+          description: byte offset
+          required: false
+          schema:
+            default: 0
+            type: integer
+        - name: limit
+          in: query
+          description: bytes to include from offset
+          required: false
+          schema:
+            default: 20480
+            type: integer
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              examples:
+                response:
+                  value:
+                    section_name: configuration_snapshot
+                    count: 760
+                    previous: null
+                    next: null
+                    file_content:
+                      - >
+                        3: JEAUBIN-M-43JF: 2019-08-22T09:38:48: %UNICON-6-INFO:
+                        %[pid=22121][pname=ChildLabor-3:1]: +++ csr1000v-1:
+                        executing command 'show running-config' +++
+                      - |
+                        show running-config
+                      - |
+                        Building configuration...
+                      - |+
+
+                      - |
+                        Current configuration : 4259 bytes
+                      - |
+                        !
+                      - >
+                        ! Last configuration change at 13:37:26 UTC Thu Aug 22
+                        2019
+                      - |
+                        !
+                      - |
+                        version 16.9
+                      - |
+                        ...
+                      - |
+                        end
+                      - |+
+
+                      - |
+                        csr1000v-1#
+  '/results/{result_id}/sections/{section_uuid}/commands/{command_id}/logline':
+    get:
+      tags:
+        - sections
+      description: read command log content by lines
+      deprecated: false
+      parameters:
+        - name: result_id
+          in: path
+          description: id of the result
+          required: true
+          schema:
+            type: string
+        - name: section_uuid
+          in: path
+          description: section id
+          required: true
+          schema:
+            type: string
+        - name: command_id
+          in: path
+          description: >-
+            execute_id 
+          required: true
+          schema:
+            type: string
+        - name: offset
+          in: query
+          description: line offset
+          required: false
+          schema:
+            default: 0
+            type: integer
+        - name: limit
+          in: query
+          description: lines to include from offset
+          required: false
+          schema:
+            default: 100
+            type: integer
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              examples:
+                response:
+                  value:
+                    section_name: configuration_snapshot
+                    count: 13
+                    previous: null
+                    next: null
+                    file_content:
+                      - >
+                        3: JEAUBIN-M-43JF: 2019-08-22T09:38:48: %UNICON-6-INFO:
+                        %[pid=22121][pname=ChildLabor-3:1]: +++ csr1000v-1:
+                        executing command 'show running-config' +++
+                      - |
+                        show running-config
+                      - |
+                        Building configuration...
+                      - |+
+
+                      - |
+                        Current configuration : 4259 bytes
+                      - |
+                        !
+                      - >
+                        ! Last configuration change at 13:37:26 UTC Thu Aug 22
+                        2019
+                      - |
+                        !
+                      - |
+                        version 16.9
+                      - |
+                        ...
+                      - |
+                        end
+                      - |+
+
+                      - |
+                        csr1000v-1#
+externalDocs:
+  description: logviewer wiki page
+  url: 'https://wiki.cisco.com/display/S3TEAM/Results+Micro+Service'
+servers:
+  - url: '/private/v1/standalone'
+components:
+  schemas:
+    Result:
+      type: object
+      properties:
+        meta:
+          type: object
+        summary:
+          type: object
+        scripts:
+          type: array
+          items:
+            $ref: '#/components/schemas/Script'
+        plugins:
+          type: object
+    Script:
+      type: object
+      properties:
+        meta:
+          type: object
+        summary:
+          type: object
+        sections:
+          type: array
+          items:
+            type: object
+  requestBodies:
+    postResultsTrade:
+      content:
+        application/x-www-form-urlencoded:
+          schema:
+            type: object
+            properties:
+              result_format:
+                type: string
+                example: trade
+                default: trade
+                enum:
+                  - trade
+                  - xunit
+                  - raw
+                  - earms
+                  - robot
+                  - kleenex
+              result_id:
+                type: string
+                example: REQ0000003-1-run
+              related_id:
+                type: string
+                example: REQ0000003
+              archive:
+                type: string
+                format: binary
+              time_stamp:
+                type: integer
+                format: int64
+              component:
+                type: string
+              branch:
+                type: string
+            required:
+              - result_id
+              - related_id
+              - archive
+              - time_stamp

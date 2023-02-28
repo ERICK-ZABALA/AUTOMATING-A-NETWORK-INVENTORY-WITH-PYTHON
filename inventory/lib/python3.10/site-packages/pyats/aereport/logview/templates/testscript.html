@@ -1,0 +1,158 @@
+{% for script in testscripts %}
+{% set scriptnum = loop.index %}
+
+<!--Testscript content-->
+<li>
+
+    {% if script.result in ("passed", "passx") %}
+    <div id="script-{{scriptnum}}" class="collapsible-header passed active">
+    {% elif script.result in ("failed", "errored", "aborted", "blocked")%}
+    <div id="script-{{scriptnum}}" class="collapsible-header errored active">
+    {% elif script.result == "skipped"%}
+    <div id="script-{{scriptnum}}" class="collapsible-header skipped active">
+    {% else %}
+    <div id="script-{{scriptnum}}" class="collapsible-header other active">
+    {% endif %}
+        <i class="material-icons">arrow_drop_down</i>
+        <h6>{{script.id}}: {{script.name}}</h6> <i class="material-icons">arrow_drop_down</i>
+        {% if script.description %}
+        <a class="toggle-data not-collapse" href="#!" data-function="toggler" data-target="descr">Description</a>
+        {% endif %}
+        {% if script.metadata %}
+        <a class="toggle-data not-collapse" href="#!" data-function="toggler" data-target="meta">Metadata</a>
+        {% endif %}
+        <div class="not-collapse expand">
+            <i class="material-icons all tooltipped" data-position="top" data-delay="30" data-tooltip="expand all">expand_more</i>
+            <i class="material-icons none tooltipped" data-position="top" data-delay="30" data-tooltip="collapse all">expand_less</i>
+        </div>
+    </div>
+    <div class="collapsible-body pr-1">
+        {% if script.description %}
+        <div class="row data-list m-0 descr" style="display: none;">
+            <div class="col s12">
+                <span style="display: inline-block;"><b>Description:</b> {{script.description.replace(" ", "&emsp14;").replace("\n", "<br />")}}</span>
+            </div>
+        </div>
+        {% endif %}
+        {% if script.metadata %}
+        <div class="row data-list m-0 meta" style="display: none;">
+            <div class="col s12">
+                {% for key, value in script.metadata.items() %}
+                <span><b>{{key}}:</b> {{value}}</span>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- Testcases -->
+        <ul class="collapsible lean" data-collapsible="expandable">
+            {% for case in script.testcases %}
+            {% set casenum = loop.index %}
+            <li>
+                <div id="script-{{scriptnum}}-test-{{casenum}}" class="collapsible-header {{case.result.lower()}}">
+                    <!-- <i class="small material-icons state">brightness_1</i> -->
+                    <i class="material-icons">arrow_drop_down</i>
+                    <span class="title">{{case.display_name}}</span>
+                    {% if case.description %}
+                    <a class="toggle-data not-collapse" href="#!" data-function="toggler" data-target="descr">Description</a>
+                    {% endif %}
+                    {% if case.metadata %}
+                    <a class="toggle-data not-collapse" href="#!" data-function="toggler" data-target="meta">Metadata</a>
+                    {% endif %}
+                    <div class="not-collapse expand">
+                        <i class="material-icons all tooltipped" data-position="top" data-delay="30" data-tooltip="expand all">expand_more</i>
+                        <i class="material-icons none tooltipped" data-position="top" data-delay="30" data-tooltip="collapse all">expand_less</i>
+                    </div>
+                    <span class="new badge ml-1" data-badge-caption="">{{case.result.upper()}}</span>
+                    <span class="new badge time ml-1" data-badge-caption="">{{case.runtime}}</span>
+                </div>
+                <div class="collapsible-body">
+                    {% if case.description %}
+                    <div class="row data-list mb-0 descr" style="display: none;">
+                        <div class="col s12">
+                            <span style="display: inline-block;"><b>Description:</b> {{case.description.replace(" ", "&emsp14;").replace("\n", "<br />")}}</span>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% if case.metadata %}
+                    <div class="row data-list meta" style="display: none;">
+                        <div class="col s12">
+                            {% for key, value in case.metadata.items() %}
+                            <span><b>{{key}}:</b> {{value}}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+                    <!-- Sections -->
+                    <ul class="collapsible lean" data-collapsible="expandable">
+
+                        {% for section in case.sections %}
+
+                        <!-- Section-1 -->
+                        <li class="section">
+                            <div class="collapsible-header {{section.result.lower()}}">
+                                <!-- <i class="small material-icons state">brightness_1</i> -->
+                                <i class="material-icons">arrow_drop_down</i>
+                                <span class="title">{{section.data.name}}</span>
+                                {% if section.data.description %}
+                                <a class="toggle-data not-collapse" href="#!" data-function="toggler" data-target="descr">Description</a>
+                                {% endif %}
+                                {% if section.metadata %}
+                                <a class="toggle-data not-collapse" href="#!" data-function="toggler" data-target="meta">Meta-Data</a>
+                                {% endif %}
+                                <div class="not-collapse expand">
+                                    <i class="material-icons all tooltipped" data-position="top" data-delay="30" data-tooltip="expand all">expand_more</i>
+                                    <i class="material-icons none tooltipped" data-position="top" data-delay="30" data-tooltip="collapse all">expand_less</i>
+                                </div>
+                                <span class="new badge ml-1" data-badge-caption="">{{section.result.upper()}}</span>
+                                <span class="new badge time ml-1" data-badge-caption="">{{section.data.runtime}}</span>
+                            </div>
+                            <div class="collapsible-body">
+                                {% if section.data.description %}
+                                <div class="row data-list mb-0 descr" style="display: none;">
+                                    <div class="col s12">
+                                        <span style="display: inline-block;"><b>Description:</b> {{section.data.description.replace(" ", "&emsp14;").replace("\n", "<br />")}}</span>
+                                    </div>
+                                </div>
+                                {% endif %}
+                                {% if section.metadata %}
+                                <div class="row data-list meta" style="display: none;">
+                                    <div class="col s12">
+                                        {% for key, value in section.metadata.items() %}
+                                        <span><b>{{key}}:</b> {{value}}</span>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                {% endif %}
+                                <ul class="collapsible lean" data-collapsible="expandable">
+                                    <!-- Steps -->
+                                    {% if section.data.teststeps is defined and section.data.teststeps|length > 0 %}
+                                    {% for teststep in section.data.teststeps %}
+                                    {% include "teststep.html" %}
+                                    {% endfor %}
+                                    {% endif %}
+
+                                    <!-- log -->
+                                    <li class="logs">
+                                        <div class="collapsible-header passed">
+                                            <i class="material-icons">arrow_drop_down</i>
+                                            <span class="title"><b>Section Logs</b></span>
+                                        </div>
+                                        <div class="collapsible-body">
+                                            <pre class="editor" style="height: {{section.logs.height}}px;">{{section.logs.data|e}}</pre>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        {% endfor %}
+                    </ul>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</li>
+
+{% endfor %}

@@ -1,0 +1,11 @@
+[console_scripts]
+easypy = ats.easypy:main
+
+[pyats.cli.commands.run]
+validate = pyats.easypy.commands:RunEasypy
+
+[pyats.manifest.runtimes.system]
+easypy = pyats.easypy.manifest.system:main
+
+[pyats.manifest.runtimes.virtualenv]
+easypy = pyats.easypy.manifest.virtualenv:main

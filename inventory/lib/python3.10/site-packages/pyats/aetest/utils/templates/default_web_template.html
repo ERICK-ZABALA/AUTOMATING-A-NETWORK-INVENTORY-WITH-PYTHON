@@ -1,0 +1,36 @@
+<html>
+    <head>
+        {% block subject_head %}
+            <h1>{{ section_name }}:<br>{{ subject }}</h1>
+        {% endblock %}
+        {% block message_head %}
+            <h3>{{ message }}</h3>
+        {% endblock %}
+    </head>
+    <body>
+        {% block form %}
+            <form action="/" method="post" accept-charset="utf-8">
+                Comments:
+                <br>
+                {% block comments_input %}
+                    <textarea name="comments" rows=20 cols=80></textarea>
+                {% endblock %}
+                <br><br>
+                {% block reason_input %}
+                    Reason:
+                    <input type="text" name="reason" size=50>
+                {% endblock %}
+                <br><br>
+                {% block result_choices_input %}
+                    {% for choice in result_choices %}
+                        <input type="radio" name="choice" value="{{ choice }}"
+                            {% if loop.first %} checked{% endif %}>
+                        {{ choice }}<br>
+                    {% endfor %}
+                {% endblock %}
+                <br><br>
+                <input type="submit" name="Submit">
+            </form>
+        {% endblock %}
+    </body>
+</html>

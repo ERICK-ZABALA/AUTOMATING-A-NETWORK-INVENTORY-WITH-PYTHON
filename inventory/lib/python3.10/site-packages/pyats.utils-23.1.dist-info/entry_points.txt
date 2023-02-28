@@ -1,0 +1,7 @@
+[pyats.cli.commands.secret]
+decode = pyats.utils.commands:DecodeSecret
+encode = pyats.utils.commands:EncodeSecret
+keygen = pyats.utils.commands:KeyGenSecret
+
+[pyats.cli.commands.validate]
+datafile = pyats.utils.commands:ValidateDatafile

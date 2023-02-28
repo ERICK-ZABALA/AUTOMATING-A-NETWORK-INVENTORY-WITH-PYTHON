@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>LogViewer</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="styles.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>{{context.initinfo.name}}</title>
+</head>
+<style type="text/css">
+    {% include "styles.css" %}
+</style>
+
+<body>
+    <header>
+        <div class="navbar-fixed">
+            <nav class="top-nav brown lighten-1">
+                <div class="nav-wrapper">
+                    <a href="#" data-activates="slide-out" class="button-collapse top-nav d-inline-block"><i class="material-icons">menu</i></a>
+                    <a class="ml-2">{{context.initinfo.name}}</a>
+                    <div class="nav-info">
+                        <div>
+                            <span class="new badge {{overall_result.lower()}}" data-badge-caption="">{{overall_result.upper()}}</span>
+                        </div>
+                        <div>
+                            <span>{{date}}</span>
+                            <span>{{runtime}}</span>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- Collapsible side-nav content -->
+        <ul id="slide-out" class="side-nav">
+            <li class="side-nav-head brown lighten-1 z-depth-1">
+                <span>{{context.initinfo.name}}</span>
+            </li>
+
+            <!-- Table of Contents -->
+            <li class="no-padding">
+                <ul>
+                    <li><a href="#overview" data-click="true">Overview</a></li>
+                    <li class="no-padding">
+                        <ul class="collapsible ">
+							{% for script in testscripts %}
+							<li>
+								<a class="collapsible-header"><i class="material-icons">arrow_drop_down</i>{{script.id}}: {{script.name}}</a>
+								<div class="collapsible-body">
+									<ul>
+										{% set scriptnum = loop.index %}
+										{% for test in script.testcases %}
+										{% set testnum = loop.index %}
+                                        <li><a href="#script-{{scriptnum}}-test-{{testnum}}" data-click="true"><span class="name">{{test.name}}</span><span class="new badge {{test.result.lower()}}" data-badge-caption="">{{test.result.upper()}}</span></a></li>
+										{% endfor %}
+									</ul>
+								</div>
+							</li>
+							{% endfor %}
+                        </ul>
+                    </li>
+                    <li>
+		                <div class="divider m-0"></div>
+		            </li>                    
+                </ul>
+            </li>
+        </ul>
+    </header>
+    <main>
+        <div class="container">
+            <div class="row">
+            <div class="col s12">
+                <ul class="collapsible lean" data-collapsible="expandable">
+                	<!-- Overview -->
+                    <li>
+                        <div id="overview" class="collapsible-header active">
+                            <i class="material-icons">arrow_drop_down</i>
+                            <h6>Overview</h6>
+                        </div>
+                        <div class="collapsible-body">
+                            <div class="row d-flex">
+                                <div class="col m12 l5 overview">
+                                	<table>
+                                		<tr>
+                                			<td><b>Job Name:</b></td>
+                                            <td>{{context.initinfo.name}}</td>
+                                		</tr>
+                                		<tr>
+                                			<td><b>Start Time:</b></td>
+                                            <td>{{context.starttime.isoformat()}}</td>
+                                		</tr>
+                                		<tr>
+                                			<td><b>End Time:</b></td>
+                                            <td>{{end_time.isoformat()}}</td>
+                                		</tr>
+                                		<tr>
+                                			<td><b>Submitter:</b></td>
+                                            <td>{{context.initinfo.submitter}}</td>
+                                		</tr>
+										<tr>
+                                			<td><b>user:</b></td>
+                                            <td>{{context.initinfo.user}}</td>
+                                		</tr>
+                                		<tr>
+                                			<td><b>Run Time:</b></td>
+                                            <td>{{runtime}}</td>
+                                		</tr>
+                                		<tr>
+                                			<td><b>Testbed:</b></td>
+                                            <td>{{context.initinfo.testbed}}</td>
+                                		</tr>
+                                		{% if context.initinfo.release %}
+                                		<tr>
+                                			<td><b>Release:</b></td>
+                                            <td>{{context.initinfo.release}}</td>
+                                		</tr>
+                                        {% endif %}
+                                		{% if context.initinfo.image %}
+                                        <tr>
+                                			<td><b>Image:</b></td>
+                                            <td>{{context.initinfo.image}}</td>
+                                		</tr>
+                                        {% endif %}
+                                	</table>
+                                </div>
+                                <div class="col m12 l7">
+                                    <div id="chartdiv"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- Testscripts -->
+                    {% include "testscript.html" %}
+                </ul>
+            </div>
+        </div>
+        </div>
+
+        <div class="fixed-action-btn">
+		    <a class="btn-floating btn-large waves-effect waves-light red scrollToTop" style="display: none;">
+		      <i class="large material-icons">arrow_upward</i>
+		    </a>
+		</div>
+    </main>
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="https://www.amcharts.com/lib/3/pie.js"></script>
+    <!-- <script src="https://www.amcharts.com/lib/3/serial.js"></script> -->
+    <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+
+    <!-- AceEditor -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.9/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+
+
+    // Strip whitespace from Ace Editor text
+	var p = document.getElementsByClassName("editor");
+	for (i = 0; i < p.length; i++) {
+		p[i].textContent = p[i].textContent.replace(/^\s+/mg, "");
+	};
+
+	// Initialize Ace Editor for all .editor elements
+    var editor;
+    $('.editor').each(function( index ) {
+    	editor = ace.edit(this);
+
+    	editor.setOptions({
+	    	readOnly: true,
+	    	showLineNumbers: false,
+	    	showGutter: false,
+	    	showPrintMargin: false,
+	    });
+		editor.setTheme("ace/theme/chrome");
+    });
+
+
+    // Initialize collapse button and collapsible accordion
+    $(".button-collapse").sideNav();
+    $('.collapsible').collapsible();
+
+
+    // Open parent collapsibles when child collapsible is opened
+    $('[data-click]').on('click', function(e) {
+        var el = $($(this).attr('href'));
+        var oneUp = $(el).closest('.collapsible-body').prev('.collapsible-header');
+        var twoUp = $(oneUp).closest('.collapsible-body').prev('.collapsible-header');
+
+        $(el).trigger('click');
+        $.each([oneUp, twoUp], function(i, val) {
+            if (!$(val).hasClass('active'))
+                $(val).trigger('click');
+        });
+
+        // close sidenav on link click
+        $(this).sideNav('hide');
+    });
+
+
+    // Stop collapse event from actions clicked inside collapsible headers
+    $(".not-collapse").on("click", function(e) { e.stopPropagation(); });
+
+    // Expand or Collapse sections by trigerring a click
+    $('.expand i').on('click', function(e) {
+    	var parent, all, el;
+
+    	el = $(this);
+		parent = el.closest('.collapsible-header');
+		all = parent.next('.collapsible-body')
+				    .find('.collapsible-header');
+
+		if ( el.closest('.side-nav').length !== 0 ) {
+			headers = $('.side-nav .collapsible-header');
+
+			if ( el.hasClass('all') && !headers.hasClass('active'))
+				headers.trigger('click');
+			else if ( el.hasClass('none') && headers.hasClass('active') )
+				headers.trigger('click');
+		}
+
+		// check if the click is to expand all sections
+     	else if ( el.hasClass('all') ) {
+    		all.each( function() {
+    			if ( !$(this).hasClass('active') )
+    				$(this).trigger('click');
+    		});
+    		if ( !parent.hasClass('active') )
+    			parent.trigger('click');
+    	}
+
+    	// check if the click is to collapse all sections
+    	else if ( el.hasClass('none') ) {
+    		all.each( function() {
+    			if ( $(this).hasClass('active') )
+    				$(this).trigger('click');
+    		});
+    		// close the parent collapse section if it's open
+    		if ( parent.hasClass('active') )
+    			parent.trigger('click');
+    	}
+    });
+
+
+	// Toggle scrollToTop button visibility based on scroll
+	$(document).ready(function(){
+		//Check to see if the window is top if not then display button
+		$(window).scroll(function(){
+			if ($(this).scrollTop() > 100)
+				$('.scrollToTop').fadeIn();
+			else
+				$('.scrollToTop').fadeOut();
+		});
+		//Click event to scroll to top
+		$('.scrollToTop').click(function(){
+			$('html, body').animate({scrollTop : 0},800);
+			return false;
+		});
+	});
+
+
+	// Setup custom collapse sections
+	$('[data-function="toggler"]').on('click', function (e) {
+	    var el = $(this);
+	    var header = el.closest('.collapsible-header');
+		var collapse;
+
+		// check the data-target, find that first child, then
+		// assign for toggling
+	    if (el.attr('data-target') == 'descr') {
+	    	if (header.next('.collapsible-body').length !== 0){
+	    		console.log(header.next('.collapsible-body'))
+	    		collapse = header.next('.collapsible-body').find('.descr').first();
+	    	}
+	    	else
+	    		collapse = header.next('.descr');
+	    }
+	    else if (el.attr('data-target') == 'meta')
+	    	collapse = header.next('.collapsible-body').find('.meta').first();
+
+	    if (!header.hasClass('active'))
+	    	header.trigger('click');
+
+     	collapse.slideToggle();
+	});
+
+	// Setup the Pie Chart
+    var chart = AmCharts.makeChart("chartdiv", {
+	  "type": "pie",
+	  "startDuration": 0,
+	   "theme": "light",
+	  "addClassNames": true,
+	  "legend":{
+	   	"position":"right",
+	    "marginRight":100,
+	    "autoMargins":false
+	  },
+	  "innerRadius": "30%",
+	  "defs": {
+	    "filter": [{
+	      "id": "shadow",
+	      "width": "200%",
+	      "height": "200%",
+	      "feOffset": {
+	        "result": "offOut",
+	        "in": "SourceAlpha",
+	        "dx": 0,
+	        "dy": 0
+	      },
+	      "feGaussianBlur": {
+	        "result": "blurOut",
+	        "in": "offOut",
+	        "stdDeviation": 5
+	      },
+	      "feBlend": {
+	        "in": "SourceGraphic",
+	        "in2": "blurOut",
+	        "mode": "normal"
+	      }
+	    }]
+	  },
+	  "dataProvider": [{
+            "status": "passed",
+            "count": {{context.summary.passed}},
+            "color": "rgb(0, 170, 0)" //#00AA00
+        }, {
+            "status": "passx",
+            "count": {{context.summary.passx}},
+            "color": "rgb(0, 170, 187)" //#00AABB
+        }, {
+            "status": "failed",
+            "count": {{context.summary.failed}},
+            "color": "rgb(255, 0, 0)" //#FF0000
+        }, {
+            "status": "errored",
+            "count": {{context.summary.errored}},
+            "color": "rgb(223, 1, 215)" //#DF01D7
+        }, {
+            "status": "aborted",
+            "count": {{context.summary.aborted}},
+            "color": "rgb(0, 0, 0)" //#000000
+        }, {
+            "status": "blocked",
+            "count": {{context.summary.blocked}},
+            "color": "rgb(161, 10, 40)" //#A10A28
+        }, {
+            "status": "skipped",
+            "count": {{context.summary.skipped}},
+            "color": "rgb(110, 110, 110)" //#6E6E6E
+        }],
+	  "valueField": "count",
+	  "titleField": "status",
+	  "colorField": "color",
+	  "export": {
+	    "enabled": true
+	  }
+	});
+
+	chart.addListener("init", handleInit);
+
+	chart.addListener("rollOverSlice", function(e) {
+	  handleRollOver(e);
+	});
+
+	function handleInit(){
+	  chart.legend.addListener("rollOverItem", handleRollOver);
+	}
+
+	function handleRollOver(e){
+	  var wedge = e.dataItem.wedge.node;
+	  wedge.parentNode.appendChild(wedge);
+	}
+    </script>
+</body>
+
+</html>

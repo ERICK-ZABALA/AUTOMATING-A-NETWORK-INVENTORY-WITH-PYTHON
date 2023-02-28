@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'CiscoSansTT-BoldOblique';
+  src: url('CiscoSansTT-BoldOblique.woff') format('woff'),
+       url('CiscoSansTT-BoldOblique.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CiscoSansTTBoldOblique';
+  src: url('CiscoSansTTBoldOblique.eot');
+  src: url('CiscoSansTTBoldOblique.woff2') format('woff2'),
+       url('CiscoSansTTBoldOblique.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+

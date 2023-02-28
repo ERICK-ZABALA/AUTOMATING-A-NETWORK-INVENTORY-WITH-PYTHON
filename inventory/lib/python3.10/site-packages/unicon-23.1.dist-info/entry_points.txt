@@ -1,0 +1,2 @@
+[console_scripts]
+mock_device_cli = unicon.mock:main

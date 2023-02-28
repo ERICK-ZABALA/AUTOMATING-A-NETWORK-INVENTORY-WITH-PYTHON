@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'CiscoSansTTLight';
+  src: url('CiscoSansTTLight.eot');
+  src: url('CiscoSansTTLight.woff2') format('woff2'),
+       url('CiscoSansTTLight.woff') format('woff'),
+       url('CiscoSansTTLight.ttf') format('truetype'),
+       url('CiscoSansTTLight.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+

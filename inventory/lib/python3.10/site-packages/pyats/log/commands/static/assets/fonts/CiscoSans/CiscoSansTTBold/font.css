@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'CiscoSansTT-Bold';
+  src: url('CiscoSansTT-Bold.woff') format('woff'),
+       url('CiscoSansTT-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CiscoSansTTBold';
+  src: url('CiscoSansTTBold.eot');
+  src: url('CiscoSansTTBold.woff2') format('woff2'),
+       url('CiscoSansTTBold.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+

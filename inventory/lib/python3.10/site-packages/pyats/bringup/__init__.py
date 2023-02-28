@@ -1,0 +1,16 @@
+from ..kleenex import *
+
+print()
+print('*' * 80)
+print('*' + 'WARNING'.center(78) + '*')
+print('*' * 80)
+print('     ats.bringup module is now renamed to ats.kleenex:')
+print('         from ats.bringup import x   -->   from ats.kleenex import x')
+print('         from ats import bringup     -->   from ats import kleenex')
+print('         import ats.bringup          -->   import ats.kleenex')
+print()
+print('     The following command can make this change recursively. ')
+print('         grep -rl "bringup" * | xargs sed -i "s/bringup/kleenex/g"')
+print()
+print('     This command is very powerful. USE WITH CAUTION.')
+print('*' * 80)

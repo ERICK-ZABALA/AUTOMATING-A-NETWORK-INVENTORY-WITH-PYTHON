@@ -1,0 +1,1 @@
+from .platformdetails import PlatformDetails

@@ -1,0 +1,5 @@
+[console_scripts]
+kleenex = ats.kleenex:main
+
+[pyats.cli.commands]
+clean = pyats.kleenex.cli.commands:RunKleenex

@@ -1,0 +1,8 @@
+[console_scripts]
+pyats = pyats.cli.__main__:main
+
+[pyats.cli.commands.run]
+manifest = pyats.manifest.commands:RunManifest
+
+[pyats.cli.commands.validate]
+manifest = pyats.manifest.commands:VerifyManifest

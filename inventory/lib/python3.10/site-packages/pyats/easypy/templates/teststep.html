@@ -1,0 +1,19 @@
+<!-- step -->
+<li>
+    <div class="collapsible-header not-collapse {{teststep.result.name.lower()}}">
+        <!--<i class="material-icons">arrow_drop_down</i>-->
+        <span class="title">Step {{teststep.extra['index']}}: {{teststep.name}}</span>
+        <a class="toggle-data not-collapse" href="#!" data-function="toggler" data-target="descr">Description</a>
+        <span class="new badge" data-badge-caption="">{{teststep.result.name.upper()}}</span>
+        <span class="new badge time ml-1" data-badge-caption="">{{teststep.runtime | runtime_formatter }}</span>
+    </div>
+    <div class="row data-list m-0 descr" style="display: none;">
+        <div class="col s12">
+            <span style="display: inline-block;"><b>Description:</b> {{teststep.name.replace(" ", "&emsp14;").replace("\n", "<br />")}}</span>
+        </div>
+    </div>
+</li>
+
+{% for teststep in teststep.sections %}
+{% include "teststep.html" %}
+{% endfor %}

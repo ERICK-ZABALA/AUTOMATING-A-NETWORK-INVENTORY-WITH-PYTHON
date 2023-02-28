@@ -1,0 +1,193 @@
+testbed:
+    name: sampleTestbed
+    alias: topologySampleTestbed
+    credentials:
+        default:
+            username: admin
+            password: CSCO12345^
+        enable:
+            password: ASK()
+        enable_ask_markup:
+            password: "%ASK{markup enable prompt}"
+    tacacs:
+        username: admin
+    passwords:
+        tacacs: CSCO12345^
+        enable:  lab
+        line: lab
+    servers:
+        filesvr:
+            server: ott2lab-tftp1
+            address: 223.255.254.254
+            path: ""
+            credentials:
+                default:
+                    username: rcpuser
+                    password: 123rcp!
+                sftp:
+                    username: sftpuser
+                    password: ENC(w6DDmsOUw6fDqsOOw5bDiQ==)
+                sftp_repeat:
+                    username: sftpuser
+                    password: ENC(w6DDmsOUw6fDqsOOw5bDiQ==)
+                sftp_markup:
+                    username: sftpuser
+                    password: "%ENC{w6DDmsOUw6fDqsOOw5bDiQ==}"
+                sftp_markup_piggy:
+                    username: sftpuser
+                    password: "%ENC{asswordpay, prefix = piggy}"
+                ftp:
+                    username: ftpuser
+                    password: ASK()
+                ftp_ask_markup:
+                    username: ftpuser
+                    password: "%ASK{}"
+        ntp:
+            server: 102.0.0.102
+    custom:
+        owner: nerf-mafia, ASG
+        contacts: pyats-support@cisco.com
+        str_containing_secret_def_enc : |4-
+            this is a string
+            with secret %ENC{w6DDmsOUw6fDqsOOw5bDiQ==} embedded inside it.
+        str_containing_secret_other_enc : |4-
+            this is a string
+            with secret %ENC{sswordpay, prefix=piggy} embedded inside it.
+        str_containing_secret_nonexist_enc : |4-
+            this is a string
+            with secret %ENC{w6DDmsOUw6fDqsOOw5bDiQ==, unknown}
+            embedded inside it.
+
+devices:
+    ott-tb1-n7k4:
+        type: Nexus 7000
+        alias: device-1
+        credentials:
+            default:
+                username: admin
+                password: abc123
+            enable:
+                password: ASK()
+            enable_ask_markup:
+                password: "%ASK{}"
+        connections:
+            a:
+              protocol: telnet
+              ip: 10.85.87.25
+              port: 2004
+            b:
+              protocol: telnet
+              ip: 10.85.87.25
+              port: 2005
+            alt:
+              protocol: ssh
+              ip: 5.19.27.5
+              prompts:
+                login: "login:"
+                password: "Password:"
+              credentials:
+                  default:
+                      username: mgt_user
+                      password: ASK()
+                  default_ask_markup:
+                      username: mgt_user
+                      password: "%ASK{}"
+        clean:
+            pre_clean: |
+                      switchname %{self}
+                      license grace-period
+                      feature telnet
+                      interface mgmt0
+                          ip addr %{self.connections.alt.ip}/24
+                      no shut
+                      vrf context management
+                          ip route 101.0.0.0/24 5.19.27.251
+                          ip route 102.0.0.0/24 5.19.27.251
+            post_clean: |
+                      switchname %{self}
+                      license grace-period
+                      feature telnet
+                      interface mgmt0
+                          ip addr %{self.connections.alt.ip}/24
+                      no shut
+                      vrf context management
+                          ip route 101.0.0.0/24 5.19.27.251
+                          ip route 102.0.0.0/24 5.19.27.251
+        custom:
+            SUP1: Supervisor Module-1X
+            SUP2: Supervisor Module-1X
+            user_provided: "%ASK{user prompt}"
+
+    ott-tb1-n7k5:
+        type: Nexus 7000
+        alias: device-2
+        connections:
+            a:
+              protocol: telnet
+              ip: 10.85.84.80
+              port: 2006
+            b:
+              protocol: telnet
+              ip: 10.85.84.80
+              port: 2009
+            alt:
+              protocol: telnet
+              ip: 5.19.27.6
+        clean:
+            pre_clean: |
+                        switchname %{self}
+                        license grace-period
+                        feature telnet
+                        interface mgmt0
+                            ip addr %{self.connections.alt.ip}/24
+                        vrf context management
+                            ip route 101.0.0.0/24 5.19.27.251
+                            ip route 102.0.0.0/24 5.19.27.251
+            post_clean: |
+                      switchname %{self}
+                      license grace-period
+                      feature telnet
+                      interface mgmt0
+                          ip addr %{self.connections.alt.ip}/24
+                      no shut
+                      vrf context management
+                          ip route 101.0.0.0/24 5.19.27.251
+                          ip route 102.0.0.0/24 5.19.27.251
+        custom:
+            SUP1: Supervisor Module-1X
+            SUP2: Supervisor Module-1X
+
+topology:
+    ott-tb1-n7k4:
+        interfaces:
+            Ethernet4/1:
+                alias: device1-intf1
+                link: rtr1-rtr2-1
+                type: ethernet
+            Ethernet4/2:
+                alias: device1-intf2
+                link: rtr1-rtr2-2
+                type: ethernet
+            Ethernet4/6:
+                link: ethernet-1
+                type: ethernet
+            Ethernet4/7:
+                link: ethernet-1
+                type: ethernet
+            Ethernet4/45:
+                link: ethernet-2
+                type: ethernet
+            Ethernet4/46:
+                link: ethernet-2
+                type: ethernet
+
+    ott-tb1-n7k5:
+        interfaces:
+            Ethernet5/1:
+                alias: device2-intf1
+                link: rtr1-rtr2-1
+                type: ethernet
+            Ethernet5/2:
+                alias: device2-intf2
+                link: rtr1-rtr2-2
+                type: ethernet

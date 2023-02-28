@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'CiscoSansTT-ExtraLightOblique';
+  src: url('CiscoSansTT-ExtraLightOblique.woff') format('woff'),
+       url('CiscoSansTT-ExtraLightOblique.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CiscoSansTTExtraLightOblique';
+  src: url('CiscoSansTTExtraLightOblique.eot');
+  src: url('CiscoSansTTExtraLightOblique.woff2') format('woff2'),
+       url('CiscoSansTTExtraLightOblique.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
