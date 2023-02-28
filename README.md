@@ -9,12 +9,13 @@
 
 # CLI METHOD
 
-Library to interact: Netmiko, Nornir, NAPALM, Scrapli, PyATS, Ansible, others
-Parse: str.find, regex, TextFSM, pyATS, others
-Spreadsheet: STD CSV
+* Library to interact: Netmiko, Nornir, NAPALM, Scrapli, PyATS, Ansible, others
+* Parse: str.find, regex, TextFSM, pyATS, others
+* Spreadsheet: STD CSV
 
 # CREATE VENV PYTHON 3.10.2 WITH PyATS
 
+```
 [opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON]$ python3.10 -m venv inventory
 
 [opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON]$ source inventory/bin/activate
@@ -35,7 +36,7 @@ You should consider upgrading via the '/home/opc/DEVNET/00_AUTOMATING_A_NETWORK_
 (inventory) [opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON]$ pip install pyats[all]
 
 (inventory) [opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON]$ pip freeze > requirements.txt
-
+```
 
 
 
