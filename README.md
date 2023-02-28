@@ -51,3 +51,6 @@ You should consider upgrading via the '/home/opc/DEVNET/00_AUTOMATING_A_NETWORK_
 
 
 # CREATE SPREADSHEET
+
+* We are going to create owner `Spreedsheet` [Sample Test Bed File](https://pubhub.devnetcloud.com/media/pyats-getting-started/docs/_downloads/b05328b78497f390ee873500df1aaa94/SampleTestbedFile.xlsx)
+
