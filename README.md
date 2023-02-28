@@ -66,6 +66,12 @@ We make a login to [sandbox](https://devnetsandbox.cisco.com/RM/Diagram/Index/43
 
 ![image](https://user-images.githubusercontent.com/38144008/222004497-c3c37576-83cb-4067-927b-ad4704e62d0d.png)
 
+![image](https://user-images.githubusercontent.com/38144008/222009619-eea78d14-3f55-4d08-86e4-5b2a424a3a3c.png)
+
+
+We are going to register all the devices Cisco in owner file like this:
+
+![image](https://user-images.githubusercontent.com/38144008/222009578-254b6427-95a1-451f-b516-d8b379188bf6.png)
 
 
 
