@@ -59,7 +59,7 @@ We are going to create owner list of devices using this [template](https://pubhu
 
 In this template we are going to collect all the devices.
 
-
+![image](https://user-images.githubusercontent.com/38144008/221994974-686c15fd-3ffe-4ebe-b307-9a1bad810ca8.png)
 
 # REFERNCES
 
