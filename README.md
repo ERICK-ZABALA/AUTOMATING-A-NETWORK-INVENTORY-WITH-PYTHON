@@ -26,7 +26,9 @@ Note: PyATS just available in environments over Linux.
 
 (inventory) [opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON]$ python --version
 Python 3.10.2
-
+```
+In this environment the version of pthon is `Python 3.10.2` 
+```
 (inventory) [opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON]$ pip list
 
 Package    Version
@@ -43,6 +45,6 @@ You should consider upgrading via the '/home/opc/DEVNET/00_AUTOMATING_A_NETWORK_
 (inventory) [opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON]$ pip freeze > requirements.txt
 ```
 
+# DOWNLOAD GUIDE MAKE INVENTORY FROM - HANK PRESTON
 
-
-
+Download in your machine Summer 2021 Devasc-Prep-Network-Inventory-01 maked by Hank Preston  [here](https://github.com/hpreston/summer2021-devasc-prep-network-inventory-01.git)
