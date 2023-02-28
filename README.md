@@ -73,7 +73,7 @@ We are going to register all the devices Cisco in owner file like this:
 
 ![image](https://user-images.githubusercontent.com/38144008/222009578-254b6427-95a1-451f-b516-d8b379188bf6.png)
 
-
+`Username` is requeried to work with the tool and put in blank the section password to `ASk{}`
 
 # REFERNCES
 
