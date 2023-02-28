@@ -61,6 +61,11 @@ In this template we are going to collect all the devices.
 
 ![image](https://user-images.githubusercontent.com/38144008/222002305-9587f85a-bf1e-4aa4-835c-0a2c9d3384d1.png)
 
+We make a login to [sandbox](https://devnetsandbox.cisco.com/RM/Diagram/Index/43964e62-a13c-4929-bde7-a2f68ad6b27c?diagramType=Topology
+). 
+
+
+
 
 # REFERNCES
 
