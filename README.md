@@ -54,3 +54,17 @@ You should consider upgrading via the '/home/opc/DEVNET/00_AUTOMATING_A_NETWORK_
 
 * We are going to create owner `Spreedsheet` [Sample Test Bed File](https://pubhub.devnetcloud.com/media/pyats-getting-started/docs/_downloads/b05328b78497f390ee873500df1aaa94/SampleTestbedFile.xlsx)
 
+PyATS work over YAML consider this point. PyATS uses a testbed.yaml to make an inventory.
+We are going to create owner list of devices using this [template](https://pubhub.devnetcloud.com/media/pyats-getting-started/docs/_downloads/b05328b78497f390ee873500df1aaa94/SampleTestbedFile.xlsx).
+
+In this template we are going to collect all the devices.
+
+image.png
+
+# REFERNCES
+
++ Creation from Excel File
+https://pubhub.devnetcloud.com/media/pyats-getting-started/docs/quickstart/manageconnections.html#creation-from-excel-file
+
++ SANDBOX to test owner Inventory
+https://devnetsandbox.cisco.com/RM/Diagram/Index/43964e62-a13c-4929-bde7-a2f68ad6b27c?diagramType=Topology
