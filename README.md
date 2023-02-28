@@ -59,7 +59,7 @@ We are going to create owner list of devices using this [template](https://pubhu
 
 In this template we are going to collect all the devices.
 
-image.png
+
 
 # REFERNCES
 
