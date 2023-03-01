@@ -223,6 +223,20 @@ You will need to install the AnyConnect Client on your system prior to accessing
 [opc@jenkins-master bin]$ cd anyconnect-linux64-4.10.05095/
 [opc@jenkins-master bin]$ cd vpn/
 [opc@jenkins-master bin]$ sudo ./vpn_install.sh
+
+Installing Cisco AnyConnect Secure Mobility Client...
+Supplemental End User License Agreement for AnyConnect(R) Secure Mobility Client v4.x and other VPN-related Software
+
+[licence agreement omitted for brevity]
+Please refer to the Cisco Systems, Inc. End User License Agreement.
+http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html
+
+Do you accept the terms in the license agreement? [y/n] y
+You have accepted the license agreement.
+Please wait while Cisco AnyConnect Secure Mobility Client is being installed...
+Starting Cisco AnyConnect Secure Mobility Client Agent...
+Done!
+
 [opc@jenkins-master bin]$ cd /opt/cisco/anyconnect/bin/
 [opc@jenkins-master bin]$ sudo ./vpn -s connect devnetsandbox-usw1-reservation.cisco.com:20229
 
