@@ -214,7 +214,7 @@ You will need to install the AnyConnect Client on your system prior to accessing
 
 [Sandbox AnyConnect](https://pubhub.devnetcloud.com/media/sandbox/site/files/anyconnect-win-4.9.04043-predeploy-k9.zip)
 
-`NOTE: to register to sandbox you need to activate the vpn client; local`
+`NOTE: To register your PC in sandbox you need to activate the vpn client; localy`
 
 ```bash
 [opc@jenkins-master bin]$ mkdir ciscovpn
