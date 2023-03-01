@@ -207,6 +207,48 @@ Connected to 8.8.8.8.
 Escape character is '^]'.
 ```
 
+# Install Sandbox AnyConnect
+
+The Cisco AnyConnect Secure Mobility Client provides users with a secure, private connection to the DevNet Sandbox Labs. 
+You will need to install the AnyConnect Client on your system prior to accessing most Sandbox Labs.
+
+[Sandbox AnyConnect](https://pubhub.devnetcloud.com/media/sandbox/site/files/anyconnect-win-4.9.04043-predeploy-k9.zip)
+
+`NOTE: to register to sandbox you need to activate the vpn client; local`
+
+```bash
+[opc@jenkins-master bin]$ mkdir ciscovpn
+[opc@jenkins-master bin]$ cd ciscovpn
+[opc@jenkins-master bin]$ tar zxf anyconnect-linux64-4.10.05095-predeploy-k9.tar.gz
+[opc@jenkins-master bin]$ cd anyconnect-linux64-4.10.05095/
+[opc@jenkins-master bin]$ cd vpn/
+[opc@jenkins-master bin]$ sudo ./vpn_install.sh
+[opc@jenkins-master bin]$ cd /opt/cisco/anyconnect/bin/
+[opc@jenkins-master bin]$ sudo ./vpn -s connect devnetsandbox-usw1-reservation.cisco.com:20229
+
+username: cisco
+password: cisco
+
+[opc@jenkins-master bin]$ ifconfig
+
+`cscotun0: flags=4305<UP,POINTOPOINT,RUNNING,NOARP,MULTICAST>  mtu 1287
+        inet 192.168.254.11  netmask 255.255.255.0  destination 192.168.254.11
+        unspec 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  txqueuelen 500  (UNSPEC)
+        RX packets 2  bytes 138 (138.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 2  bytes 138 (138.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+`
+ens3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9000
+        inet 10.0.0.25  netmask 255.255.255.0  broadcast 10.0.0.255
+        ether 02:00:17:00:10:ef  txqueuelen 1000  (Ethernet)
+        RX packets 7461  bytes 1286537 (1.2 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 7055  bytes 2535736 (2.4 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+```
+
 # REFERNCES
 
 + Creation from Excel File
