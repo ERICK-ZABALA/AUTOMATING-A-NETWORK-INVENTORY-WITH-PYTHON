@@ -121,7 +121,7 @@ Running: nso_sandbox_testbed_same_credentials.yaml
 
 ```bash
 inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$ ls
-inventory  nso_sandbox_testbed_same_credentials.yaml  nso_sandbox_testbed.yaml  README.md  sample
+inventory  nso_sandbox_testbed.yaml  README.md  sample
 (inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$ pyats validate testbed --testbed nso_sandbox_testbed_same_credentials.yaml
 Loading testbed file: nso_sandbox_testbed_same_credentials.yaml
 --------------------------------------------------------------------------------
@@ -143,8 +143,8 @@ Testbed Devices:
 |-- dist-sw02 [nxos/dist-sw02]
 |-- edge-firewall01 [asa/edge-firewall01]
 |-- edge-sw01 [ios/edge-sw01]
-`-- internet-rtr01 [iosxe/internet-rtr01]
-
+-- internet-rtr01 [iosxe/internet-rtr01]
+`
 YAML Lint Messages
 ------------------
   4:81      warning  line too long (113 > 80 characters)  (line-length)
@@ -162,6 +162,10 @@ Warning Messages
  - Device 'edge-firewall01' has no interface definitions
  - Device 'edge-sw01' has no interface definitions
  - Device 'internet-rtr01' has no interface definitions
+`
+(inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$ ls
+inventory  nso_sandbox_testbed_same_credentials.yaml  nso_sandbox_testbed.yaml  README.md  sample
+
 ```
 
 # REFERNCES
