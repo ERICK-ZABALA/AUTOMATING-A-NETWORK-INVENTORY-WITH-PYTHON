@@ -261,6 +261,36 @@ ens3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9000
         TX packets 7055  bytes 2535736 (2.4 MiB)
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
+[opc@jenkins-master profile]$ telnet 10.10.20.172
+
+'Trying 10.10.20.172...
+Connected to 10.10.20.172.
+Escape character is '^]'.
+CC
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco''s      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************
+
+User Access Verification
+
+Password: CC
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco''s     *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************
+edge-sw01>en
+Password:
+edge-sw01#exit
+Connection closed by foreign host.
 ```
 
 # REFERNCES
