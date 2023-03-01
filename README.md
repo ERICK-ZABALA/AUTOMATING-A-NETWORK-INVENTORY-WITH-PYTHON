@@ -297,6 +297,44 @@ Password:
 edge-sw01#exit
 Connection closed by foreign host.
 ```
+# TESTING IF CLI WORK WITH PYATS
+
++ We are going to validate if working CLI with PyATS 
+
+```bash
+inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$ ls
+inventory  nso_sandbox_testbed_same_credentials.yaml  nso_sandbox_testbed.yaml  README.md  sample
+```
+
+```bash
+(inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$ pyats parse "show version" --testbed nso_sandbox_testbed_same_credentials.yaml
+Enter default password for testbed: cisco
+
+Enter value for testbed.credentials.default.username: cisco
+Enter enable password for testbed: cisco
+  0%|                                                                                                                          | 0/1 [00:00<?, ?it/s
+```json  
+  {
+  "chassis_detail": "IOS XRv Chassis",
+  "config_register": "0x2102",
+  "device_family": "IOS XRv Series",
+  "image": "bootflash:disk0/xrvr-os-mbi-6.3.1/mbixrvr-rp.vm",
+  "main_mem": "cisco IOS XRv Series (Pentium II Stepping 7) processor with 3145215K bytes of memory.",
+  "operating_system": "IOSXR",
+  "processor": "Pentium II Stepping 7",
+  "processor_memory_bytes": "3145215K",
+  "rp_config_register": "0x2102",
+  "software_version": "6.3.1",
+  "uptime": "7 hours, 30 minutes"
+}
+```
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:06<00:00,  6.22s/it]
+  0%|                                                                                                                          | 0/1 [00:00<?, ?it/s]{
+  ...
+```
+![image](https://user-images.githubusercontent.com/38144008/222148411-97c31e44-5128-40de-821c-f85b4dedceec.png)
+
+![image](https://user-images.githubusercontent.com/38144008/222148335-3912b558-3e2b-448d-8a9f-40084261890c.png)
 
 # REFERNCES
 
