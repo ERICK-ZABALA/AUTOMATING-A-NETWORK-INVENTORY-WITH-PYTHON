@@ -85,7 +85,7 @@ sample/nso_sandbox_devices.xlsx -> nso_sandbox_testbed.yaml
 ```
 You should see the next file nso_sandbox_testbed.yaml in your virtual environment.
 
-```
+```yaml
 devices:
   core-rtr01:
     connections:
