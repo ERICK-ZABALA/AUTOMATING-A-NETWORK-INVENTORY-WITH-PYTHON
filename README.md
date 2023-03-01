@@ -125,10 +125,10 @@ inventory  nso_sandbox_testbed.yaml  README.md  sample
 (inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$ `pyats validate testbed --testbed nso_sandbox_testbed_same_credentials.yaml`
 Loading testbed file: nso_sandbox_testbed_same_credentials.yaml
 --------------------------------------------------------------------------------
-Enter default password for testbed: 
+Enter default password for testbed: `cisco`
 
-Enter value for testbed.credentials.default.username: cisco
-Enter enable password for testbed: 
+Enter value for testbed.credentials.default.username: `cisco`
+Enter enable password for testbed: `cisco`
 
 Testbed Name:
     nso_sandbox_testbed_same_credentials
