@@ -17,7 +17,7 @@
 
 Note: PyATS just available in environments over Linux.
 
-```linux
+```bash
 [opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON]$ python3.10 -m venv inventory
 
 [opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON]$ cd inventory
@@ -28,7 +28,7 @@ Note: PyATS just available in environments over Linux.
 Python 3.10.2
 ```
 In this environment the version of python is `Python 3.10.2` 
-```
+```bash
 (inventory) [opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON]$ pip list
 
 Package    Version
@@ -76,7 +76,7 @@ We are going to register all the devices Cisco in owner file like this:
 
 `Username` is requeried to work with the tool and put in blank the section password to `%ASK{}`
 
-```
+```bash
 (inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$ ls
 inventory  README.md  sample
 (inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$ pyats create testbed file --path sample/nso_sandbox_devices.xlsx --output nso_sandbox_testbed.yaml -v
