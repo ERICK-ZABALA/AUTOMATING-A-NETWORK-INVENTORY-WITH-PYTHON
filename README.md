@@ -120,15 +120,15 @@ testbed:
 Running: nso_sandbox_testbed_same_credentials.yaml
 
 ```bash
-inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$ `ls`
+inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$ ls
 inventory  nso_sandbox_testbed.yaml  README.md  sample
-(inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$ `pyats validate testbed --testbed nso_sandbox_testbed_same_credentials.yaml`
+(inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$ pyats validate testbed --testbed nso_sandbox_testbed_same_credentials.yaml
 Loading testbed file: nso_sandbox_testbed_same_credentials.yaml
 --------------------------------------------------------------------------------
-Enter default password for testbed: `cisco`
+Enter default password for testbed: cisco
 
-Enter value for testbed.credentials.default.username: `cisco`
-Enter enable password for testbed: `cisco`
+Enter value for testbed.credentials.default.username: cisco
+Enter enable password for testbed: cisco
 
 Testbed Name:
     nso_sandbox_testbed_same_credentials
@@ -163,7 +163,7 @@ Warning Messages
  - Device 'edge-sw01' has no interface definitions
  - Device 'internet-rtr01' has no interface definitions
 `
-(inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$ `ls`
+(inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$ ls
 inventory  `nso_sandbox_testbed_same_credentials.yaml`  nso_sandbox_testbed.yaml  README.md  sample
 
 ```
