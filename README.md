@@ -103,6 +103,66 @@ devices:
     type: iosxr ...
 ```
 
+# IMPROVING GENERATED TESTBED FILE
+
+In this section we are going to improve our code alocated the credentials to begin.
+
+```yaml
+testbed:
+  credentials:
+    default:
+      password: '%ASK{}'
+      username: '%ASK{}'
+    enable:
+      password: '%ASK{}'
+```
+
+Running: nso_sandbox_testbed_same_credentials.yaml
+
+```bash
+inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$ ls
+inventory  nso_sandbox_testbed_same_credentials.yaml  nso_sandbox_testbed.yaml  README.md  sample
+(inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$ pyats validate testbed --testbed nso_sandbox_testbed_same_credentials.yaml
+Loading testbed file: nso_sandbox_testbed_same_credentials.yaml
+--------------------------------------------------------------------------------
+Enter default password for testbed: 
+
+Enter value for testbed.credentials.default.username: cisco
+Enter enable password for testbed: 
+
+Testbed Name:
+    nso_sandbox_testbed_same_credentials
+
+Testbed Devices:
+.
+|-- core-rtr01 [iosxr/core-rtr01]
+|-- core-rtr02 [iosxr/core-rtr02]
+|-- dist-rtr01 [iosxe/dist-rtr01]
+|-- dist-rtr02 [iosxe/dist-rtr02]
+|-- dist-sw01 [nxos/dist-sw01]
+|-- dist-sw02 [nxos/dist-sw02]
+|-- edge-firewall01 [asa/edge-firewall01]
+|-- edge-sw01 [ios/edge-sw01]
+`-- internet-rtr01 [iosxe/internet-rtr01]
+
+YAML Lint Messages
+------------------
+  4:81      warning  line too long (113 > 80 characters)  (line-length)
+  5:81      warning  line too long (81 > 80 characters)  (line-length)
+  6:81      warning  line too long (86 > 80 characters)  (line-length)
+
+Warning Messages
+----------------
+ - Device 'core-rtr01' has no interface definitions
+ - Device 'core-rtr02' has no interface definitions
+ - Device 'dist-rtr01' has no interface definitions
+ - Device 'dist-rtr02' has no interface definitions
+ - Device 'dist-sw01' has no interface definitions
+ - Device 'dist-sw02' has no interface definitions
+ - Device 'edge-firewall01' has no interface definitions
+ - Device 'edge-sw01' has no interface definitions
+ - Device 'internet-rtr01' has no interface definitions
+```
 
 # REFERNCES
 
