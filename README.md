@@ -313,7 +313,8 @@ Enter default password for testbed: cisco
 Enter value for testbed.credentials.default.username: cisco
 Enter enable password for testbed: cisco
   0%|                                                                                                                          | 0/1 [00:00<?, ?it/s
-```json  
+```
+```python 
   {
   "chassis_detail": "IOS XRv Chassis",
   "config_register": "0x2102",
@@ -328,6 +329,7 @@ Enter enable password for testbed: cisco
   "uptime": "7 hours, 30 minutes"
 }
 ```
+```bash
 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:06<00:00,  6.22s/it]
   0%|                                                                                                                          | 0/1 [00:00<?, ?it/s]{
   ...
