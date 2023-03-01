@@ -103,9 +103,9 @@ devices:
     type: iosxr ...
 ```
 
-# IMPROVING GENERATED TESTBED FILE
+# IMPROVING US TESTBED FILE
 
-In this section we are going to improve our code alocated the credentials to begin.
+In this section we are going to improve our code alocated the credentials to begin. In this scenario we are working with the same credentials for all devices.
 
 ```yaml
 testbed:
