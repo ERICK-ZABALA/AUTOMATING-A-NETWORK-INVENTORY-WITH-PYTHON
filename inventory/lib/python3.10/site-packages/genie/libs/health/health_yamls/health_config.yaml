@@ -1,0 +1,32 @@
+health_settings:
+  health_name:
+    cpu:                     # matches with health_name under health_data
+      x: stoptime            # matches with field under health_data
+      y: value               # matches with field under health_data
+      x_legend: timestamp    # legend for x-axis
+      y_legend: CPU load (%) # legend for y-axis
+      y_scale_min: 0         # minimum scale for y-axis (x_ is optional)
+      y_scale_max: 100       # maximum scale for y-axis
+      y_threshold: 90        # threshold for y-axis
+      y_threshold_line: True # flag to draw line for threshold
+    memory:
+      x: stoptime
+      y: value
+      x_legend: timestamp
+      y_legend: Memory usage (%)
+      y_scale_min: 0
+      y_scale_max: 100
+      y_threshold: 90
+      y_threshold_line: True
+    logging:
+      x: stoptime
+      y: logs
+      x_legend: timestamp
+      y_legend: num of logging
+      y_data_source: line
+    core:
+      x: stoptime
+      y: corefiles
+      x_legend: timestamp
+      y_legend: num of corefiles
+      y_data_source: filename

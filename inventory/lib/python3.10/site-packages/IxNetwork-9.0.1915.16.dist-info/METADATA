@@ -1,0 +1,105 @@
+Metadata-Version: 2.0
+Name: IxNetwork
+Version: 9.0.1915.16
+Summary: IxNetwork Low Level API
+Home-page: https://github.com/ixiacom/ixnetwork-api-py
+Author: Ixia
+Author-email: diana.galan@keysight.com
+License: License :: OSI Approved :: MIT License
+Keywords: ixia ixnetwork
+Platform: Windows
+Platform: Linux
+Platform: Solaris
+Platform: Mac OS-X
+Platform: Unix
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: System Administrators
+Classifier: Intended Audience :: Developers
+Classifier: Environment :: No Input/Output (Daemon)
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: System :: Distributed Computing
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS
+Requires-Dist: backports.ssl (>=0.0.9backports.ssl-match-hostname>=3.5.0.1)
+Requires-Dist: pyopenssl (>=17.5.0)
+Requires-Dist: requests (>=2.18.4)
+Requires-Dist: websocket-client (>=0.47.0)
+
+.. image:: https://img.shields.io/pypi/v/ixnetwork.svg
+    :target: https://pypi.org/project/ixnetwork
+
+.. image:: https://img.shields.io/pypi/pyversions/ixnetwork.svg
+    :target: https://pypi.org/project/ixnetwork
+
+.. image:: https://img.shields.io/badge/license-MIT-green.svg
+    :target: https://en.wikipedia.org/wiki/MIT_License
+
+
+
+
+IxNetwork is the Python package for the IxNetwork Low Level API that allows you to configure and run IxNetwork tests.
+
+Installing
+==========
+
+| The master branch always contains the latest official release. It is only updated on new IxNetwork releases. Official releases are posted to `PyPI <https://pypi.python.org/pypi/ixnetwork/>`_. 
+| The dev branch contains improvements and fixes of the current release that will go into the next release version.
+
+* To install the official release just run
+  ``pip install --upgrade ixnetwork``.
+* To install the version in `github <https://github.com/ixiacom/ixnetwork-api-py>`_ use
+  ``python setup.py develop`` for development install or
+  ``python setup.py install``.
+
+Testing
+=======
+| Unit tests can be invoked by running ``python setup.py test`` command.
+| We strongly recommend that you test the package installation and unit test execution against the python environments listed in ''tox.ini''.
+| For this you can use `tox <https://testrun.org/tox/>`_ utility. Run the following:
+
+* yum install python-tox
+* tox
+
+Documentation
+=============
+| For general language documentation of IxNetwork API see the `Low Level API Guide <http://downloads.ixiacom.com/library/user_guides/ixnetwork/9.00/EA_9.00_Rev_A/QuickReferenceGuides/LLAPI_reference_guide.pdf>`_ and the `IxNetwork API Help <http://downloads.ixiacom.com/library/user_guides/ixnetwork/9.00/EA_9.00_Rev_A/IxNetwork_HTML5/IxNetwork.htm>`_.
+| This will require a login to `Ixia Support <https://support.ixiacom.com/user-guide>`_ web page.
+
+
+
+IxNetwork API server / Python Support
+=====================================
+IxNetwork.py lib 9.00.1915.16 supports:
+
+* Python 2.7, 3.3, 3.4, 3.5, 3.6, 3.7
+* IxNetwork Windows API server 8.40+
+* IxNetwork Web Edition (Linux API Server) 8.50+
+
+Compatibility with older versions may continue to work but it is not actively supported.
+
+Compatibility Policy
+====================
+IxNetwork Low Level API library is supported on the following operating systems:
+
+* Microsoft Windows
+* CentOS 7 on x64 platform
+
+Related Projects
+================
+* IxNetwork API Tcl Bindings: https://github.com/ixiacom/ixnetwork-api-tcl
+* IxNetwork API Perl Bindings: https://github.com/ixiacom/ixnetwork-api-pl
+* IxNetwork API Ruby Bindings: https://github.com/ixiacom/ixnetwork-api-rb
+
+

@@ -1,0 +1,79 @@
+cisco-distutils:
+  repo_name: ciscodistutils
+
+genie: 
+  repo_name: genie
+
+genie.libs: 
+  url: https://github.com/CiscoTestAutomation/genielibs.git
+  repo_name: genielibs
+  related_pkgs: 
+      - genie.libs.clean
+      - genie.libs.conf
+      - genie.libs.filetransferutils
+      - genie.libs.ops
+      - genie.libs.health
+      - genie.libs.robot
+      - genie.libs.sdk
+
+genie.libs.clean: 
+  url: https://github.com/CiscoTestAutomation/genielibs.git
+  repo_name: genielibs
+
+genie.libs.conf: 
+  url: https://github.com/CiscoTestAutomation/genielibs.git
+  repo_name: genielibs
+
+genie.libs.filetransferutils: 
+  url: https://github.com/CiscoTestAutomation/genielibs.git
+  repo_name: genielibs
+
+genie.libs.health: 
+  url: https://github.com/CiscoTestAutomation/genielibs.git
+  repo_name: genielibs
+
+genie.libs.ops: 
+  url: https://github.com/CiscoTestAutomation/genielibs.git
+  repo_name: genielibs
+
+genie.libs.robot: 
+  url: https://github.com/CiscoTestAutomation/genielibs.git
+  repo_name: genielibs
+    
+genie.libs.sdk: 
+  url: https://github.com/CiscoTestAutomation/genielibs.git
+  repo_name: genielibs
+
+genie.libs.parser: 
+  url: https://github.com/CiscoTestAutomation/genieparser.git
+  repo_name: genieparser
+
+genie.telemetry: 
+  url: https://github.com/CiscoTestAutomation/genietelemetry.git
+  repo_name: genietelemetry
+
+genie.trafficgen: 
+  url: https://github.com/CiscoTestAutomation/genietrafficgen.git
+  repo_name: genietrafficgen
+
+pyats: 
+  repo_name: pyats
+
+pyats.contrib: 
+  url: https://github.com/CiscoTestAutomation/pyats.contrib.git
+  repo_name: pyats.contrib
+
+rest.connector: 
+  url: https://github.com/CiscoTestAutomation/rest.git
+  repo_name: rest
+
+unicon: 
+  repo_name: unicon
+
+unicon.plugins: 
+  url: https://github.com/CiscoTestAutomation/unicon.plugins.git
+  repo_name: unicon.plugins
+
+yang.connector: 
+  url: https://github.com/CiscoTestAutomation/yang.git
+  repo_name: yang

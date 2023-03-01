@@ -1,0 +1,292 @@
+# MIT LICENSE
+#
+# Copyright 1997 - 2020 by IXIA Keysight
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"),
+# to deal in the Software without restriction, including without limitation
+# the rights to use, copy, modify, merge, publish, distribute, sublicense,
+# and/or sell copies of the Software, and to permit persons to whom the
+# Software is furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+# THE SOFTWARE.
+import sys
+from ixnetwork_restpy.base import Base
+from ixnetwork_restpy.files import Files
+
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
+
+
+class ExpectedInitiatedLspList(Base):
+    """This specifies the Expected Initiated LSPs from the PCE for traffic generation.
+    The ExpectedInitiatedLspList class encapsulates a required expectedInitiatedLspList resource which will be retrieved from the server every time the property is accessed.
+    """
+
+    __slots__ = ()
+    _SDM_NAME = "expectedInitiatedLspList"
+    _SDM_ATT_MAP = {
+        "Active": "active",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "InsertIpv6ExplicitNull": "insertIpv6ExplicitNull",
+        "MaxExpectedSegmentCount": "maxExpectedSegmentCount",
+        "Name": "name",
+        "SourceIpv4Address": "sourceIpv4Address",
+        "SourceIpv6Address": "sourceIpv6Address",
+        "SymbolicPathName": "symbolicPathName",
+    }
+    _SDM_ENUM_MAP = {}
+
+    def __init__(self, parent, list_op=False):
+        super(ExpectedInitiatedLspList, self).__init__(parent, list_op)
+
+    @property
+    def Tag(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d.Tag): An instance of the Tag class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import (
+            Tag,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("Tag", None) is not None:
+                return self._properties.get("Tag")
+        return Tag(self)
+
+    @property
+    def Active(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
+
+    @property
+    def Count(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
+
+    @property
+    def DescriptiveName(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
+
+    @property
+    def InsertIpv6ExplicitNull(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Insert IPv6 Explicit Null MPLS header if the traffic type is of type IPv6
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["InsertIpv6ExplicitNull"])
+
+    @InsertIpv6ExplicitNull.setter
+    def InsertIpv6ExplicitNull(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["InsertIpv6ExplicitNull"], value)
+
+    @property
+    def MaxExpectedSegmentCount(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: This control is used to set the maximum Segment count/ MPLS labels that would be present in the generted traffic.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["MaxExpectedSegmentCount"])
+
+    @MaxExpectedSegmentCount.setter
+    def MaxExpectedSegmentCount(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["MaxExpectedSegmentCount"], value)
+
+    @property
+    def Name(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
+    @Name.setter
+    def Name(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
+
+    @property
+    def SourceIpv4Address(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is used to set the Source IPv4 address in the IP header of the generated traffic.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SourceIpv4Address"])
+        )
+
+    @property
+    def SourceIpv6Address(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is used to set the Source IPv6 address in the IP header of the generated traffic.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SourceIpv6Address"])
+        )
+
+    @property
+    def SymbolicPathName(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is used for generating the traffic for those LSPs from PCE for which the Symbolic Path Name is configured and matches the value.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SymbolicPathName"])
+        )
+
+    def update(
+        self, InsertIpv6ExplicitNull=None, MaxExpectedSegmentCount=None, Name=None
+    ):
+        # type: (bool, int, str) -> ExpectedInitiatedLspList
+        """Updates expectedInitiatedLspList resource on the server.
+
+        This method has some named parameters with a type: obj (Multivalue).
+        The Multivalue class has documentation that details the possible values for those named parameters.
+
+        Args
+        ----
+        - InsertIpv6ExplicitNull (bool): Insert IPv6 Explicit Null MPLS header if the traffic type is of type IPv6
+        - MaxExpectedSegmentCount (number): This control is used to set the maximum Segment count/ MPLS labels that would be present in the generted traffic.
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        InsertIpv6ExplicitNull=None,
+        MaxExpectedSegmentCount=None,
+        Name=None,
+    ):
+        # type: (int, str, bool, int, str) -> ExpectedInitiatedLspList
+        """Finds and retrieves expectedInitiatedLspList resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve expectedInitiatedLspList resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all expectedInitiatedLspList resources from the server.
+
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - InsertIpv6ExplicitNull (bool): Insert IPv6 Explicit Null MPLS header if the traffic type is of type IPv6
+        - MaxExpectedSegmentCount (number): This control is used to set the maximum Segment count/ MPLS labels that would be present in the generted traffic.
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+        Returns
+        -------
+        - self: This instance with matching expectedInitiatedLspList resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of expectedInitiatedLspList data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the expectedInitiatedLspList resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
+
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        SourceIpv4Address=None,
+        SourceIpv6Address=None,
+        SymbolicPathName=None,
+    ):
+        """Base class infrastructure that gets a list of expectedInitiatedLspList device ids encapsulated by this object.
+
+        Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
+
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+        - SourceIpv4Address (str): optional regex of sourceIpv4Address
+        - SourceIpv6Address (str): optional regex of sourceIpv6Address
+        - SymbolicPathName (str): optional regex of symbolicPathName
+
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._get_ngpf_device_ids(locals())

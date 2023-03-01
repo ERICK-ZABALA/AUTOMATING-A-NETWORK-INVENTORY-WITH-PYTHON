@@ -1,0 +1,2 @@
+def speed():
+    return 'fast'

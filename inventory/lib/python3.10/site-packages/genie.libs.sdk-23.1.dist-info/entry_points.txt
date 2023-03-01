@@ -1,0 +1,2 @@
+[pyats.easypy.plugins]
+plugin = genie.libs.sdk.triggers.blitz.maple_converter.plugin:maple_clean_plugin

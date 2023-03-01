@@ -1,0 +1,11 @@
+[pyats.easypy.plugins]
+fileserver = genie.libs.filetransferutils.fileserver.plugin:fileserver_plugin
+
+[pyats.utils.fileutils.plugins]
+apic = genie.libs.filetransferutils.plugins.apic
+ios = genie.libs.filetransferutils.plugins.ios
+iosxe = genie.libs.filetransferutils.plugins.iosxe
+iosxr = genie.libs.filetransferutils.plugins.iosxr
+junos = genie.libs.filetransferutils.plugins.junos
+linux = genie.libs.filetransferutils.plugins.linux
+nxos = genie.libs.filetransferutils.plugins.nxos

@@ -1,0 +1,2 @@
+[pyats.cli.commands.run]
+validate = pyats.robot.commands:RunRobot

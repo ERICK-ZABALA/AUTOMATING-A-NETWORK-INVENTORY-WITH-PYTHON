@@ -1,0 +1,31 @@
+[console_scripts]
+genie = genie.cli.__main__:main
+
+[genie.cli.commands.create]
+parser = genie.cli.commands.create_parser:CreateParser
+testbed = genie.cli.commands.create_testbed:CreateTestbed
+trigger = genie.cli.commands.create_trigger:CreateTrigger
+
+[pyats.cli.commands]
+develop = genie.cli.commands.develop:DevelopCommand
+diff = genie.cli.commands.diff:DiffCommand
+dnac = genie.cli.commands.dnac:DnacCommand
+learn = genie.cli.commands.learn:LearnCommand
+parse = genie.cli.commands.parser:ParserCommand
+shell = genie.cli.commands.shell:ShellCommand
+undevelop = genie.cli.commands.undevelop:UndevelopCommand
+
+[pyats.cli.commands.create]
+parser = genie.cli.commands.create_parser:CreateParser
+testbed = genie.cli.commands.create_testbed:CreateTestbed
+trigger = genie.cli.commands.create_trigger:CreateTrigger
+
+[pyats.cli.commands.run]
+genie = genie.cli.commands.run:RunCommand
+
+[pyats.cli.commands.validate]
+validate = genie.harness.commands:ValidateJinja2ConfigFile
+
+[pyats.utils.__legacy_imports__]
+abstract = genie.abstract:_IMPORTMAP
+metaparser = genie.metaparser:_IMPORTMAP

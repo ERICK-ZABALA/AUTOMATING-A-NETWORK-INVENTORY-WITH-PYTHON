@@ -1,0 +1,4 @@
+
+
+class MyCls(object):
+    pass

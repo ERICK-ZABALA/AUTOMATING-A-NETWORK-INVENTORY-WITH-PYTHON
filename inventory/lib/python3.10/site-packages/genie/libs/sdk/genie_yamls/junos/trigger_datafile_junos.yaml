@@ -1,0 +1,8 @@
+extends: "%CALLABLE{genie.libs.sdk.genie_yamls.datafile(trigger)}"
+
+TriggerSleep:
+  groups: ["sleep"]
+  sleep_time: 5
+  message_time: 1
+  count: 1
+  devices: ["uut"]
