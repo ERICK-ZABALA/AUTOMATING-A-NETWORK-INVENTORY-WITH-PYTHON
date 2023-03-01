@@ -28,7 +28,7 @@ Note: PyATS just available in environments over Linux.
 Python 3.10.2
 ```
 In this environment the version of python is `Python 3.10.2` 
-```pip
+```python
 (inventory) [opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON]$ pip list
 
 Package    Version
