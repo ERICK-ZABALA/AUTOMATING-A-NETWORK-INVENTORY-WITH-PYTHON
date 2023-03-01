@@ -335,8 +335,6 @@ Enter enable password for testbed: cisco
 
 ![image](https://user-images.githubusercontent.com/38144008/222148411-97c31e44-5128-40de-821c-f85b4dedceec.png)
 
-![image](https://user-images.githubusercontent.com/38144008/222148335-3912b558-3e2b-448d-8a9f-40084261890c.png)
-
 # REFERNCES
 
 + Creation from Excel File
