@@ -74,7 +74,35 @@ We are going to register all the devices Cisco in owner file like this:
 
 ![image](https://user-images.githubusercontent.com/38144008/222009578-254b6427-95a1-451f-b516-d8b379188bf6.png)
 
-`Username` is requeried to work with the tool and put in blank the section password to `ASk{}`
+`Username` is requeried to work with the tool and put in blank the section password to `%ASK{}`
+
+```
+(inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$ ls
+inventory  README.md  sample
+(inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$ pyats create testbed file --path sample/nso_sandbox_devices.xlsx --output nso_sandbox_testbed.yaml -v
+Testbed file generated: 
+sample/nso_sandbox_devices.xlsx -> nso_sandbox_testbed.yaml
+```
+You should see the next file nso_sandbox_testbed.yaml in your virtual environment.
+
+```
+devices:
+  core-rtr01:
+    connections:
+      cli:
+        ip: 10.10.20.173
+        protocol: telnet
+    credentials:
+      default:
+        password: '%ASK{}'
+        username: cisco
+      enable:
+        password: '%ASK{}'
+    os: iosxr
+    platform: core-rtr01
+    type: iosxr ...
+```
+
 
 # REFERNCES
 
