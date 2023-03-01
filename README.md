@@ -166,7 +166,7 @@ Warning Messages
 (inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$ ls
 inventory  `nso_sandbox_testbed_same_credentials.yaml`  nso_sandbox_testbed.yaml  README.md  sample
 ```
-# CONFIGURE VPN CLIENT WITH SANDBOX
+# CONFIGURING TELNET IN YOUR LOCAL HOST
 
 + You need to install telnet in your linux: sudo dnf install telnet
 
@@ -207,7 +207,7 @@ Connected to 8.8.8.8.
 Escape character is '^]'.
 ```
 
-# Install Sandbox AnyConnect
+# INSTALL VPN CLIENT - ANYCONNECT
 
 The Cisco AnyConnect Secure Mobility Client provides users with a secure, private connection to the DevNet Sandbox Labs. 
 You will need to install the AnyConnect Client on your system prior to accessing most Sandbox Labs.
