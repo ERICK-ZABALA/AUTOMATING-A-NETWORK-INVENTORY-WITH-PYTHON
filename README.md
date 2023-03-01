@@ -165,7 +165,46 @@ Warning Messages
 `
 (inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$ ls
 inventory  `nso_sandbox_testbed_same_credentials.yaml`  nso_sandbox_testbed.yaml  README.md  sample
+```
+# CONFIGURE VPN CLIENT WITH SANDBOX
 
++ You need to install telnet in your linux: sudo dnf install telnet
+
+```bash
+[opc@jenkins-master ~]$ sudo dnf install telnet
+ Package                 Architecture            Version                           Repository                      Size
+========================================================================================================================
+Installing:
+ telnet                  x86_64                  1:0.17-76.el8                     ol8_appstream                   72 k
+Transaction Summary
+==================================================================================================================
+
+Install  1 Package
+Total download size: 72 k
+Installed size: 119 k
+Is this ok [y/N]: y
+Downloading Packages:
+telnet-0.17-76.el8.x86_64.rpm                                                           885 kB/s |  72 kB     00:00
+------------------------------------------------------------------------------------------------------------------------
+Total                                                                                   833 kB/s |  72 kB     00:00
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                1/1
+  Installing       : telnet-1:0.17-76.el8.x86_64                                                                    1/1
+  Running scriptlet: telnet-1:0.17-76.el8.x86_64                                                                    1/1
+  Verifying        : telnet-1:0.17-76.el8.x86_64                                                                    1/1
+
+Installed:
+  telnet-1:0.17-76.el8.x86_64
+
+Complete!
+[opc@jenkins-master ~]$ telnet 8.8.8.8 53
+Trying 8.8.8.8...
+Connected to 8.8.8.8.
+Escape character is '^]'.
 ```
 
 # REFERNCES
