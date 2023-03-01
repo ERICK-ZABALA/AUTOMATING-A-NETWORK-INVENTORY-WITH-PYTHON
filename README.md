@@ -166,7 +166,7 @@ Warning Messages
 (inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$ ls
 inventory  `nso_sandbox_testbed_same_credentials.yaml`  nso_sandbox_testbed.yaml  README.md  sample
 ```
-# CONFIGURING TELNET IN YOUR LOCAL HOST
+# CONFIGURE TELNET IN YOUR LOCAL HOST
 
 + You need to install telnet in your linux: sudo dnf install telnet
 
