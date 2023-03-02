@@ -335,6 +335,67 @@ Enter enable password for testbed: cisco
 
 ![image](https://user-images.githubusercontent.com/38144008/222148411-97c31e44-5128-40de-821c-f85b4dedceec.png)
 
+# CLI APPROACH WORKS WITH PYATS - PARSE
+
+When we are using "pyats parse" in some devices the command "show version" is not available for example in "edge-firewall01 | asa". Not all is perfect :(.
+
+PyATS return: `dicts/Lists or JSON format`
+
+```bash
+(inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$ pyats parse "show version" --testbed nso_sandbox_testbed_same_credentials.yaml
+
+Enter default password for testbed: cisco
+Enter value for testbed.credentials.default.username: cisco
+Enter enable password for testbed: cisco
+  
+  0%|                                                                                                                          | 0/1 [00:00<?, ?it/s]{
+  "chassis_detail": "IOS XRv Chassis",
+  "config_register": "0x2102",
+  "device_family": "IOS XRv Series",
+  "image": "bootflash:disk0/xrvr-os-mbi-6.3.1/mbixrvr-rp.vm",
+  "main_mem": "cisco IOS XRv Series (Pentium II Stepping 7) processor with 3145215K bytes of memory.",
+  "operating_system": "IOSXR",
+  "processor": "Pentium II Stepping 7",
+  "processor_memory_bytes": "3145215K",
+  "rp_config_register": "0x2102",
+  "software_version": "6.3.1",
+  "uptime": "1 day, 10 hours, 14 minutes"
+}
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:06<00:00,  6.44s/it]
+  0%| 
+```
+
+That is the information to generate us report inventory csv file.
+
+```json
+"operating_system": "IOSXR",
+"software_version": "6.3.1",
+"uptime": "1 day, 10 hours, 14 minutes"
+```
+
+if you pyats parse not found the specific command "show version" you probably received this answer.
+
+```bash
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  3.20it/s]
+
+  0%|                                                                                                                          | 0/1 [00:00<?, ?it/s]Issue with the parser show version
+
+
+Traceback (most recent call last):
+  File "src/genie/cli/commands/parser.py", line 339, in genie.cli.commands.parser.ParserCommand.parse
+  File "src/genie/conf/base/device.py", line 531, in genie.conf.base.device.Device.parse
+  File "src/genie/conf/base/device.py", line 578, in genie.conf.base.device.Device._get_parser_output
+TypeError: device is not connected, output must be provided.
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 414.87it/s]
+```
++ How to resolve this problem?
+
+  Well, the solution to this type of problem is Python; Yes we need to create a script using Python.
+
++ Create a script in python and executable.
+
+  
+
 # REFERNCES
 
 + Creation from Excel File
