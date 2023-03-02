@@ -392,9 +392,16 @@ TypeError: device is not connected, output must be provided.
 
   Well, the solution to this type of problem is Python; Yes we need to create a script using Python.
 
-+ Create a script in python and executable.
++ Create a script in python and executable `chmod +x network_inventory.py`.
 
-  
+```bash
+(inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$ chmod +x network_inventory.py
+(inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$ ls
+inventory  network_inventory.py  nso_sandbox_testbed_same_credentials.yaml  nso_sandbox_testbed.yaml  README.md  sample
+(inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$
+```
+
+
 
 # REFERNCES
 
