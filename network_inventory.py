@@ -1,4 +1,4 @@
-#! ~/DEVNET/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON/inventory/bin/python
+#!/home/opc/DEVNET/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON/inventory/bin/python
 """
 That is an script basic that permit capture an inventory of our network 
 using CLI as "show version" and "show inventory".

@@ -115,7 +115,7 @@ devices:
     connections:
       cli:
         ip: 10.10.20.182
-        protocol: telnet
+        protocol: ssh
     credentials:
       default:
         password: '%ASK{}'
