@@ -373,7 +373,7 @@ That is the information to generate us report inventory csv file.
 "uptime": "1 day, 10 hours, 14 minutes"
 ```
 
-if you pyats parse not found the specific command "show version" you probably received this answer.
+if you pyats parse not found the specific command "show version" you probably receive this answer.
 
 ```bash
 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  3.20it/s]
