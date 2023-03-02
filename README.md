@@ -394,6 +394,9 @@ TypeError: device is not connected, output must be provided.
 
 + Create a script in python and executable `chmod +x network_inventory.py`.
 
+![image](https://user-images.githubusercontent.com/38144008/222495857-2ce07c78-d329-4326-8933-ac9f19b16f80.png)
+
+
 ```bash
 (inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$ chmod +x network_inventory.py
 (inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$ ls
