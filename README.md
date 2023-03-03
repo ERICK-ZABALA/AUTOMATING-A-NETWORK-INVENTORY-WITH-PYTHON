@@ -572,7 +572,7 @@ if __name__ == "__main__":
   
 ```
 
-CLI:`./network_inventory.py nso_sandbox_testbed_same_credentials.yaml `
+CLI:    `./network_inventory.py nso_sandbox_testbed_same_credentials.yaml `
 
 ```bash
 (inventory)  devnet@Devnet  ~/Documents/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON   main ±  ./network_inventory_03.py nso_sandbox_testbed_same_credentials.yaml    
@@ -613,7 +613,7 @@ genie.metaparser.util.exceptions.SchemaMissingKeyError: Missing keys: [['version
 
 # HANDLING ERRORS IN PYTHON
 
-CLI RUN: `./network_inventory.py nso_sandbox_testbed_same_credentials.yaml`
+CLI RUN:    `./network_inventory.py nso_sandbox_testbed_same_credentials.yaml`
 
 In this section we are resolving the exception that was generated previously.
 
@@ -665,6 +665,10 @@ Traceback (most recent call last):
 genie.metaparser.util.exceptions.SchemaEmptyParserError: Parser Output is empty
 ```
 ![image](https://user-images.githubusercontent.com/38144008/222838581-f8bbf2f1-25a3-4b3c-9642-38300d0c5eff.png)
+
+That make sense is empty when insert `show inventory`.
+
+![image](https://user-images.githubusercontent.com/38144008/222839736-3c64ed17-8eac-46f7-a53b-48eddaf17a82.png)
 
 
 # REFERNCES
