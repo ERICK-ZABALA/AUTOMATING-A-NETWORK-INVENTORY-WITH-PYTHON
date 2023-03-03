@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/opc/DEVNET/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON/inventory"
+VIRTUAL_ENV="/home/devnet/Documents/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON/inventory"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

@@ -1,0 +1,98 @@
+Metadata-Version: 2.1
+Name: pyats.contrib
+Version: 23.2
+Summary: Open source package for pyATS framework extensions.
+Home-page: https://developer.cisco.com/pyats/
+Author: Cisco Systems Inc.
+Author-email: pyats-support-ext@cisco.com
+License: Apache 2.0
+Keywords: genie pyats test automation open source contrib
+Classifier: Development Status :: 6 - Mature
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Telecommunications Industry
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Software Development :: Testing
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests
+Requires-Dist: requests-toolbelt
+Requires-Dist: xlrd (==1.2)
+Requires-Dist: xlwt
+Requires-Dist: xlsxwriter
+
+# pyATS Contribution Package
+
+The `pyats.contrib` package is a collection of open-source extensions for the
+pyATS framework. 
+
+Plugins, extensions and codes under this project are designed to automatically
+integrate into the pyATS framework using its various published hook/entry-point
+interfaces.
+
+## General Information
+
+- Website: https://developer.cisco.com/pyats/
+- Documentation: https://developer.cisco.com/docs/pyats/
+- Support: pyats-support-ext@cisco.com
+
+## Installation
+
+This package is automatically installed when you perform a full pyATS 
+installation. Alternatively, you can install this package separately, if you 
+have a more light-weight pyATS install:
+
+```
+# when using full-install, this package is included by default
+$ pip install pyats[full]
+
+
+# to install separately
+$ pip install pyats.contrib
+```
+
+## Solution Documentation
+
+For now, each individual folder under `src/` has its own README.md file.
+We are working on a better hosting solution for all documentation related to 
+this repository.
+
+## Contributions
+
+Everyone is welcomed to pitch-in, collaborate, contribute and improve upon 
+what's here, and or introduce new ideas and plugins. The goal of this package is
+three-fold:
+
+    - to introduce a place where the pyATS development team can open-source
+      bits and pieces of the framework
+
+    - to provide a location for community members to collaborate together, 
+      centrally
+
+    - to document and demonstrate, via examples, the various plugins and hook 
+      capabilities the framework has to offer.
+
+Please consider the following when contributing to this repository:
+
+- minimize dependencies as much as possible; use lazy-loading where possible.
+  Eg: adding a pip installation dependency will impact ALL users that install
+  this package, where as adding an import dependency, with try/except around it,
+  and printing a nice error message indicating you need package X installed to
+  enable this feature, allows selectively installation of dependencies per 
+  what's needed
+
+- include unit-tests and documentation for everything you develop

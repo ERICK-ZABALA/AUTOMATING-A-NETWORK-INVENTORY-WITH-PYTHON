@@ -1,0 +1,88 @@
+Metadata-Version: 2.1
+Name: pyats.topology
+Version: 23.2
+Summary: pyATS Topology: Topology Objects and Testbed YAMLs
+Home-page: https://developer.cisco.com/pyats/
+Author: Cisco Systems Inc.
+Author-email: pyats-support-ext@cisco.com
+License: Apache 2.0
+Keywords: pyats topology testbed device interface links
+Classifier: Development Status :: 6 - Mature
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Telecommunications Industry
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Software Development :: Testing
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.5
+Requires-Dist: pyyaml
+Requires-Dist: yamllint
+Requires-Dist: pyats.datastructures (<23.3.0,>=23.2.0)
+Requires-Dist: pyats.connections (<23.3.0,>=23.2.0)
+Requires-Dist: pyats.utils (<23.3.0,>=23.2.0)
+Provides-Extra: dev
+Requires-Dist: Sphinx ; extra == 'dev'
+Requires-Dist: sphinx-rtd-theme ; extra == 'dev'
+
+pyATS Topology Component
+========================
+
+pyATS is an end-to-end testing ecosystem, specializing in data-driven and 
+reusable testing, and engineered to be suitable for Agile, rapid development 
+iterations. Extensible by design, pyATS enables developers start with small, 
+simple and linear test cases, and scale towards large, complex and asynchronous 
+test suites.
+
+pyATS is initially developed internally in Cisco, and is now available to the
+general public starting late 2017 through `Cisco DevNet`_. Visit the pyATS
+home page at
+
+    https://developer.cisco.com/site/pyats/
+
+.. _Cisco DevNet: https://developer.cisco.com/
+
+
+Topology Package
+----------------
+
+This is a sub-component of pyATS that models devices, testbeds and their 
+interfaces in a Python object oriented fashion.
+
+Requirements
+------------
+
+pyATS currently supports Python 3.4+ on Linux & Mac systems. Windows platforms
+are not yet supported.
+
+Quick Start
+-----------
+
+.. code-block:: console
+    
+    # install pyats as a whole
+    $ pip install pyats
+
+    # to upgrade this package manually
+    $ pip install --upgrade pyats.topology
+
+    # to install alpha/beta versions, add --pre
+    $ pip install --pre pyats.topology
+
+For more information on setting up your Python development environment,
+such as creating virtual environment and installing ``pip`` on your system, 
+please refer to `Virtual Environment and Packages`_ in Python tutorials.
+
+.. _Virtual Environment and Packages: https://docs.python.org/3/tutorial/venv.html

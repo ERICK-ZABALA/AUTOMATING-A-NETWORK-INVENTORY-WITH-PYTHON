@@ -1,4 +1,4 @@
-#!/home/opc/DEVNET/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON/inventory/bin/python3
+#!/home/devnet/Documents/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON/inventory/bin/python3.10
 # vim: ts=4 sw=4 et ai:
 # -*- coding: utf8 -*-
 
