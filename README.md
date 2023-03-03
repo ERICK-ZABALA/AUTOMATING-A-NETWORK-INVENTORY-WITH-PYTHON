@@ -479,13 +479,12 @@ if __name__ == "__main__":
     # Built inventory report over data structure
 
     # Generate a CSV File of data
-    
 ```
+
 CLI: `./network_inventory.py nso_sandbox_testbed_same_credentials.yaml`
 
 ```bash
-(inventory)  devnet@Devnet  ~/Documents/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON   main ±  ./network_inventory.py nso_sandbox_testbed_same_credentials.yaml
-
+(inventory)  devnet@Devnet  ~/Documents/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON   main ±  ./network_inventory_02.py nso_sandbox_testbed_same_credentials.yaml
 ####################################
 Creating a Network Inventory script.
 ####################################
@@ -495,7 +494,17 @@ Enter default password for testbed:
 Enter value for testbed.credentials.default.username: cisco
 Enter enable password for testbed: 
 Connecting to all devices in testbed: nso_sandbox_testbed_same_credentials
+Disconnecting from device core-rtr01.
+Disconnecting from device core-rtr02.
+Disconnecting from device dist-rtr01.
+Disconnecting from device dist-rtr02.
+Disconnecting from device dist-sw01.
+Disconnecting from device dist-sw02.
+Disconnecting from device edge-firewall01.
+Disconnecting from device edge-sw01.
+Disconnecting from device internet-rtr01.
 ```
+
 # CREATING SHOW VERSION & SHOW INVENTORY
 
 ```python

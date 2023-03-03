@@ -20,11 +20,10 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(prog = 'NETWORK INVENTORY',description='General network inventory report')
     parser.add_argument('testbed', type=str, help='pyATS Testbed File')
     args = parser.parse_args()
-    print(args)
-
+    
     # Create pyATS testbed object
     testbed =load(args.testbed)
-    print(testbed)
+    
     # Connect to network devices
     testbed.connect()
     
