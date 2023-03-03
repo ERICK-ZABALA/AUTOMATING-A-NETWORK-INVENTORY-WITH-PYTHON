@@ -14,29 +14,21 @@ from pyats.topology.loader import load
 if __name__ == "__main__":
     import argparse
 
-    print("####################################")
-    print("Creating a Network Inventory script.")
-    print("####################################")
+    print("Creating a network inventory script.")
 
     # Load pyATS testbed
     parser = argparse.ArgumentParser(prog = 'NETWORK INVENTORY',description='General network inventory report')
     parser.add_argument('testbed', type=str, help='pyATS Testbed File')
     args = parser.parse_args()
-    print(f"Loading testbed file: {args.testbed}")
+    print(args)
 
     # Create pyATS testbed object
     testbed =load(args.testbed)
-    print(f"Connecting to all devices in testbed: {testbed.name}")
-
+    print(testbed)
     # Connect to network devices
-    testbed.connect(log_stdout=False)
+    testbed.connect()
     
     # Run command to gather output from devices
-
-    # Disconnect from network devices
-    for device in testbed.devices:
-        print(f"Disconnecting from device {device}.")
-        testbed.devices[device].disconnect()
     
     # Built inventory report over data structure
 
