@@ -611,7 +611,57 @@ genie.metaparser.util.exceptions.SchemaMissingKeyError: Missing keys: [['version
 ```
 ![image](https://user-images.githubusercontent.com/38144008/222665998-f9762020-a77c-402a-9aa1-4c76a1091ee3.png)
 
-# USING REGULAR EXPRESION TO FIXED THE ISSUE
+# HANDLING ERRORS IN PYTHON
+
+CLI RUN: `./network_inventory.py nso_sandbox_testbed_same_credentials.yaml`
+
+In this section we are resolving the exception that was generated previously.
+
+```python
+genie.metaparser.util.exceptions.SchemaMissingKeyError: Missing keys: [['version', 'mem_size'], ['version', 'platform'], ['version', 'processor_type']] 
+```
+to resolve that issue we are going to issue exceptions like this.
+
+```python
+
+    def parse_command(device, command):
+        """
+        Attempt to parse a command on a device with PyATS.
+        In caase of common errors, return best info possible.
+        """
+        print(f"Running {command} on {device.name}")
+        try:
+            output = device.parse(command)
+            return {"type":"parsed", "output": output}
+        except ParserNotFound:
+            print(f"\033[91mError: pyATS lacks a parser for device\033[0m")
+        except SchemaMissingKeyError:
+            print(f"\033[91mError: pyATS lacks missing keys for device\033[0m")
+            
+```
+However as a result of this code we have this type of error that is little different.
+
+```bash
+
+Gathering show version from device edge-sw01
+Running show version on edge-sw01
+edge-sw01 show version: {'type': 'parsed', 'output': {'version': {'version_short': '15.2', 'platform': 'vios_l2', 'version': '15.2(20200924:215240)', 'image_id': 'vios_l2-ADVENTERPRISEK9-M', 'label': '[sweickge-sep24-2020-l2iol-release 135]', 'os': 'IOS', 'image_type': 'developer image', 'copyright_years': '1986-2020', 'compiled_date': 'Tue 29-Sep-20 11:53', 'compiled_by': 'sweickge', 'rom': 'Bootstrap program is IOSv', 'hostname': 'edge-sw01', 'uptime': '2 days, 16 hours, 4 minutes', 'returned_to_rom_by': 'reload', 'system_image': 'flash0:/vios_l2-adventerprisek9-m', 'last_reload_reason': 'Unknown reason', 'chassis': 'IOSv', 'main_mem': '722145', 'processor_type': '', 'rtr_type': 'IOSv', 'chassis_sn': '9JKJJ4YUDOL', 'number_of_intfs': {'Gigabit Ethernet': '4'}, 'mem_size': {'non-volatile configuration': '256'}, 'processor_board_flash': '0K', 'curr_config_register': '0x101'}}}
+
+Gathering show inventory from device edge-sw01
+Running show inventory on edge-sw01
+Traceback (most recent call last):
+  File "/home/devnet/Documents/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON/./network_inventory.py", line 63, in <module>
+    show_inventory[device] = parse_command(testbed.devices[device], "show inventory")
+  File "/home/devnet/Documents/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON/./network_inventory.py", line 46, in parse_command
+    output = device.parse(command)
+  File "src/genie/conf/base/device.py", line 531, in genie.conf.base.device.Device.parse
+  File "src/genie/conf/base/device.py", line 570, in genie.conf.base.device.Device._get_parser_output
+  File "src/genie/conf/base/device.py", line 568, in genie.conf.base.device.Device._get_parser_output
+  File "src/genie/metaparser/_metaparser.py", line 329, in genie.metaparser._metaparser.MetaParser.parse
+  File "src/genie/metaparser/_metaparser.py", line 322, in genie.metaparser._metaparser.MetaParser.parse
+  File "src/genie/metaparser/util/schemaengine.py", line 233, in genie.metaparser.util.schemaengine.Schema.validate
+genie.metaparser.util.exceptions.SchemaEmptyParserError: Parser Output is empty
+```
 
 
 # REFERNCES

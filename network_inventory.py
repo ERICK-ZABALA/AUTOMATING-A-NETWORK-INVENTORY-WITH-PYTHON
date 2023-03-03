@@ -9,7 +9,8 @@ Goal:
 
 # Start our program from main
 from pyats.topology.loader import load
-
+from genie.libs.parser.utils.common import ParserNotFound
+from genie.metaparser.util.exceptions import SchemaMissingKeyError
 
 if __name__ == "__main__":
     import argparse
@@ -22,11 +23,11 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(prog = 'NETWORK INVENTORY',description='General network inventory report')
     parser.add_argument('testbed', type=str, help='pyATS Testbed File')
     args = parser.parse_args()
-    print(f"Loading testbed file: {args.testbed}")
+    print(f"\033[94mLoading testbed file: {args.testbed}\033[0m")
 
     # Create pyATS testbed object
     testbed =load(args.testbed)
-    print(f"Connecting to all devices in testbed: {testbed.name}")
+    print(f"\033[93mConnecting to all devices in testbed: {testbed.name}\033[0m")
 
     # Connect to network devices
     testbed.connect(log_stdout=False)
@@ -35,15 +36,33 @@ if __name__ == "__main__":
     show_version={}
     show_inventory={}
 
+    def parse_command(device, command):
+        """
+        Attempt to parse a command on a device with PyATS.
+        In caase of common errors, return best info possible.
+        """
+        print(f"Running {command} on {device.name}")
+        try:
+            output = device.parse(command)
+            return {"type":"parsed", "output": output}
+        except ParserNotFound:
+            print(f"\033[91mError: pyATS lacks a parser for device\033[0m")
+        except SchemaMissingKeyError:
+            print(f"\033[91mError: pyATS lacks missing keys for device\033[0m")
+            
+        # device.execute runs command, gathers raw output
+        output = device.execute(command)
+        return {"type":"raw", "output":output}
+
     for device in testbed.devices:
-        print(f"Gatherin show version from device {device}")
-        show_version[device] = testbed.devices[device].parse("show version")
+        print(f"\n\033[92mGathering show version from device {device}\033[0m")
+        show_version[device] = parse_command(testbed.devices[device], "show version")
         print(f"{device} show version: {show_version[device]}")
 
-        print(f"Gatherin show version from device {device}")
-        show_inventory[device] = testbed.devices[device].parse("show inventory")
+        print(f"\n\033[92mGathering show inventory from device {device}\033[0m")
+        show_inventory[device] = parse_command(testbed.devices[device], "show inventory")
         print(f"{device} show inventory: {show_inventory[device]}")
-        
+
         
 
     # Disconnect from network devices
