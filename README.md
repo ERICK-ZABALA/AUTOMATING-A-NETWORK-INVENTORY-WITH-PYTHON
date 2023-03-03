@@ -564,6 +564,10 @@ Enter enable password for testbed: cisco
 Connecting to all devices in testbed: nso_sandbox_testbed_same_credentials
 Traceback (most recent call last): 
 ```
+# ERROR GATHERING INFO "ASA"
+
+ In this type of scenario is necesary to user regular expresion (RegEx), str.find(), TextFSM.
+ 
 
 # REFERNCES
 

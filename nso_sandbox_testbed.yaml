@@ -114,8 +114,8 @@ devices:
   internet-rtr01:
     connections:
       cli:
-        ip: 10.10.20.182
-        protocol: ssh
+        ip: 10.10.20.181
+        protocol: telnet
     credentials:
       default:
         password: '%ASK{}'
