@@ -694,6 +694,7 @@ In this case we need to add an other exception in order to continue the process.
         return {"type":"raw", "output":output}
 ```
 
+![image](https://user-images.githubusercontent.com/38144008/222843921-053aa549-f04d-42b5-abf5-cb2e2e31a0ec.png)
 
 
 # REFERNCES
