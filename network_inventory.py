@@ -32,6 +32,19 @@ if __name__ == "__main__":
     testbed.connect(log_stdout=False)
     
     # Run command to gather output from devices
+    show_version={}
+    show_inventory={}
+
+    for device in testbed.devices:
+        print(f"Gatherin show version from device {device}")
+        show_version[device] = testbed.devices[device].parse("show version")
+        print(f"{device} show version: {show_version[device]}")
+
+        print(f"Gatherin show version from device {device}")
+        show_inventory[device] = testbed.devices[device].parse("show inventory")
+        print(f"{device} show inventory: {show_inventory[device]}")
+        
+        
 
     # Disconnect from network devices
     for device in testbed.devices:
