@@ -639,6 +639,8 @@ to resolve that issue we are going to issue exceptions like this.
             print(f"\033[91mError: pyATS lacks missing keys for device\033[0m")
             
 ```
+![image](https://user-images.githubusercontent.com/38144008/222838603-e211d307-3ba8-45c7-948d-1bcc04e20d57.png)
+
 However as a result of this code we have this type of error that is little different.
 
 ```bash
@@ -662,6 +664,7 @@ Traceback (most recent call last):
   File "src/genie/metaparser/util/schemaengine.py", line 233, in genie.metaparser.util.schemaengine.Schema.validate
 genie.metaparser.util.exceptions.SchemaEmptyParserError: Parser Output is empty
 ```
+![image](https://user-images.githubusercontent.com/38144008/222838581-f8bbf2f1-25a3-4b3c-9642-38300d0c5eff.png)
 
 
 # REFERNCES
