@@ -403,7 +403,25 @@ TypeError: device is not connected, output must be provided.
 inventory  'network_inventory.py'  nso_sandbox_testbed_same_credentials.yaml  nso_sandbox_testbed.yaml  README.md  sample
 (inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$
 ```
+# CONECTIVITY PYATS WITH SCRIPT PYTHON
 
+This command "`./network_inventory.py nso_sandbox_testbed_same_credentials.yaml`" permit to verify your concetivity from PyATS, script and network access.
+
+```bash
+(inventory)  devnet@Devnet  ~/Documents/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON   main ±  `./network_inventory.py nso_sandbox_testbed_same_credentials.yaml`
+
+Creating a network inventory script.
+Namespace(testbed='nso_sandbox_testbed_same_credentials.yaml')
+Enter default password for testbed: 
+
+Enter value for testbed.credentials.default.username: cisco
+Enter enable password for testbed: 
+<Testbed object 'nso_sandbox_testbed_same_credentials' at 0x7fa854c41fc0>
+
+2023-03-02 21:43:19,858: %UNICON-INFO: +++ core-rtr02 logfile /tmp/core-rtr02-cli-20230302T214319855.log +++
+
+2023-03-02 21:43:19,861: %UNICON-INFO: +++ Unicon plugin iosxr (unicon.plugins.iosxr) +++
+```
 
 
 # REFERNCES
