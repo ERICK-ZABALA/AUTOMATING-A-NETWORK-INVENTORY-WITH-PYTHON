@@ -337,7 +337,11 @@ Enter enable password for testbed: cisco
 
 Sometimes parsers can not be included in some plataforms, that is the reason of this error.(in asa device).
 
-## error parse
+## error parse asa device:
+
+![image](https://user-images.githubusercontent.com/38144008/222657835-750906d3-ce8a-486e-9a2c-f030455aefad.png)
+
+
 
 
 # CLI APPROACH WORKS WITH PYATS - PARSE
