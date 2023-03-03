@@ -505,7 +505,9 @@ Disconnecting from device edge-sw01.
 Disconnecting from device internet-rtr01.
 ```
 
-# CREATING SHOW VERSION & SHOW INVENTORY
+# GATHERING SHOW VERSION & SHOW INVENTORY
+
+In this section we are going to display show version and show inventory from python script.
 
 ```python
 #!/home/devnet/Documents/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON/inventory/bin/python
@@ -546,16 +548,14 @@ if __name__ == "__main__":
     show_inventory={}
 
     for device in testbed.devices:
-        print(f"Gatherin show version from device {device}")
+        print(f"\nGatherin show version from device {device}")
         show_version[device] = testbed.devices[device].parse("show version")
         print(f"{device} show version: {show_version[device]}")
 
-        print(f"Gatherin show version from device {device}")
+        print(f"Gatherin show inventory from device {device}")
         show_inventory[device] = testbed.devices[device].parse("show inventory")
         print(f"{device} show inventory: {show_inventory[device]}")
         
-        
-
     # Disconnect from network devices
     for device in testbed.devices:
         print(f"Disconnecting from device {device}.")
@@ -570,21 +570,41 @@ if __name__ == "__main__":
 CLI:`./network_inventory.py nso_sandbox_testbed_same_credentials.yaml `
 
 ```bash
-inventory)  devnet@Devnet  ~/Documents/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON   main ±  ./network_inventory.py nso_sandbox_testbed_same_credentials.yaml 
+(inventory)  devnet@Devnet  ~/Documents/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON   main ±  ./network_inventory_03.py nso_sandbox_testbed_same_credentials.yaml    
 ####################################
 Creating a Network Inventory script.
 ####################################
 Loading testbed file: nso_sandbox_testbed_same_credentials.yaml
-Enter default password for testbed:cisco 
+Enter default password for testbed: 
 
 Enter value for testbed.credentials.default.username: cisco
-Enter enable password for testbed: cisco
+Enter enable password for testbed: 
 Connecting to all devices in testbed: nso_sandbox_testbed_same_credentials
-Traceback (most recent call last): 
-```
-# ERROR GATHERING INFO "ASA"
 
- In this type of scenario is necesary to user regular expresion (RegEx), str.find(), TextFSM.
+Gatherin show version from device core-rtr01
+core-rtr01 show version: {'operating_system': 'IOSXR', 'software_version': '6.3.1', 'uptime': '2 days, 2 hours, 19 minutes', 'image': 'bootflash:disk0/xrvr-os-mbi-6.3.1/mbixrvr-rp.vm', 'device_family': 'IOS XRv Series', 'processor': 'Pentium II Stepping 7', 'processor_memory_bytes': '3145215K', 'main_mem': 'cisco IOS XRv Series (Pentium II Stepping 7) processor with 3145215K bytes of memory.', 'chassis_detail': 'IOS XRv Chassis', 'config_register': '0x2102', 'rp_config_register': '0x2102'}
+Gatherin show inventory from device core-rtr01
+core-rtr01 show inventory: {'module_name': {'0/0/CPU0': {'descr': 'Route Processor type (16, 0)', 'pid': 'IOSXRV', 'vid': 'V01', 'sn': 'N/A'}}}
+```
+## ERROR GATHERING INFO "ASA"
+
+In this type of scenario is necesary to user regular expresion (RegEx), str.find(), TextFSM.
+
+```bash
+Gatherin show version from device edge-firewall01
+Traceback (most recent call last):
+  File "/home/devnet/Documents/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON/./network_inventory_03.py", line 40, in <module>
+    show_version[device] = testbed.devices[device].parse("show version")
+  File "src/genie/conf/base/device.py", line 531, in genie.conf.base.device.Device.parse
+  File "src/genie/conf/base/device.py", line 570, in genie.conf.base.device.Device._get_parser_output
+  File "src/genie/conf/base/device.py", line 568, in genie.conf.base.device.Device._get_parser_output
+  File "src/genie/metaparser/_metaparser.py", line 342, in genie.metaparser._metaparser.MetaParser.parse
+  File "src/genie/metaparser/_metaparser.py", line 322, in genie.metaparser._metaparser.MetaParser.parse
+  File "src/genie/metaparser/util/schemaengine.py", line 419, in genie.metaparser.util.schemaengine.Schema.validate
+genie.metaparser.util.exceptions.SchemaMissingKeyError: Missing keys: [['version', 'mem_size'], ['version', 'platform'], ['version', 'processor_type']]
+
+```
+# USING REGULAR EXPRESION TO FIXED THE ISSUE
 
 
 # REFERNCES
