@@ -335,6 +335,11 @@ Enter enable password for testbed: cisco
 
 ![image](https://user-images.githubusercontent.com/38144008/222148411-97c31e44-5128-40de-821c-f85b4dedceec.png)
 
+Sometimes parsers can not be included in some plataforms, that is the reason of this error.(in asa device).
+
+## error parse
+
+
 # CLI APPROACH WORKS WITH PYATS - PARSE
 
 When we are using "pyats parse" in some devices the command "show version" is not available for example in "edge-firewall01 | asa". Not all is perfect :(.
@@ -567,7 +572,7 @@ Traceback (most recent call last):
 # ERROR GATHERING INFO "ASA"
 
  In this type of scenario is necesary to user regular expresion (RegEx), str.find(), TextFSM.
- 
+
 
 # REFERNCES
 
