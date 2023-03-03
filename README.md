@@ -412,6 +412,10 @@ TypeError: device is not connected, output must be provided.
 inventory  'network_inventory.py'  nso_sandbox_testbed_same_credentials.yaml  nso_sandbox_testbed.yaml  README.md  sample
 (inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$
 ```
+Note: Verify your `shebang` in your script.
+
+![image](https://user-images.githubusercontent.com/38144008/222668149-ef8217cf-c85a-478a-894d-8ca389d0c0e2.png)
+
 # PYTHON SCRIPTING FOR NETWORK CONNECTIVITY TESTING WITH PyATS
 
 This command `./network_inventory.py nso_sandbox_testbed_same_credentials.yaml` permit to verify your concetivity from PyATS, script and network access.
@@ -504,6 +508,7 @@ Disconnecting from device edge-firewall01.
 Disconnecting from device edge-sw01.
 Disconnecting from device internet-rtr01.
 ```
+![image](https://user-images.githubusercontent.com/38144008/222666104-5c4f2a7a-3ee8-4f4f-b810-82631a7a8c64.png)
 
 # GATHERING SHOW VERSION & SHOW INVENTORY
 
@@ -604,6 +609,8 @@ Traceback (most recent call last):
 genie.metaparser.util.exceptions.SchemaMissingKeyError: Missing keys: [['version', 'mem_size'], ['version', 'platform'], ['version', 'processor_type']]
 
 ```
+![image](https://user-images.githubusercontent.com/38144008/222665998-f9762020-a77c-402a-9aa1-4c76a1091ee3.png)
+
 # USING REGULAR EXPRESION TO FIXED THE ISSUE
 
 
