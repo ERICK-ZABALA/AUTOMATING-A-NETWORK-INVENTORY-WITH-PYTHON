@@ -403,7 +403,7 @@ TypeError: device is not connected, output must be provided.
 inventory  'network_inventory.py'  nso_sandbox_testbed_same_credentials.yaml  nso_sandbox_testbed.yaml  README.md  sample
 (inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$
 ```
-# CONECTIVITY PYATS WITH SCRIPT PYTHON
+# PYTHON SCRIPTING FOR NETWORK CONNECTIVITY TESTING WITH PyATS
 
 This command "`./network_inventory.py nso_sandbox_testbed_same_credentials.yaml`" permit to verify your concetivity from PyATS, script and network access.
 
