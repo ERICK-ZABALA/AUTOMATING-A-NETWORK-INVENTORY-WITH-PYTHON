@@ -670,6 +670,31 @@ That make sense is empty when insert `show inventory`.
 
 ![image](https://user-images.githubusercontent.com/38144008/222839736-3c64ed17-8eac-46f7-a53b-48eddaf17a82.png)
 
+In this case we need to add an other exception in order to continue the process.
+
+```python
+ def parse_command(device, command):
+        """
+        Attempt to parse a command on a device with PyATS.
+        In caase of common errors, return best info possible.
+        """
+        print(f"Running {command} on {device.name}")
+        try:
+            output = device.parse(command)
+            return {"type":"parsed", "output": output}
+        except ParserNotFound:
+            print(f"\033[91mError: pyATS lacks a parser for device\033[0m")
+        except SchemaMissingKeyError:
+            print(f"\033[91mError: pyATS lacks missing keys for device\033[0m")
+        except SchemaEmptyParserError:
+            print(f"\033[91mError: No valid data found in the device\033[0m")
+            
+        # device.execute runs command, gathers raw output
+        output = device.execute(command)
+        return {"type":"raw", "output":output}
+```
+
+
 
 # REFERNCES
 

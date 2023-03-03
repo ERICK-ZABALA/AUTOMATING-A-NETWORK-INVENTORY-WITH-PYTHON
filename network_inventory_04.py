@@ -10,7 +10,7 @@ Goal:
 # Start our program from main
 from pyats.topology.loader import load
 from genie.libs.parser.utils.common import ParserNotFound
-from genie.metaparser.util.exceptions import SchemaMissingKeyError, SchemaEmptyParserError
+from genie.metaparser.util.exceptions import SchemaMissingKeyError
 
 if __name__ == "__main__":
     import argparse
@@ -49,8 +49,6 @@ if __name__ == "__main__":
             print(f"\033[91mError: pyATS lacks a parser for device\033[0m")
         except SchemaMissingKeyError:
             print(f"\033[91mError: pyATS lacks missing keys for device\033[0m")
-        except SchemaEmptyParserError:
-            print(f"\033[91mError: No valid data found in the device\033[0m")
             
         # device.execute runs command, gathers raw output
         output = device.execute(command)
