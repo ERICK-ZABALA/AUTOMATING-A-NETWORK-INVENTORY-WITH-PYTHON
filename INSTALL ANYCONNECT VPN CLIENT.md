@@ -4,14 +4,31 @@ To install python in your development environment. You can follow these steps.
 
 + Download VPN Client Anyconnect via console.
 
+The Cisco AnyConnect Secure Mobility Client provides users with a secure, private connection to the DevNet Sandbox Labs. 
+You will need to install the AnyConnect Client on your system prior to accessing most Sandbox Labs.
+
+[Sandbox AnyConnect](https://pubhub.devnetcloud.com/media/sandbox/site/files/anyconnect-win-4.9.04043-predeploy-k9.zip)
+
+
 ```bash
 [opc@jenkins-master bin]$ wget http://www.hostwaydcs.com/CISCO/AnyConnect/anyconnect-linux64-4.10.05095-predeploy-k9.tar.gz
-
 [opc@jenkins-master bin]$ tar zxf anyconnect-linux64-4.10.05095-predeploy-k9.tar.gz
 
 [opc@jenkins-master bin]$ cd anyconnect-linux64-4.10.05095/vpn
-
 [opc@jenkins-master bin]$ sudo ./vpn_install.sh
+
+Installing Cisco AnyConnect Secure Mobility Client...
+Supplemental End User License Agreement for AnyConnect(R) Secure Mobility Client v4.x and other VPN-related Software
+
+[licence agreement omitted for brevity]
+Please refer to the Cisco Systems, Inc. End User License Agreement.
+http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html
+
+Do you accept the terms in the license agreement? [y/n] y
+You have accepted the license agreement.
+Please wait while Cisco AnyConnect Secure Mobility Client is being installed...
+Starting Cisco AnyConnect Secure Mobility Client Agent...
+Done!
 
 [opc@jenkins-master bin]$ cd /opt/cisco/anyconnect/bin/
 [opc@jenkins-master bin]$ sudo ./vpn -s connect devnetsandbox-usw1-reservation.cisco.com:20229
@@ -46,6 +63,8 @@ Run the following command to make the file executable:
 `[opc@jenkins-master ]$ chmod +x vpn_connect.sh`
 
 `[opc@jenkins-master ]$./vpn_connect.sh`
+
+# DevNet Sandbox Cisco
 
 + In order to have this credentials to connect your environment with Cisco Sandbox, you need to create an account in Cisco and reserve your sandbox Lab.
 
