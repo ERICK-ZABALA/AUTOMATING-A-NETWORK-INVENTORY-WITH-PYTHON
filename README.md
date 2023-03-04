@@ -1064,7 +1064,11 @@ Code that permit filter the parameters required to diplay the network inventory.
     print(f"\n\033[97mnetwork_inventory = {network_inventory}\033[0m")
     
 ```
+```bash
+Assembling network inventory data from output.
 
+network_inventory = [('core-rtr01', 'iosxr', '6.3.1', '2 days, 22 hours, 53 minutes', 'N/A'), ('core-rtr02', 'iosxr', '6.3.1', '2 days, 22 hours, 53 minutes', 'N/A'), ('dist-rtr01', 'iosxe', '17.3.2', '2 days, 22 hours, 51 minutes', '91EDY6XXOPI'), ('dist-rtr02', 'iosxe', '17.3.2', '2 days, 22 hours, 51 minutes', '9X9NDJ21PR5'), ('dist-sw01', 'nxos', '9.2(4)', '2 days, 22 hours,51 minutes', '9ORBHMVBPDB'), ('dist-sw02', 'nxos', '9.2(4)', '2 days, 22 hours,50 minutes', '9NLTHFK2289'), ('edge-firewall01', 'asa', None, None, '9A3LTK7V6RD'), ('edge-sw01', 'ios', '15.2(20200924:215240)', '2 days, 22 hours, 46 minutes', 'N/A'), ('internet-rtr01', 'iosxe', '17.3.2', '2 days, 22 hours, 51 minutes', '9150TDM5N31')]
+```
 
 
 # REFERNCES
