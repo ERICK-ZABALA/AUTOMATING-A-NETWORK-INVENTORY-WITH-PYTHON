@@ -38,6 +38,7 @@ Your public key has been saved in /home/opc/.ssh/id_rsa.pub.
 The key fingerprint is:[enter]
 SHA256:d34vpdY+/rfOiQSq7yoEl9L2FLOpxIR+MxSMO3n001I opc@jenkins-master
 The key's randomart image is:
+
 +---[RSA 3072]----+
 |    +..          |
 |   o = o E       |
@@ -63,6 +64,7 @@ drwx------. 27 opc opc 4096 Feb 28 06:29 ..
 
 ssh-rsa eRau8T40vnH3uryhEkjsjSoNj8oL7X3ifZ5shlCo32U9yp+wt+b0yCry9Rv7wvNznG1e5+Kz/H+QEzOF9geiYZOekJ8KUXz8qsbPZRA7vdwZCAZxDU0XQaXzWGWjL765Yno+QCirg8EbZHSY9He3MhrzJmJy1zzCkIpY/XRR4xxxxxRqq5pLhYUJJrmRYLWe/yXgT99m5lSShyrh9OIc9Y7LyVpEqg8Q2CGE8HNS85IlsLghNEFHuzdYqN+lfp7yiOVbBFuDkHhMKTI7WIF7vufUZ3iS2bgy+E4mvj6O4d/Kgb8SroWNLMVrpnKoEPHEZYFQPKId6Yt4sYfgmQjHu!!!!CWr
 ```
+
 # LOAD SSH KEY IN GIT HUB
 
 + Previously you need to create an account in [GitHub](https://github.com/)
@@ -71,7 +73,7 @@ ssh-rsa eRau8T40vnH3uryhEkjsjSoNj8oL7X3ifZ5shlCo32U9yp+wt+b0yCry9Rv7wvNznG1e5+Kz
 
 + You need to create an repository in th portal web https://github.com. 
 
-# SYNCRONIZE MV WITH REPOSITORY PREVIOUS
+# SYNCRONIZE THE LOCAL ENVIRONMENT WITH A PREVIOUSLY INSTALLED REPOSITORY
 
 ```bash
 [opc@jenkins-master DEVNET]$ git clone git@github.com:ERICK-ZABALA/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON.git
