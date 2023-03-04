@@ -9,7 +9,10 @@
 
 # VIDEO INSPIRATION
 
-[![Watch the video](https://img.youtube.com/vi/OMyOkqTOWWc/0.jpg)](https://www.youtube.com/watch?v=OMyOkqTOWWc)
+<iframe width="560" height="315" src="https://youtu.be/OMyOkqTOWWc" frameborder="0" allowfullscreen></iframe>
+
+
+ [![Watch the video](https://img.youtube.com/vi/OMyOkqTOWWc/0.jpg)](https://www.youtube.com/watch?v=OMyOkqTOWWc) 
 
 
 # METHOD CLI
