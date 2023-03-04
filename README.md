@@ -957,7 +957,7 @@ Code that permit filter the parameters required for show the inventory.
                 show_inventory)
                 )
     
-    print(f"\n\033[95mnetwork_inventory = {network_inventory}\033[0m")
+    print(f"\n\033[96mnetwork_inventory = {network_inventory}\033[0m")
     
 
 ```
