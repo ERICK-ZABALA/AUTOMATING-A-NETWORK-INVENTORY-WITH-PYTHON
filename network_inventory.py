@@ -111,13 +111,13 @@ if __name__ == "__main__":
         elif device.os == "iosxe":
             software_version = show_version[device.name]["output"]["version"]["xe_version"]
             uptime = show_version[device_name]["output"]["version"]["uptime"]
-            serial_number = show_inventory[device.name]["output"]["main"]["chassis"]["CSR1000V"]["sn"]
+            serial_number = None
         elif device.os == "nxos":
             software_version = show_version[device.name]["output"]["platform"]["software"]["system_version"]
             uptime = show_version[device.name]["output"]["platform"]["kernel_uptime"]
             serial_number = show_inventory[device.name]["output"]["name"]["Chassis"]["serial_number"]
         elif device.os == "iosxr":
-            software_version = show_version[device.name]["output"]["software version"]
+            software_version = show_version[device.name]["output"]["software_version"]
             uptime = show_version[device.name]["output"]["uptime"]
             serial_number = None
         elif device.os == "asa":
@@ -141,7 +141,7 @@ if __name__ == "__main__":
                 show_inventory)
                 )
     
-    print(f"\n\033[92mnetwork_inventory = {network_inventory}\033[0m")
+    print(f"\n\033[95mnetwork_inventory = {network_inventory}\033[0m")
     
 
 
