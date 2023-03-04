@@ -5,7 +5,7 @@ To install python in your development environment. you can follow these steps.
 
 + Download Python via console.
 
-`[opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON]$ wget https://www.python.org/ftp/python/3.10.2/Python-3.10.2.tgz`
+`[opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON]$ wget [https://www.python.org/ftp/python/3.10.2/Python-3.10.2.tgz](https://www.python.org/ftp/python/3.10.2/Python-3.10.2.tar.xz)`
 
 + Extract the downloaded archive by running the following command:
 
