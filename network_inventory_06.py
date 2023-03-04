@@ -74,29 +74,11 @@ if __name__ == "__main__":
     
     # Built inventory report over data structure
     #   IOS XR
-    #       software_version: show version output ["output"]["software_version"]
+    #       software_version: show version output ["output"]["software version"]
     #       uptime:           show version output ["output"]["uptime"]
-    #       sn:               show inventory output ["output"]["module_name"]["MODULE"]["sn"]    
+    #       serial:           show inventory output ["output"]["module_name"]["MODULE"]["sn"]    
     #
-    #   IOS-XE
-    #       xe_version:       show version output ["output"]["version"]["xe_version"]
-    #       uptime:           show version output ["output"]["version"]["uptime"]
-    #       sn:               show inventory output ["output"]["main"]["chassis"]["CSR1000V"]["sn"]
-    #  
-    #   IOS
-    #       version:          show version output ["output"]["version"]["version"]
-    #       uptime:           show version output ["output"]["version"]["uptime"]
-    #       serial:N/A        show inventory output ["output"]
     #
-    #   NX-OS
-    #       system_version:   show version output ["output"]["platform"]["software"]["system_version"] 
-    #       kernel_uptime:    show version output ["output"]["platform"]["kernel_uptime"]  
-    #       serial_number:    show inventory output ["output"]["name"]["Chassis"]["serial_number"]  
-    #   
-    #   ASA
-    #       software_version: show version output ["output"] "Cisco Adaptive Security Appliance Software Version 9.15(1)1"
-    #       uptime:           show version output ["output"] "up 2 days 17 hours"  
-    #       sn:               show inventory output ["output"]["Chassis"]["sn"]  
     #
 
     def get_devices_inventory(device, show_version, show_inventory):
@@ -104,26 +86,10 @@ if __name__ == "__main__":
         device_name = device.name
         device_os = device.os
 
-        if device.os == "ios":
-            software_version = show_version[device.name]["output"]["version"]["version"]
-            uptime = show_version[device_name]["output"]["version"]["uptime"]
-            serial_number = None
-        elif device.os == "iosxe":
-            software_version = show_version[device.name]["output"]["version"]["xe_version"]
-            uptime = show_version[device_name]["output"]["version"]["uptime"]
-            serial_number = show_inventory[device.name]["output"]["main"]["chassis"]["CSR1000V"]["sn"]
-        elif device.os == "nxos":
-            software_version = show_version[device.name]["output"]["platform"]["software"]["system_version"]
-            uptime = show_version[device.name]["output"]["platform"]["kernel_uptime"]
-            serial_number = show_inventory[device.name]["output"]["name"]["Chassis"]["serial_number"]
-        elif device.os == "iosxr":
-            software_version = show_version[device.name]["output"]["software version"]
-            uptime = show_version[device.name]["output"]["uptime"]
-            serial_number = None
-        elif device.os == "asa":
+        if device_os in ["ios","iosxe","nxos","iosxr","asa"]:
             software_version = None
             uptime = None
-            serial_number = show_inventory[device.name]["output"]["Chassis"]["sn"]
+            serial_number = None
         else:
             return False
         
