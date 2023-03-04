@@ -104,22 +104,31 @@ if __name__ == "__main__":
         device_name = device.name
         device_os = device.os
 
-        if device.os == "ios":
+        if device.os in ["ios","iosxe"]:
             software_version = show_version[device.name]["output"]["version"]["version"]
             uptime = show_version[device_name]["output"]["version"]["uptime"]
-            serial_number = None
-        elif device.os == "iosxe":
-            software_version = show_version[device.name]["output"]["version"]["xe_version"]
-            uptime = show_version[device_name]["output"]["version"]["uptime"]
-            serial_number = None
+            # Skip devices without parsed show inventory data
+            if show_inventory[device.name]["output"] !="":
+                # Extract chassi_name = 'CSR1000V' 
+                chassis_name = show_version[device.name]["output"]["version"]["chassis"]
+                serial_number = show_inventory[device.name]["output"]["main"]["chassis"][chassis_name]["sn"]
+            else:
+                serial_number = "N/A"    
         elif device.os == "nxos":
             software_version = show_version[device.name]["output"]["platform"]["software"]["system_version"]
-            uptime = show_version[device.name]["output"]["platform"]["kernel_uptime"]
+            uptime_dict = show_version[device.name]["output"]["platform"]["kernel_uptime"]
+            uptime = f'{uptime_dict["days"]} days, {uptime_dict["hours"]} hours,{uptime_dict["minutes"]} minutes'
             serial_number = show_inventory[device.name]["output"]["name"]["Chassis"]["serial_number"]
         elif device.os == "iosxr":
             software_version = show_version[device.name]["output"]["software_version"]
             uptime = show_version[device.name]["output"]["uptime"]
-            serial_number = None
+                        
+            # Grab the serial from first module - should be the RP
+            # Mapping all content in module_name and capture module["sn"] as serial_number
+            for module in show_inventory[device.name]["output"]["module_name"].values():
+                serial_number = module["sn"]
+                break
+
         elif device.os == "asa":
             software_version = None
             uptime = None
@@ -141,7 +150,7 @@ if __name__ == "__main__":
                 show_inventory)
                 )
     
-    print(f"\n\033[95mnetwork_inventory = {network_inventory}\033[0m")
+    print(f"\n\033[97mnetwork_inventory = {network_inventory}\033[0m")
     
 
 
