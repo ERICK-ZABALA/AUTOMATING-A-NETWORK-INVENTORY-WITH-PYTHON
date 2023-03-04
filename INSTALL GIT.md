@@ -159,7 +159,7 @@ Host github.com
 
 `(inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$ git pull -Xtheirs`
 
-#UPDATE REPOSITORY LOCAL FROM REPOSITORY GITHUB
+# UPDATE REPOSITORY LOCAL FROM REPOSITORY GITHUB
 
 The git pull command with the -Xtheirs option specifies the strategy for resolving conflicts during the merge process.
 
