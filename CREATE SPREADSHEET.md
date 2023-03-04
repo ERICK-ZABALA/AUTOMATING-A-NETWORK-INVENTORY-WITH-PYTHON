@@ -1,6 +1,14 @@
 
 # CREATE SPREADSHEET
 
++ how can we talk to the devices?
++ what tool / language will we use?
++ How do we create the list of devices to work with?
++ How will we share our code for others to use?
++ How do we protect any “secrets” (username/password)
+
+Let's go...
+
 * We are going to create owner `Spreedsheet` [Sample Test Bed File](https://pubhub.devnetcloud.com/media/pyats-getting-started/docs/quickstart/manageconnections.html#creation-from-excel-file)
 
 PyATS work over YAML consider this point. PyATS uses a testbed.yaml to make an inventory.
@@ -54,7 +62,7 @@ devices:
 
 # IMPROVING US TESTBED FILE
 
-In this section we are going to improve our code alocated the credentials to begin. In this scenario we are working with the same credentials for all devices.
+In this section, we will improve our code by allocating the necessary credentials. For the purposes of this scenario, we will be using the same credentials for all devices.
 
 ```yaml
 testbed:
@@ -66,7 +74,7 @@ testbed:
       password: '%ASK{}'
 ```
 
-Running: nso_sandbox_testbed_same_credentials.yaml
+RUN CLI:    `pyats validate testbed --testbed nso_sandbox_testbed_same_credentials.yaml`
 
 ```bash
 inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$ ls
