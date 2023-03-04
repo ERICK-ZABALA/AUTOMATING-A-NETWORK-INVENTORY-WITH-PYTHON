@@ -11,6 +11,7 @@ Goal:
 from pyats.topology.loader import load
 from genie.libs.parser.utils.common import ParserNotFound
 from genie.metaparser.util.exceptions import SchemaMissingKeyError, SchemaEmptyParserError
+import re
 
 if __name__ == "__main__":
     import argparse
@@ -130,8 +131,12 @@ if __name__ == "__main__":
                 break
 
         elif device.os == "asa":
-            software_version = None
-            uptime = None
+            software_version_regex = "Software Version ([^\n ]*)"
+            uptime_regex = f"{device.name} up ([\d]* days? [\d]* hours?)"
+
+            software_version = re.search(software_version_regex, show_version[device.name]["output"]).group(1)
+            uptime = re.search(uptime_regex, show_version[device.name]["output"]).group(1)
+            
             serial_number = show_inventory[device.name]["output"]["Chassis"]["sn"]
         else:
             return False
@@ -151,11 +156,6 @@ if __name__ == "__main__":
                 )
     
     print(f"\n\033[97mnetwork_inventory = {network_inventory}\033[0m")
-    
-
-
-        
-
 
 
 
