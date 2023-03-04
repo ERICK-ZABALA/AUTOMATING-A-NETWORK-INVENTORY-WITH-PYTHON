@@ -1,7 +1,7 @@
 
 # CREATE SPREADSHEET
 
-+ how can we talk to the devices?
++ How can we talk to the devices?
 + what tool / language will we use?
 + How do we create the list of devices to work with?
 + How will we share our code for others to use?
@@ -40,7 +40,7 @@ inventory  README.md  sample
 Testbed file generated: 
 sample/nso_sandbox_devices.xlsx -> nso_sandbox_testbed.yaml
 ```
-You should see the next file nso_sandbox_testbed.yaml in your virtual environment.
+You should see the next file `nso_sandbox_testbed.yaml` in your virtual environment.
 
 ```yaml
 devices:
@@ -123,3 +123,12 @@ Warning Messages
 (inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$ ls
 inventory  `nso_sandbox_testbed_same_credentials.yaml`  nso_sandbox_testbed.yaml  README.md  sample
 ```
+With command "pyats validate testbed --testbed nso_sandbox_testbed_same_credentials.yaml" is used to run a validation test on a network testbed using the Cisco PyATS (Python Automation Framework for Testing and Scripting) framework.
+
+The command takes in two arguments:
+
+"validate testbed" specifies the action to be taken, which is to validate the testbed.
+"--testbed nso_sandbox_testbed_same_credentials.yaml" specifies the testbed to be used, which is a YAML-formatted file containing the details of the devices to be tested and their connectivity.
+In summary, the command runs a PyATS validation test on a network testbed specified in a YAML-formatted file called "nso_sandbox_testbed_same_credentials.yaml". The purpose of the test is to validate the configuration and connectivity of the devices in the testbed.
+
+We are going to work with this specific file in our environment `nso_sandbox_testbed_same_credentials.yaml`
