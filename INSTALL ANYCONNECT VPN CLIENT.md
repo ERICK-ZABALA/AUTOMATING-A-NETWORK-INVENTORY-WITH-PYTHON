@@ -22,6 +22,30 @@ Password: XC1sco=
 
 # CREATE AN EXECUTABLE FILE - VPN CLIENT
 
+Open a text editor and enter the following commands:
+
+```bash
+[opc@jenkins-master ]$ # sudo nano vpnconnect.sh
+```
+Copy this code in the file vpnconnect.sh
+
+```bash
+!/bin/bash
+cd /opt/cisco/anyconnect/bin/
+./vpn -s connect devnetsandbox-usw1-reservation.cisco.com:20229 <<EOF
+cisco.dev
+XC1sco="
+EOF
+```
+Save the file with a descriptive name, such as "vpn_connect.sh".
+
+Open a terminal and navigate to the location where you saved the file.
+
+Run the following command to make the file executable:
+
+`[opc@jenkins-master ]$ chmod +x vpn_connect.sh`
+
+`[opc@jenkins-master ]$./vpn_connect.sh`
 
 + In order to have this credentials to connect your environment with Cisco Sandbox, you need to create an account in Cisco and reserve your sandbox Lab.
 
@@ -32,3 +56,4 @@ We are going to go to plataform [sandbox](https://devnetsandbox.cisco.com/RM/Dia
 
 ![image](https://user-images.githubusercontent.com/38144008/222009619-eea78d14-3f55-4d08-86e4-5b2a424a3a3c.png)
 
+![image](https://user-images.githubusercontent.com/38144008/222930335-ec242a99-c97d-4c11-9178-350c34193a4d.png)
