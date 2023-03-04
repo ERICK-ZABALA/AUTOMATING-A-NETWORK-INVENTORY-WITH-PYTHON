@@ -13,15 +13,19 @@ To install python in your development environment. you can follow these steps.
 
 Navigate to the extracted directory by running the following command:
 
-`[opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON]$ cd Python-3.10.2`
+```bash
+[opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON]$ cd Python-3.10.2
 
-`[opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON]$ ./configure --enable-optimizations`
+[opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON]$ ./configure --enable-optimizations
+```
 
 Build and install Python 3.10 using the following command:
 
-`[opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON]$ make`
+```bash
+[opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON]$ make
 
-`[opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON]$ sudo make altinstall`
+[opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON]$ sudo make altinstall
+```
 
 # CREATE VENV PYTHON 3.10.2 WITH PyATS
 
