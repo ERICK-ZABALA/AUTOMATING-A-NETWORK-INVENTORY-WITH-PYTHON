@@ -136,7 +136,7 @@ if __name__ == "__main__":
 
             software_version = re.search(software_version_regex, show_version[device.name]["output"]).group(1)
             uptime = re.search(uptime_regex, show_version[device.name]["output"]).group(1)
-            
+
             serial_number = show_inventory[device.name]["output"]["Chassis"]["sn"]
         else:
             return False
@@ -156,8 +156,6 @@ if __name__ == "__main__":
                 )
     
     print(f"\n\033[97mnetwork_inventory = {network_inventory}\033[0m")
-
-
 
     # Generate a CSV File of data
     

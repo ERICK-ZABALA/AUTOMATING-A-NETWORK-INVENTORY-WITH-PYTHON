@@ -967,7 +967,7 @@ CLI RUN:    `./network_inventory.py nso_sandbox_testbed_same_credentials.yaml`
 
 The parameter serial_number is None. Output:
 
-```python
+```json
 
 Assembling network inventory.
 
@@ -1064,12 +1064,39 @@ Code that permit filter the parameters required to diplay the network inventory.
     print(f"\n\033[97mnetwork_inventory = {network_inventory}\033[0m")
     
 ```
-```bash
+
+CLI RUN:    `./network_inventory.py nso_sandbox_testbed_same_credentials.yaml`
+
+```json
 Assembling network inventory data from output.
 
 network_inventory = [('core-rtr01', 'iosxr', '6.3.1', '2 days, 22 hours, 53 minutes', 'N/A'), ('core-rtr02', 'iosxr', '6.3.1', '2 days, 22 hours, 53 minutes', 'N/A'), ('dist-rtr01', 'iosxe', '17.3.2', '2 days, 22 hours, 51 minutes', '91EDY6XXOPI'), ('dist-rtr02', 'iosxe', '17.3.2', '2 days, 22 hours, 51 minutes', '9X9NDJ21PR5'), ('dist-sw01', 'nxos', '9.2(4)', '2 days, 22 hours,51 minutes', '9ORBHMVBPDB'), ('dist-sw02', 'nxos', '9.2(4)', '2 days, 22 hours,50 minutes', '9NLTHFK2289'), ('edge-firewall01', 'asa', None, None, '9A3LTK7V6RD'), ('edge-sw01', 'ios', '15.2(20200924:215240)', '2 days, 22 hours, 46 minutes', 'N/A'), ('internet-rtr01', 'iosxe', '17.3.2', '2 days, 22 hours, 51 minutes', '9150TDM5N31')]
 ```
 
++ In this section uses regular expressions to obtain the coorect that in our ASA.
+
+Script in Python:
+
+```python
+        elif device.os == "asa":
+            software_version_regex = "Software Version ([^\n ]*)"
+            uptime_regex = f"{device.name} up ([\d]* days? [\d]* hours?)"
+
+            software_version = re.search(software_version_regex, show_version[device.name]["output"]).group(1)
+            uptime = re.search(uptime_regex, show_version[device.name]["output"]).group(1)
+
+            serial_number = show_inventory[device.name]["output"]["Chassis"]["sn"]
+
+
+```
+
+RUN CLI:    `./network_inventory.py nso_sandbox_testbed_same_credentials.yaml`
+
+```json
+Assembling network inventory data from output.
+
+network_inventory = [('core-rtr01', 'iosxr', '6.3.1', '3 days, 5 minutes', 'N/A'), ('core-rtr02', 'iosxr', '6.3.1', '3 days, 5 minutes', 'N/A'), ('dist-rtr01', 'iosxe', '17.3.2', '3 days, 4 minutes', '91EDY6XXOPI'), ('dist-rtr02', 'iosxe', '17.3.2', '3 days, 4 minutes', '9X9NDJ21PR5'), ('dist-sw01', 'nxos', '9.2(4)', '3 days, 0 hours,3 minutes', '9ORBHMVBPDB'), ('dist-sw02', 'nxos', '9.2(4)', '3 days, 0 hours,3 minutes', '9NLTHFK2289'), ('edge-firewall01', 'asa', '9.15(1)1', '3 days 0 hours', '9A3LTK7V6RD'), ('edge-sw01', 'ios', '15.2(20200924:215240)', '2 days, 23 hours, 59 minutes', 'N/A'), ('internet-rtr01', 'iosxe', '17.3.2', '3 days, 4 minutes', '9150TDM5N31')]
+```
 
 # REFERNCES
 
