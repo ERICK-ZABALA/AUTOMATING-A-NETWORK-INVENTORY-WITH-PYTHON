@@ -73,6 +73,48 @@ if __name__ == "__main__":
         testbed.devices[device].disconnect()
     
     # Built inventory report over data structure
+    #   IOS XR
+    #       software_version: show version output ["output"]["software version"]
+    #       uptime:           show version output ["output"]["uptime"]
+    #       serial:           show inventory output ["output"]["module_name"]["MODULE"]["sn"]    
+    #
+    #
+    #
+
+    def get_devices_inventory(device, show_version, show_inventory):
+        # Common detail from tested device
+        device_name = device.name
+        device_os = device.os
+
+        if device_os in ["ios","iosxe","nxos","iosxr","asa"]:
+            software_version = None
+            uptime = None
+            serial_number = None
+        else:
+            return False
+        
+        return (device_name, device_os, software_version, uptime, serial_number)
+    
+    print(f"\n\033[92mAssembling network inventory data from output.\033[0m")
+    
+    network_inventory = []
+    
+    for device in testbed.devices:
+        network_inventory.append(
+            get_devices_inventory(
+                testbed.devices[device],
+                show_version, 
+                show_inventory)
+                )
+    
+    print(f"\n\033[92mnetwork_inventory = {network_inventory}\033[0m")
+    
+
+
+        
+
+
+
 
     # Generate a CSV File of data
     

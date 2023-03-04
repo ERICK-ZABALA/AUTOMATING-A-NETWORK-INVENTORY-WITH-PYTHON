@@ -802,6 +802,85 @@ With this validate format online you can verify the json data.
 
 + https://www.freeformatter.com/json-validator.html
 
+Format JSON:
+
+```json
+{
+	'type': 'parsed',
+	'output': {
+		'operating_system': 'IOSXR',
+		'software_version': '6.3.1',
+		'uptime': '2 days, 17 hours, 18 minutes',
+		'image': 'bootflash:disk0/xrvr-os-mbi-6.3.1/mbixrvr-rp.vm',
+		'device_family': 'IOS XRv Series',
+		'processor': 'Pentium II Stepping 7',
+		'processor_memory_bytes': '3145215K',
+		'main_mem': 'cisco IOS XRv Series (Pentium II Stepping 7) processor with 3145215K bytes of memory.',
+		'chassis_detail': 'IOS XRv Chassis',
+		'config_register': '0x2102',
+		'rp_config_register': '0x2102'
+	}
+}
+
+{
+	'type': 'parsed',
+	'output': {
+		'module_name': {
+			'0/0/CPU0': {
+				'descr': 'Route Processor type (16, 0)',
+				'pid': 'IOSXRV',
+				'vid': 'V01',
+				'sn': 'N/A'
+			}
+		}
+	}
+}
+```
+
+After that we need to collect the information:
+
+```python
+# Built inventory report over data structure
+    #   IOS XR
+    #       software_version: show version output ["output"]["software version"]
+    #       uptime:           show version output ["output"]["uptime"]
+    #       serial:           show inventory output ["output"]["module_name"]["MODULE"]["sn"]    
+    #
+    #
+    #
+
+    def get_devices_inventory(device, show_version, show_inventory):
+        # Common detail from tested device
+        device_name = device.name
+        device_os = device.os
+
+        if device_os in ["ios","iosxe","nxos","iosxr","asa"]:
+            software_version = None
+            uptime = None
+            serial_number = None
+        else:
+            return False
+        
+        return (device_name, device_os, software_version, uptime, serial_number)
+    
+    print(f"\n\033[92mAssembling network inventory data from output.\033[0m")
+    
+    network_inventory = []
+    
+    for device in testbed.devices:
+        network_inventory.append(
+            get_devices_inventory(
+                testbed.devices[device],
+                show_version, 
+                show_inventory)
+                )
+    
+    print(f"\n\033[92mnetwork_inventory = {network_inventory}\033[0m")
+    
+```
+
+CLI RUN:    `./network_inventory.py nso_sandbox_testbed_same_credentials.yaml`
+
 
 # REFERNCES
 
