@@ -179,4 +179,20 @@ if __name__ == "__main__":
         for device in network_inventory:
             inv_writer.writerow(device)
     
+"""
+OUTPUT: 
++ Loading testbed file nso_sandbox_testbed_same_credentials.yaml
+Connecting to all devices in sandbox all devices login via Telnet
+Gathering show version and show inventory
++ genie.libs.parser.utils.common import ParserNotFound 
++ genie.metaparser.util.exceptions import SchemaMissingKeyError
+Resolved the problen in device of segurity "edge-firewall01', 'asa', '9.15(1)1'"
+because the do not generate a parser as other devices.
++ genie.metaparser.util.exceptions import SchemaEmptyParserError
+Resolved the problem in the show inventory empty of this particular device "edge-firewall01', 'asa', '9.15(1)1'"
++ re
+permit evaluate word as a singular or plural in the information of time that provide the device "edge-firewall01', 'asa', '9.15(1)1'"
+Writing inventory to file csv file using this format:
+2023-03-04-00-15-08_nso_sandbox_testbed_same_credentials_network_inventory.csv
 
+"""

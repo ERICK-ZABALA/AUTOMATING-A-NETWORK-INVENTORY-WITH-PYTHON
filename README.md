@@ -1098,6 +1098,44 @@ Assembling network inventory data from output.
 network_inventory = [('core-rtr01', 'iosxr', '6.3.1', '3 days, 5 minutes', 'N/A'), ('core-rtr02', 'iosxr', '6.3.1', '3 days, 5 minutes', 'N/A'), ('dist-rtr01', 'iosxe', '17.3.2', '3 days, 4 minutes', '91EDY6XXOPI'), ('dist-rtr02', 'iosxe', '17.3.2', '3 days, 4 minutes', '9X9NDJ21PR5'), ('dist-sw01', 'nxos', '9.2(4)', '3 days, 0 hours,3 minutes', '9ORBHMVBPDB'), ('dist-sw02', 'nxos', '9.2(4)', '3 days, 0 hours,3 minutes', '9NLTHFK2289'), ('edge-firewall01', 'asa', '9.15(1)1', '3 days 0 hours', '9A3LTK7V6RD'), ('edge-sw01', 'ios', '15.2(20200924:215240)', '2 days, 23 hours, 59 minutes', 'N/A'), ('internet-rtr01', 'iosxe', '17.3.2', '3 days, 4 minutes', '9150TDM5N31')]
 ```
 
+# CREATING A CSV FILE
+
+In this section using la library csv are generating the csv file.
+
+RUN CLI: `/network_inventory.py nso_sandbox_testbed_same_credentials.yaml`
+
+```python
+    # Generate a CSV File of data
+
+    now = datetime.now()
+    inventory_file = f'{now.strftime("%Y-%m-%d-%H-%M-%S")}_{testbed.name}_network_inventory.csv'
+    
+    print(f'Writting inventory to file {inventory_file}.')
+
+    with open(inventory_file, 'w', newline='') as csvfile:
+        inv_writer = csv.writer(csvfile, dialect="excel")
+        # Write header row
+        inv_writer.writerow(
+            ("device_name", 
+             "device_os", 
+             "software_version", 
+             "uptime", 
+             "serial_number"
+            ))
+        for device in network_inventory:
+            inv_writer.writerow(device)
+    
+```
+That is the final result we have a csv file with the devices.
+
+```json
+Assembling network inventory data from output.
+
+network_inventory = [('core-rtr01', 'iosxr', '6.3.1', '3 days, 37 minutes', 'N/A'), ('core-rtr02', 'iosxr', '6.3.1', '3 days, 37 minutes', 'N/A'), ('dist-rtr01', 'iosxe', '17.3.2', '3 days, 36 minutes', '91EDY6XXOPI'), ('dist-rtr02', 'iosxe', '17.3.2', '3 days, 36 minutes', '9X9NDJ21PR5'), ('dist-sw01', 'nxos', '9.2(4)', '3 days, 0 hours,35 minutes', '9ORBHMVBPDB'), ('dist-sw02', 'nxos', '9.2(4)', '3 days, 0 hours,35 minutes', '9NLTHFK2289'), ('edge-firewall01', 'asa', '9.15(1)1', '3 days 0 hours', '9A3LTK7V6RD'), ('edge-sw01', 'ios', '15.2(20200924:215240)', '3 days, 30 minutes', 'N/A'), ('internet-rtr01', 'iosxe', '17.3.2', '3 days, 36 minutes', '9150TDM5N31')]
+
+Writting inventory to file 2023-03-04-00-15-08_nso_sandbox_testbed_same_credentials_network_inventory.csv.
+```
+
 # REFERNCES
 
 + Creation from Excel File
@@ -1105,3 +1143,6 @@ https://pubhub.devnetcloud.com/media/pyats-getting-started/docs/quickstart/manag
 
 + SANDBOX to test owner Inventory
 https://devnetsandbox.cisco.com/RM/Diagram/Index/43964e62-a13c-4929-bde7-a2f68ad6b27c?diagramType=Topology
+
++ JSON to test format
+https://jsonlint.com/
