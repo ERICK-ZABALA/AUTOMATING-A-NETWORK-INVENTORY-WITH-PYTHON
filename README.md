@@ -7,7 +7,7 @@
 + How will we share our code for others to use?
 + How do we protect any “secrets” (username/password)
 
-VIDEO INSPIRATION
+# VIDEO INSPIRATION
 
 <iframe width="560" height="315" src="https://www.youtube.com/watch?v=OMyOkqTOWWc" frameborder="0" allowfullscreen></iframe>
 
