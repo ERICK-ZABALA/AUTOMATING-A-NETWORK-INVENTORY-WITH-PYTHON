@@ -962,8 +962,9 @@ Code that permit filter the parameters required for show the inventory.
 
 ```
 
-```python
+CLI RUN:    `./network_inventory.py nso_sandbox_testbed_same_credentials.yaml`
 
+```python
 Assembling network inventory data from output.
 
 network_inventory = [('core-rtr01', 'iosxr', '6.3.1', '2 days, 21 hours, 38 minutes', None), ('core-rtr02', 'iosxr', '6.3.1', '2 days, 21 hours, 38 minutes', None), ('dist-rtr01', 'iosxe', '17.03.02', '2 days, 21 hours, 37 minutes', None), ('dist-rtr02', 'iosxe', '17.03.02', '2 days, 21 hours, 36 minutes', None), ('dist-sw01', 'nxos', '9.2(4)', {'days': 2, 'hours': 21, 'minutes': 36, 'seconds': 28}, '9ORBHMVBPDB'), ('dist-sw02', 'nxos', '9.2(4)', {'days': 2, 'hours': 21, 'minutes': 36, 'seconds': 25}, '9NLTHFK2289'), ('edge-firewall01', 'asa', None, None, '9A3LTK7V6RD'), ('edge-sw01', 'ios', '15.2(20200924:215240)', '2 days, 21 hours, 32 minutes', None), ('internet-rtr01', 'iosxe', '17.03.02', '2 days, 21 hours, 37 minutes', None)]
