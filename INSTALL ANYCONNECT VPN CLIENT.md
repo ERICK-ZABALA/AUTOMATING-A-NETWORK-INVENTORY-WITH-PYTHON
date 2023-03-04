@@ -33,12 +33,6 @@ You have accepted the license agreement.
 Please wait while Cisco AnyConnect Secure Mobility Client is being installed...
 Starting Cisco AnyConnect Secure Mobility Client Agent...
 Done!
-
-[opc@jenkins-master bin]$ cd /opt/cisco/anyconnect/bin/
-[opc@jenkins-master bin]$ sudo ./vpn -s connect devnetsandbox-usw1-reservation.cisco.com:20229
-
-Username: cisco.dev
-Password: XC1sco=
 ```
 
 # CREATE AN EXECUTABLE FILE - VPN CLIENT
@@ -85,7 +79,7 @@ We are going to go to plataform [sandbox](https://devnetsandbox.cisco.com/RM/Dia
 
 ```bash
 [opc@jenkins-master bin]$ cd /opt/cisco/anyconnect/bin/
-[opc@jenkins-master bin]$ sudo ./vpn -s connect devnetsandbox-usw1-reservation.cisco.com:20229
+[opc@jenkins-master bin]$ sudo ./vpn -s connect devnetsandbox-usw1-reseration.cisco.com:2XXX9
 
 username: cisco.dev
 password: XC1sco="
