@@ -195,5 +195,5 @@ nothing to commit, working tree clean
 (inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$ git push
 Everything up-to-date
 
-```bash
+```
 
