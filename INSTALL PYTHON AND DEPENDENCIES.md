@@ -59,6 +59,53 @@ You should consider upgrading via the '/home/opc/DEVNET/00_AUTOMATING_A_NETWORK_
 (inventory) [opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON]$ pip freeze > requirements.txt
 ```
 
+# INSTALL TELNET IN LINUX
+
+```bash
+[opc@jenkins-master ~]$ sudo dnf install telnet
+
+========================================================================================================================
+ Package                 Architecture            Version                           Repository                      Size
+========================================================================================================================
+Installing:
+ telnet                  x86_64                  1:0.17-76.el8                     ol8_appstream                   72 k
+
+Transaction Summary
+========================================================================================================================
+Install  1 Package
+
+Total download size: 72 k
+Installed size: 119 k
+Is this ok [y/N]: y
+Downloading Packages:
+telnet-0.17-76.el8.x86_64.rpm                                                           885 kB/s |  72 kB     00:00
+------------------------------------------------------------------------------------------------------------------------
+Total                                                                                   833 kB/s |  72 kB     00:00
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                1/1
+  Installing       : telnet-1:0.17-76.el8.x86_64                                                                    1/1
+  Running scriptlet: telnet-1:0.17-76.el8.x86_64                                                                    1/1
+  Verifying        : telnet-1:0.17-76.el8.x86_64                                                                    1/1
+
+Installed:
+  telnet-1:0.17-76.el8.x86_64
+
+Complete!
+```
+
++ Testing telnet in your environment.
+
+```bash
+[opc@jenkins-master ~]$ telnet 8.8.8.8 53
+Trying 8.8.8.8...
+Connected to 8.8.8.8.
+Escape character is '^]'.
+```
+
 # DOWNLOAD GUIDE MAKE INVENTORY FROM - HANK PRESTON
 
 * Download in your machine [Summer 2021 Devasc-Prep-Network-Inventory-01](https://github.com/hpreston/summer2021-devasc-prep-network-inventory-01.git) maked by Hank Preston, that is a guide if you need help to develop all the code related how to make an inventory.
