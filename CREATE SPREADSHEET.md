@@ -1,3 +1,4 @@
+# ![image](https://user-images.githubusercontent.com/38144008/222942993-7e327eab-a374-4941-800c-218e2ece8528.png)
 
 # CREATE SPREADSHEET
 
@@ -132,3 +133,10 @@ The command takes in two arguments:
 In summary, the command runs a PyATS validation test on a network testbed specified in a YAML-formatted file called "nso_sandbox_testbed_same_credentials.yaml". The purpose of the test is to validate the configuration and connectivity of the devices in the testbed.
 
 We are going to work with this specific file in our environment `nso_sandbox_testbed_same_credentials.yaml`
+
+# REFERNCES
+
+* Download in your machine [Summer 2021 Devasc-Prep-Network-Inventory-01](https://github.com/hpreston/summer2021-devasc-prep-network-inventory-01.git) maked by Hank Preston, that is a guide if you need help to develop all the code related how to make an inventory.
++ Creation from [Excel File](https://pubhub.devnetcloud.com/media/pyats-getting-started/docs/quickstart/manageconnections.html#creation-from-excel-file)
++ [Devnet Sandbox](https://devnetsandbox.cisco.com/RM/Diagram/Index/43964e62-a13c-4929-bde7-a2f68ad6b27c?diagramType=Topology) to test owner Inventory
++ [JSON](https://jsonlint.com/) to test format	
