@@ -9,7 +9,7 @@
 
 # SOLUTION FINAL - VIDEO
 
- [![Watch the video](!![image](https://user-images.githubusercontent.com/38144008/222939757-b16d577e-5cdf-4806-a4b8-209f02b1d3cd.png)
+[image](https://user-images.githubusercontent.com/38144008/222939757-b16d577e-5cdf-4806-a4b8-209f02b1d3cd.png)
 
 # METHOD CLI
 
