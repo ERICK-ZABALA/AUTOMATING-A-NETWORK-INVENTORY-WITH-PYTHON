@@ -188,33 +188,6 @@ Code that permit filter the parameters required to diplay the network inventory.
 
 ```python
 
-    # Built inventory report over data structure
-    #   IOS XR
-    #       software_version: show version output ["output"]["software_version"]
-    #       uptime:           show version output ["output"]["uptime"]
-    #       sn:               show inventory output ["output"]["module_name"]["MODULE"]["sn"]    
-    #
-    #   IOS-XE
-    #       xe_version:       show version output ["output"]["version"]["xe_version"]
-    #       uptime:           show version output ["output"]["version"]["uptime"]
-    #       sn:               show inventory output ["output"]["main"]["chassis"]["CSR1000V"]["sn"]
-    #  
-    #   IOS
-    #       version:          show version output ["output"]["version"]["version"]
-    #       uptime:           show version output ["output"]["version"]["uptime"]
-    #       serial:N/A        show inventory output ["output"]
-    #
-    #   NX-OS
-    #       system_version:   show version output ["output"]["platform"]["software"]["system_version"] 
-    #       kernel_uptime:    show version output ["output"]["platform"]["kernel_uptime"]  
-    #       serial_number:    show inventory output ["output"]["name"]["Chassis"]["serial_number"]  
-    #   
-    #   ASA
-    #       software_version: show version output ["output"] "Cisco Adaptive Security Appliance Software Version 9.15(1)1"
-    #       uptime:           show version output ["output"] "up 2 days 17 hours"  
-    #       sn:               show inventory output ["output"]["Chassis"]["sn"]  
-    #
-
     def get_devices_inventory(device, show_version, show_inventory):
         # Common detail from tested device
         device_name = device.name
@@ -223,19 +196,23 @@ Code that permit filter the parameters required to diplay the network inventory.
         if device.os in ["ios","iosxe"]:
             software_version = show_version[device.name]["output"]["version"]["version"]
             uptime = show_version[device_name]["output"]["version"]["uptime"]
-            # Skip devices without parsed show inventory data
+
+	    # Skip devices without parsed show inventory data
             if show_inventory[device.name]["output"] !="":
-                # Extract chassi_name = 'CSR1000V' 
+                
+		# Extract chassi_name = 'CSR1000V' 
                 chassis_name = show_version[device.name]["output"]["version"]["chassis"]
                 serial_number = show_inventory[device.name]["output"]["main"]["chassis"][chassis_name]["sn"]
             else:
                 serial_number = "N/A"    
-        elif device.os == "nxos":
+        
+	elif device.os == "nxos":
             software_version = show_version[device.name]["output"]["platform"]["software"]["system_version"]
             uptime_dict = show_version[device.name]["output"]["platform"]["kernel_uptime"]
             uptime = f'{uptime_dict["days"]} days, {uptime_dict["hours"]} hours,{uptime_dict["minutes"]} minutes'
             serial_number = show_inventory[device.name]["output"]["name"]["Chassis"]["serial_number"]
-        elif device.os == "iosxr":
+        
+	elif device.os == "iosxr":
             software_version = show_version[device.name]["output"]["software_version"]
             uptime = show_version[device.name]["output"]["uptime"]
                         
@@ -244,29 +221,6 @@ Code that permit filter the parameters required to diplay the network inventory.
             for module in show_inventory[device.name]["output"]["module_name"].values():
                 serial_number = module["sn"]
                 break
-
-        elif device.os == "asa":
-            software_version = None
-            uptime = None
-            serial_number = show_inventory[device.name]["output"]["Chassis"]["sn"]
-        else:
-            return False
-        
-        return (device_name, device_os, software_version, uptime, serial_number)
-    
-    print(f"\n\033[92mAssembling network inventory data from output.\033[0m")
-    
-    network_inventory = []
-    
-    for device in testbed.devices:
-        network_inventory.append(
-            get_devices_inventory(
-                testbed.devices[device],
-                show_version, 
-                show_inventory)
-                )
-    
-    print(f"\n\033[97mnetwork_inventory = {network_inventory}\033[0m")
     
 ```
 
@@ -279,7 +233,7 @@ network_inventory = [('core-rtr01', 'iosxr', '6.3.1', '2 days, 22 hours, 53 minu
 ```
 ![image](https://user-images.githubusercontent.com/38144008/222886594-64b00b19-0f84-4296-9cff-3fad0e3ad713.png)
 
-+ In this section uses regular expressions to obtain the coorect that in our ASA.
++ In this section uses regular expressions (re) to obtain the coorect that in our ASA.
 
 Script in Python:
 
