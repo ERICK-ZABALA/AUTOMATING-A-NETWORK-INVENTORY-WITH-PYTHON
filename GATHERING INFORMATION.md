@@ -64,7 +64,7 @@ if __name__ == "__main__":
 
 CLI:    `./network_inventory.py nso_sandbox_testbed_same_credentials.yaml `
 
-```bash
+```yaml
 (inventory)  devnet@Devnet  ~/Documents/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON   main ±  ./network_inventory_03.py nso_sandbox_testbed_same_credentials.yaml    
 ####################################
 Creating a Network Inventory script.
