@@ -1,22 +1,17 @@
 
 # AUTOMATING A NETWORK INVENTORY WITH PYTHON
 
+![image](https://user-images.githubusercontent.com/38144008/222942190-0b3464ca-a7e4-4ade-9a69-a6c674808467.png)
+
+[![image]( https://user-images.githubusercontent.com/38144008/222942190-0b3464ca-a7e4-4ade-9a69-a6c674808467.png)](https://www.youtube.com/watch?v=OMyOkqTOWWc)
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=OMyOkqTOWWc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 + how can we talk to the devices?
 + what tool / language will we use?
 + How do we create the list of devices to work with?
 + How will we share our code for others to use?
 + How do we protect any “secrets” (username/password)
-
-# SOLUTION FINAL - VIDEO
-
-![image](https://user-images.githubusercontent.com/38144008/222942190-0b3464ca-a7e4-4ade-9a69-a6c674808467.png)
-
-![image](https://user-images.githubusercontent.com/38144008/222942136-58efce94-54c8-47ca-8e83-c0d90d9b2122.png)
-
-
-![image](https://user-images.githubusercontent.com/38144008/222941593-cb3236e3-5555-40d3-a503-8e66fb56600c.png)
-
-
 
 
 # METHOD CLI
