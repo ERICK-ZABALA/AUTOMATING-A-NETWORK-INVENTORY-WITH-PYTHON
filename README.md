@@ -7,9 +7,10 @@
 + How will we share our code for others to use?
 + How do we protect any “secrets” (username/password)
 
-# VIDEO INSPIRATION
+# SOLUTION FINAL - VIDEO
 
- [![Watch the video](https://i9.ytimg.com/vi_webp/OMyOkqTOWWc/mq3.webp?sqp=CLDJjKAG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYACqgWKAgwIABABGFsgYihlMA8=&rs=AOn4CLAM15drPscxlPCrl0GdxizAiTh67w)](https://www.youtube.com/watch?v=OMyOkqTOWWc) 
+ [![Watch the video](![image](https://user-images.githubusercontent.com/38144008/222939476-bb454035-2dbc-4e6d-8443-0cbe7eab5dac.png)
+](https://www.youtube.com/watch?v=OMyOkqTOWWc) 
 
 
 # METHOD CLI
