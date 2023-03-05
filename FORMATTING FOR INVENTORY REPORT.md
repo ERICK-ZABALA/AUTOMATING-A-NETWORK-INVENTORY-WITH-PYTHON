@@ -1,6 +1,6 @@
 
 
-# COLLECTING DATA FOR INVENTORY REPORT
+# FORMATTING FOR INVENTORY REPORT
 
 We are going to collet data as software version, uptime, serial number over devices in our devnet sandbox.
 
