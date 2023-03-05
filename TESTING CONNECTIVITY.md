@@ -1,7 +1,15 @@
-
 # TESTING CONNECTIVITY 
 
 + We are going to validate if CLI with PyATS works properly. 
+
+RUN CLI:    (inventory) [opc@jenkins-master NETWORK-INVENTORY-WITH-PYTHON]$ `pyats parse "show version" --testbed nso_sandbox_testbed_same_credentials.yaml`
+
+Here's a breakdown of the command and what each component does:
+
+pyats: This is the command used to run PyATS.
+parse: This is the PyATS sub-command used to parse the output of a show command on a network device.
+"show version": This is the show command that will be executed on the network device. In this case, it will likely retrieve the device's software version information.
+--testbed nso_sandbox_testbed_same_credentials.yaml: This specifies the testbed file that PyATS should use to connect to the network device and execute the show command. The testbed file is in YAML format and is named "nso_sandbox_testbed_same_credentials.yaml". The contents of the testbed file likely contain information about the network device(s) that PyATS will be connecting to, such as their IP addresses, login credentials, and other connection details.
 
 ```bash
 inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$ ls
@@ -9,8 +17,8 @@ inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$ ls
 inventory  nso_sandbox_testbed_same_credentials.yaml  nso_sandbox_testbed.yaml  README.md  sample
 
 (inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$ pyats parse "show version" --testbed nso_sandbox_testbed_same_credentials.yaml
-Enter default password for testbed: cisco
 
+Enter default password for testbed: cisco
 Enter value for testbed.credentials.default.username: cisco
 Enter enable password for testbed: cisco
   0%|                                                                                                                          | 0/1 [00:00<?, ?it/s
@@ -72,7 +80,7 @@ Enter enable password for testbed: cisco
   0%| 
 ```
 
-That is the information to generate us report inventory csv file.
+That is the information to generate us inventory report csv file.
 
 ```json
 "operating_system": "IOSXR",
@@ -80,7 +88,7 @@ That is the information to generate us report inventory csv file.
 "uptime": "1 day, 10 hours, 14 minutes"
 ```
 
-if you pyats parse not found the specific command "show version" you probably receive this answer.
+If you PyAts parse not found the specific command "show version" you probably receive this answer.
 
 ```bash
 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  3.20it/s]
@@ -95,14 +103,15 @@ Traceback (most recent call last):
 TypeError: device is not connected, output must be provided.
 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 414.87it/s]
 ```
+# EXECUTABLE SCRIPT PYTHON
+
 + How to resolve this problem?
 
-  Well, the solution to this type of problem is with Python; Yes we need to create a script using Python.
+Well, the solution to this type of problem is with code in Python; Yes we need to create a script using Python.
 
 + Create a script in python and executable `chmod +x network_inventory.py`.
 
 ![image](https://user-images.githubusercontent.com/38144008/222495857-2ce07c78-d329-4326-8933-ac9f19b16f80.png)
-
 
 ```bash
 (inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$ chmod +x network_inventory.py
@@ -110,7 +119,7 @@ TypeError: device is not connected, output must be provided.
 inventory  'network_inventory.py'  nso_sandbox_testbed_same_credentials.yaml  nso_sandbox_testbed.yaml  README.md  sample
 (inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$
 ```
-Note: Verify your `shebang` in your script.
+Note: Verify your `shebang` in your script in order to works properly
 
 ![image](https://user-images.githubusercontent.com/38144008/222668149-ef8217cf-c85a-478a-894d-8ca389d0c0e2.png)
 
@@ -133,6 +142,7 @@ Enter enable password for testbed:
 
 2023-03-02 21:43:19,861: %UNICON-INFO: +++ Unicon plugin iosxr (unicon.plugins.iosxr) +++
 ```
+
 # TESTING DISABLE LOGS IN PARSER
 
 + Disabling logs in parser
@@ -182,6 +192,7 @@ if __name__ == "__main__":
 
     # Generate a CSV File of data
 ```
+# FINAL RESULT
 
 CLI RUN:    `./network_inventory.py nso_sandbox_testbed_same_credentials.yaml`
 
