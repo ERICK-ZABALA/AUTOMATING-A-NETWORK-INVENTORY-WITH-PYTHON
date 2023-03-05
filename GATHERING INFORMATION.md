@@ -1,6 +1,6 @@
 
 
-# GATHERING SHOW VERSION & SHOW INVENTORY
+# GATHERING INFORMATION - SHOW VERSION & SHOW INVENTORY
 
 In this section, we will demonstrate how to retrieve and display the output of the "show version" and "show inventory" commands using a `Python Script`.
 
@@ -110,7 +110,7 @@ genie.metaparser.util.exceptions.SchemaMissingKeyError: Missing keys: [['version
 
 CLI RUN:    `./network_inventory.py nso_sandbox_testbed_same_credentials.yaml`
 
-# SOLOUTION FIRST ISSUE 
+# SOLUTION FIRST ISSUE 
 
 To resolve that issue we are going to use `exceptions` in our code in python.
 
@@ -165,7 +165,7 @@ That make sense is empty when insert `show inventory`.
 
 ![image](https://user-images.githubusercontent.com/38144008/222839736-3c64ed17-8eac-46f7-a53b-48eddaf17a82.png)
 
-# SOLOUTION SECOND ISSUE 
+# SOLUTION SECOND ISSUE 
 
 In this case we need to add an other `exception` in order to continue the process.
 
