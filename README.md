@@ -1,7 +1,7 @@
 
 # [![image]( https://user-images.githubusercontent.com/38144008/222942190-0b3464ca-a7e4-4ade-9a69-a6c674808467.png)](https://www.youtube.com/watch?v=OMyOkqTOWWc)
-AUTOMATING A NETWORK INVENTORY WITH PYTHON
 
+# AUTOMATING A NETWORK INVENTORY WITH PYTHON
 
 + Click to Dino to check all video!!! 
 + how can we talk to the devices?
