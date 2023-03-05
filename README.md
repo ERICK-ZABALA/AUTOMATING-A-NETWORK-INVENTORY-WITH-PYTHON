@@ -12,7 +12,7 @@
 <iframe width="560" height="315" src="https://youtu.be/OMyOkqTOWWc" frameborder="0" allowfullscreen></iframe>
 
 
- [![Watch the video](https://img.youtube.com/vi/OMyOkqTOWWc/0.jpg)](https://www.youtube.com/watch?v=OMyOkqTOWWc) 
+ [![Watch the video](https://i9.ytimg.com/vi_webp/OMyOkqTOWWc/mq3.webp?sqp=CLDJjKAG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYACqgWKAgwIABABGFsgYihlMA8=&rs=AOn4CLAM15drPscxlPCrl0GdxizAiTh67w)](https://www.youtube.com/watch?v=OMyOkqTOWWc) 
 
 
 # METHOD CLI
