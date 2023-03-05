@@ -77,9 +77,14 @@ Enter enable password for testbed:
 Connecting to all devices in testbed: nso_sandbox_testbed_same_credentials
 
 Gatherin show version from device core-rtr01
-core-rtr01 show version: {'operating_system': 'IOSXR', 'software_version': '6.3.1', 'uptime': '2 days, 2 hours, 19 minutes', 'image': 'bootflash:disk0/xrvr-os-mbi-6.3.1/mbixrvr-rp.vm', 'device_family': 'IOS XRv Series', 'processor': 'Pentium II Stepping 7', 'processor_memory_bytes': '3145215K', 'main_mem': 'cisco IOS XRv Series (Pentium II Stepping 7) processor with 3145215K bytes of memory.', 'chassis_detail': 'IOS XRv Chassis', 'config_register': '0x2102', 'rp_config_register': '0x2102'}
+core-rtr01 show version: {'operating_system': 'IOSXR', 'software_version': '6.3.1', 'uptime': '2 days, 2 hours, 19 minutes',
+'image': 'bootflash:disk0/xrvr-os-mbi-6.3.1/mbixrvr-rp.vm', 'device_family': 'IOS XRv Series', 'processor': 'Pentium II Stepping 7',
+'processor_memory_bytes': '3145215K', 'main_mem': 'cisco IOS XRv Series (Pentium II Stepping 7) processor with 3145215K bytes of memory.',
+'chassis_detail': 'IOS XRv Chassis', 'config_register': '0x2102', 'rp_config_register': '0x2102'}
+
 Gatherin show inventory from device core-rtr01
-core-rtr01 show inventory: {'module_name': {'0/0/CPU0': {'descr': 'Route Processor type (16, 0)', 'pid': 'IOSXRV', 'vid': 'V01', 'sn': 'N/A'}}}
+core-rtr01 show inventory: {'module_name': {'0/0/CPU0': {'descr': 'Route Processor type (16, 0)', 'pid': 'IOSXRV', 'vid': 'V01',
+'sn': 'N/A'}}}
 ```
 ## ERROR GATHERING INFO "ASA"
 
