@@ -1,8 +1,7 @@
 
 # AUTOMATING A NETWORK INVENTORY WITH PYTHON
 
-[![image]( https://user-images.githubusercontent.com/38144008/222942190-0b3464ca-a7e4-4ade-9a69-a6c674808467.png)](https://www.youtube.com/watch?v=OMyOkqTOWWc)
-<iframe width="560" height="315" src="https://www.youtube.com/embed/OMyOkqTOWWc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![image]( https://user-images.githubusercontent.com/38144008/222942190-0b3464ca-a7e4-4ade-9a69-a6c674808467.png)]([https://www.youtube.com/watch?v=OMyOkqTOWWc](https://www.youtube.com/embed/OMyOkqTOWWc))
 
 + how can we talk to the devices?
 + what tool / language will we use?
