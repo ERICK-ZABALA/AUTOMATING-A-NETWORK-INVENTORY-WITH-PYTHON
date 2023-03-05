@@ -13,6 +13,9 @@
 
 ![image](https://user-images.githubusercontent.com/38144008/222940037-69b8c421-0c07-4ffd-8c18-c6f4a81a7f26.png)
 
+![image](https://user-images.githubusercontent.com/38144008/222941593-cb3236e3-5555-40d3-a503-8e66fb56600c.png)
+
+
 
 
 # METHOD CLI
