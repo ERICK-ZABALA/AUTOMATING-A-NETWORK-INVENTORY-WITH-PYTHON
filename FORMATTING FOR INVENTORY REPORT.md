@@ -254,9 +254,13 @@ RUN CLI:    `./network_inventory.py nso_sandbox_testbed_same_credentials.yaml`
 Assembling network inventory data from output.
 
 network_inventory = [('core-rtr01', 'iosxr', '6.3.1', '3 days, 5 minutes', 'N/A'), 
-('core-rtr02', 'iosxr', '6.3.1', '3 days, 5 minutes', 'N/A'), ('dist-rtr01', 'iosxe', '17.3.2', '3 days, 4 minutes', '91EDY6XXOPI'), 
-('dist-rtr02', 'iosxe', '17.3.2', '3 days, 4 minutes', '9X9NDJ21PR5'), ('dist-sw01', 'nxos', '9.2(4)', '3 days, 0 hours,3 minutes', '9ORBHMVBPDB'), 
-('dist-sw02', 'nxos', '9.2(4)', '3 days, 0 hours,3 minutes', '9NLTHFK2289'), ('edge-firewall01', 'asa', '9.15(1)1', '3 days 0 hours', '9A3LTK7V6RD'), 
-('edge-sw01', 'ios', '15.2(20200924:215240)', '2 days, 23 hours, 59 minutes', 'N/A'), ('internet-rtr01', 'iosxe', '17.3.2', '3 days, 4 minutes', '9150TDM5N31')]
+('core-rtr02', 'iosxr', '6.3.1', '3 days, 5 minutes', 'N/A'), 
+('dist-rtr01', 'iosxe', '17.3.2', '3 days, 4 minutes', '91EDY6XXOPI'), 
+('dist-rtr02', 'iosxe', '17.3.2', '3 days, 4 minutes', '9X9NDJ21PR5'), 
+('dist-sw01', 'nxos', '9.2(4)', '3 days, 0 hours,3 minutes', '9ORBHMVBPDB'), 
+('dist-sw02', 'nxos', '9.2(4)', '3 days, 0 hours,3 minutes', '9NLTHFK2289'), 
+('edge-firewall01', 'asa', '9.15(1)1', '3 days 0 hours', '9A3LTK7V6RD'), 
+('edge-sw01', 'ios', '15.2(20200924:215240)', '2 days, 23 hours, 59 minutes', 'N/A'), 
+('internet-rtr01', 'iosxe', '17.3.2', '3 days, 4 minutes', '9150TDM5N31')]
 ```
 ![image](https://user-images.githubusercontent.com/38144008/222886524-67feae5b-eacb-4431-a92e-dbd9a6edd58c.png)
