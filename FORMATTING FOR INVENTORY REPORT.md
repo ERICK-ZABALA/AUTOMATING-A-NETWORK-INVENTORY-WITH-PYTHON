@@ -2,15 +2,15 @@
 
 # COLLECTING DATA FOR INVENTORY REPORT
 
-We are going to collet data as software version, uptime, serial number.
+We are going to collet data as software version, uptime, serial number over devices in our devnet sandbox.
 
-With this validate format online you can verify the json data.
+We are going to do a schema that permit collect data using the online portal JSON and we are going to put in the comments in our code. Really usefull this methodology.
 
-+ https://www.freeformatter.com/json-validator.html
++ Web Page to validate format JSON https://jsonlint.com/
 
-Format JSON:
+# FORMAT JSON
 
-```json
+```yaml
 {
 	'type': 'parsed',
 	'output': {
@@ -42,10 +42,9 @@ Format JSON:
 	}
 }
 ```
-
 After that we need to collect the information:
 
-```python
+```yaml
 # Built inventory report over data structure
     #   IOS XR
     #       software_version: show version output ["output"]["software version"]
