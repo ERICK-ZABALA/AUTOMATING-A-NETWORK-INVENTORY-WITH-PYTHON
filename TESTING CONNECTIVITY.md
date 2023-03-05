@@ -1,14 +1,13 @@
 
-# TESTING IF CLI WORK WITH PYATS
+# TESTING CONNECTIVITY 
 
-+ We are going to validate if working CLI with PyATS 
++ We are going to validate if CLI with PyATS works properly. 
 
 ```bash
 inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$ ls
-inventory  nso_sandbox_testbed_same_credentials.yaml  nso_sandbox_testbed.yaml  README.md  sample
-```
 
-```bash
+inventory  nso_sandbox_testbed_same_credentials.yaml  nso_sandbox_testbed.yaml  README.md  sample
+
 (inventory) [opc@jenkins-master AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON]$ pyats parse "show version" --testbed nso_sandbox_testbed_same_credentials.yaml
 Enter default password for testbed: cisco
 
@@ -37,14 +36,11 @@ Enter enable password for testbed: cisco
 
 ![image](https://user-images.githubusercontent.com/38144008/222148411-97c31e44-5128-40de-821c-f85b4dedceec.png)
 
-Sometimes parsers can not be included in some plataforms, that is the reason of this error.(in asa device).
+Sometimes parsers can not be included in some plataforms, that is the reason of this error in asa device.
 
-## error parse asa device:
+## ERROR GENERATE IN ASA DEVICE
 
 ![image](https://user-images.githubusercontent.com/38144008/222657835-750906d3-ce8a-486e-9a2c-f030455aefad.png)
-
-
-
 
 # CLI APPROACH WORKS WITH PYATS - PARSE
 
@@ -101,7 +97,7 @@ TypeError: device is not connected, output must be provided.
 ```
 + How to resolve this problem?
 
-  Well, the solution to this type of problem is Python; Yes we need to create a script using Python.
+  Well, the solution to this type of problem is with Python; Yes we need to create a script using Python.
 
 + Create a script in python and executable `chmod +x network_inventory.py`.
 
@@ -123,7 +119,7 @@ Note: Verify your `shebang` in your script.
 This command `./network_inventory.py nso_sandbox_testbed_same_credentials.yaml` permit to verify your concetivity from PyATS, script and network access.
 
 ```bash
-(inventory)  devnet@Devnet  ~/Documents/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON   main ±  `./network_inventory.py nso_sandbox_testbed_same_credentials.yaml`
+(inventory)  devnet@Devnet  ~/Documents/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON$`./network_inventory.py nso_sandbox_testbed_same_credentials.yaml`
 
 Creating a network inventory script.
 Namespace(testbed='nso_sandbox_testbed_same_credentials.yaml')
@@ -137,9 +133,9 @@ Enter enable password for testbed:
 
 2023-03-02 21:43:19,861: %UNICON-INFO: +++ Unicon plugin iosxr (unicon.plugins.iosxr) +++
 ```
-# TEST 2 - DISABLE LOGS IN PARSE
+# TESTING DISABLE LOGS IN PARSER
 
-+ Disabling logs using parser
++ Disabling logs in parser
 
 ```python
 #!/home/devnet/Documents/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON/inventory/bin/python
@@ -187,7 +183,7 @@ if __name__ == "__main__":
     # Generate a CSV File of data
 ```
 
-CLI: `./network_inventory.py nso_sandbox_testbed_same_credentials.yaml`
+CLI RUN:    `./network_inventory.py nso_sandbox_testbed_same_credentials.yaml`
 
 ```bash
 (inventory)  devnet@Devnet  ~/Documents/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON   main ±  ./network_inventory_02.py nso_sandbox_testbed_same_credentials.yaml
