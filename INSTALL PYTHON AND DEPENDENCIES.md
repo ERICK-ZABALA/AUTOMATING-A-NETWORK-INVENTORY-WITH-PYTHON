@@ -107,7 +107,7 @@ Connected to 8.8.8.8.
 Escape character is '^]'.
 ```
 
-# DOWNLOAD GUIDE MAKE INVENTORY FROM - HANK PRESTON
+# DOWNLOAD THE GUIDE TO MAKE THE INVENTORY FROM GITHUB OF HANK PRESTON
 
 * Download in your machine [Summer 2021 Devasc-Prep-Network-Inventory-01](https://github.com/hpreston/summer2021-devasc-prep-network-inventory-01.git) maked by Hank Preston, that is a guide if you need help to develop all the code related how to make an inventory.
 
