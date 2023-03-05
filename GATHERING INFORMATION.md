@@ -2,7 +2,7 @@
 
 # GATHERING SHOW VERSION & SHOW INVENTORY
 
-In this section we are going to display show version and show inventory from python script.
+In this section, we will demonstrate how to retrieve and display the output of the "show version" and "show inventory" commands using a Python script.
 
 ```python
 #!/home/devnet/Documents/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON/inventory/bin/python
