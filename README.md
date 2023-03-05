@@ -29,6 +29,7 @@
 | INSTALL GIT | Install GIT via CLI | [INSTALL GIT](https://github.com/ERICK-ZABALA/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON/blob/main/INSTALL%20GIT.md) | In this step you install git in your environment. |
 | CREATE SPREADSHEET | Create Spreadsheet  | [CREATE SPREADSHEET](https://github.com/ERICK-ZABALA/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON/blob/main/CREATE%20SPREADSHEET.md) | In this step you create an Spreadsheet. |
 | TESTING CONNECTIVITY | Testing Connectivity  | [TESTING CONNECTIVITY](https://github.com/ERICK-ZABALA/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON/blob/main/TESTING%20CONNECTIVITY.md) | In this step you are going to make a testing connectivity. |
+| GATHERING INFORMATION | Gathering show version and show inventory over devices with Python  | [GATHERING INFORMATION](https://github.com/ERICK-ZABALA/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON/blob/main/GATHERING%20INFORMATION.md) | In this step you are going to begin gathering information. |
 
 
 # REFERNCES
