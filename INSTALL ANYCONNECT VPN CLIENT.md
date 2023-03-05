@@ -1,3 +1,5 @@
+# ![image](https://user-images.githubusercontent.com/38144008/222942921-38042aa4-ad58-4865-8930-99c1d20f690f.png)
+
 # INSTALL VPN CLIENT ANYCONNECT
 
 To install python in your development environment. You can follow these steps.
@@ -102,3 +104,10 @@ ens3: flags=4213<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9000
         TX packets 7055  bytes 2535736 (2.4 MiB)
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 ```
+
+# REFERNCES
+
+* Download in your machine [Summer 2021 Devasc-Prep-Network-Inventory-01](https://github.com/hpreston/summer2021-devasc-prep-network-inventory-01.git) maked by Hank Preston, that is a guide if you need help to develop all the code related how to make an inventory.
++ Creation from [Excel File](https://pubhub.devnetcloud.com/media/pyats-getting-started/docs/quickstart/manageconnections.html#creation-from-excel-file)
++ [Devnet Sandbox](https://devnetsandbox.cisco.com/RM/Diagram/Index/43964e62-a13c-4929-bde7-a2f68ad6b27c?diagramType=Topology) to test owner Inventory
++ [JSON](https://jsonlint.com/) to test format
