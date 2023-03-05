@@ -31,7 +31,7 @@
 | TESTING CONNECTIVITY | Testing Connectivity  | [TESTING CONNECTIVITY](https://github.com/ERICK-ZABALA/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON/blob/main/TESTING%20CONNECTIVITY.md) | In this step you are going to make a testing connectivity. |
 | GATHERING INFORMATION | Gathering show version and show inventory over devices with Python  | [GATHERING INFORMATION](https://github.com/ERICK-ZABALA/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON/blob/main/GATHERING%20INFORMATION.md) | In this step you are going to begin gathering information. |
 | FORMATTING FOR INVENTORY REPORT | Provide a correct format to generate a inventory report in Python  | [FORMATTING FOR INVENTORY REPORT](https://github.com/ERICK-ZABALA/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON/blob/main/FORMATTING%20FOR%20INVENTORY%20REPORT) | In this step you are going to begin gathering information. |
-
+| CREATING A CSV FILE | Provide a CSV File as a report in Python  | [CREATING A CSV FILE](https://github.com/ERICK-ZABALA/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON/blob/main/CREATING%20A%20CSV%20FILE.md) | In this step you are going to provide a report via Python. |
 
 # REFERNCES
 
