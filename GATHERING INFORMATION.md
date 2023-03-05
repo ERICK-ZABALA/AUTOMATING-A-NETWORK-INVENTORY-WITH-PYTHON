@@ -43,11 +43,11 @@ if __name__ == "__main__":
     show_inventory={}
 
     for device in testbed.devices:
-        print(f"\nGatherin show version from device {device}")
+        print(f"\nGathering show version from device {device}")
         show_version[device] = testbed.devices[device].parse("show version")
         print(f"{device} show version: {show_version[device]}")
 
-        print(f"Gatherin show inventory from device {device}")
+        print(f"Gathering show inventory from device {device}")
         show_inventory[device] = testbed.devices[device].parse("show inventory")
         print(f"{device} show inventory: {show_inventory[device]}")
         
