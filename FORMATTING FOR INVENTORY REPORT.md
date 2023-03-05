@@ -50,9 +50,7 @@ After that we need to collect the information:
     #       software_version: show version output ["output"]["software version"]
     #       uptime:           show version output ["output"]["uptime"]
     #       serial:           show inventory output ["output"]["module_name"]["MODULE"]["sn"]    
-    #
-    #
-    #
+   
 
     def get_devices_inventory(device, show_version, show_inventory):
         # Common detail from tested device
