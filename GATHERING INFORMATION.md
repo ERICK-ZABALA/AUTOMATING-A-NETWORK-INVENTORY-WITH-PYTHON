@@ -86,9 +86,9 @@ Gatherin show inventory from device core-rtr01
 core-rtr01 show inventory: {'module_name': {'0/0/CPU0': {'descr': 'Route Processor type (16, 0)', 'pid': 'IOSXRV', 'vid': 'V01',
 'sn': 'N/A'}}}
 ```
-## ERROR GATHERING INFO "ASA"
+# FIRST ISSUE IN GATHERING INFORMATION OF "ASA" (edge-firewall01)
 
-In this type of scenario is necesary to user regular expresion (RegEx), str.find(), TextFSM.
+In this scenario, we have an exception exceptions.SchemaMissingKeyError happend when a specified schema key is missing from a parsed output. 
 
 ```bash
 Gatherin show version from device edge-firewall01
@@ -110,12 +110,9 @@ genie.metaparser.util.exceptions.SchemaMissingKeyError: Missing keys: [['version
 
 CLI RUN:    `./network_inventory.py nso_sandbox_testbed_same_credentials.yaml`
 
-In this section we are resolving the exception that was generated previously.
+# SOLOUTION FIRST ISSUE 
 
-```python
-genie.metaparser.util.exceptions.SchemaMissingKeyError: Missing keys: [['version', 'mem_size'], ['version', 'platform'], ['version', 'processor_type']] 
-```
-to resolve that issue we are going to issue exceptions like this.
+To resolve that issue we are going to use `exceptions` in our code in python.
 
 ```python
 
@@ -135,6 +132,8 @@ to resolve that issue we are going to issue exceptions like this.
             
 ```
 ![image](https://user-images.githubusercontent.com/38144008/222838603-e211d307-3ba8-45c7-948d-1bcc04e20d57.png)
+
+# SECOND ISSUE IN GATHERING INFORMATION OF "edge-sw01"
 
 However as a result of this code we have this type of error that is little different.
 
@@ -159,13 +158,16 @@ Traceback (most recent call last):
   File "src/genie/metaparser/util/schemaengine.py", line 233, in genie.metaparser.util.schemaengine.Schema.validate
 genie.metaparser.util.exceptions.SchemaEmptyParserError: Parser Output is empty
 ```
+
 ![image](https://user-images.githubusercontent.com/38144008/222838581-f8bbf2f1-25a3-4b3c-9642-38300d0c5eff.png)
 
 That make sense is empty when insert `show inventory`.
 
 ![image](https://user-images.githubusercontent.com/38144008/222839736-3c64ed17-8eac-46f7-a53b-48eddaf17a82.png)
 
-In this case we need to add an other exception in order to continue the process.
+# SOLOUTION SECOND ISSUE 
+
+In this case we need to add an other `exception` in order to continue the process.
 
 ```python
  def parse_command(device, command):
@@ -191,18 +193,21 @@ In this case we need to add an other exception in order to continue the process.
 
 ![image](https://user-images.githubusercontent.com/38144008/222843921-053aa549-f04d-42b5-abf5-cb2e2e31a0ec.png)
 
+# FINAL SOLUTION - GATHERING INFORMATION
+
 CLI RUN:    `./network_inventory.py nso_sandbox_testbed_same_credentials.yaml`
 
-```bash
+```yaml
 (inventory)  devnet@Devnet  ~/Documents/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON   main ±  ./network_inventory.py nso_sandbox_testbed_same_credentials.yaml
+
 ####################################
-Creating a Network Inventory script.
+Creating a Network Inventory Script.
 ####################################
 Loading testbed file: nso_sandbox_testbed_same_credentials.yaml
-Enter default password for testbed: 
+Enter default password for testbed: cisco 
 
 Enter value for testbed.credentials.default.username: cisco
-Enter enable password for testbed: 
+Enter enable password for testbed: cisco
 Connecting to all devices in testbed: nso_sandbox_testbed_same_credentials
 
 Gathering show version from device core-rtr01
