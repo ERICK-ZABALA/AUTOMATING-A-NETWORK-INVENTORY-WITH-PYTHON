@@ -9,6 +9,8 @@
 
 # SOLUTION FINAL - VIDEO
 
+![image](https://user-images.githubusercontent.com/38144008/222942190-0b3464ca-a7e4-4ade-9a69-a6c674808467.png)
+
 ![image](https://user-images.githubusercontent.com/38144008/222942136-58efce94-54c8-47ca-8e83-c0d90d9b2122.png)
 
 
