@@ -22,7 +22,7 @@ Navigate to the extracted directory by running the following command:
 
 Build and install Python 3.10 using the following command:
 
-```bash
+```yaml
 [opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON]$ make
 
 [opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON]$ sudo make altinstall
@@ -34,7 +34,7 @@ Python 3.10.2
 NOTA: if you have problem in you environment getting an response as "(main) $ python --version
 Python 3.10.4" you need to apply this command to resolve the problem.
 
-```bash
+```yaml
 [opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON/Python-3.10.2]$ ls /usr/local/bin/python*
 /usr/local/bin/python3.10  /usr/local/bin/python3.10-config
 [opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON/Python-3.10.2]$ sudo ln -s /usr/local/bin/python3.10 /usr/local/bin/python3.10.2
