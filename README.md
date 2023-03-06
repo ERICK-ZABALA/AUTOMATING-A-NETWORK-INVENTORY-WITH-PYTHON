@@ -31,7 +31,7 @@ Automating a network inventory with Python pyats involves using the pyATS framew
 | FORMATTING FOR INVENTORY REPORT | Provide a correct format to generate a inventory report in Python  | [FORMATTING FOR INVENTORY REPORT](https://github.com/ERICK-ZABALA/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON/blob/main/FORMATTING%20FOR%20INVENTORY%20REPORT.md) | In this step you are going to begin gathering information. |
 | CREATING A CSV FILE | Provide a CSV File as a report in Python  | [CREATING A CSV FILE](https://github.com/ERICK-ZABALA/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON/blob/main/CREATING%20A%20CSV%20FILE.md) | In this step you are going to provide a report via Python. |
 
-# REFERNCES
+# REFERENCES
 
 * Download in your machine [Summer 2021 Devasc-Prep-Network-Inventory-01](https://github.com/hpreston/summer2021-devasc-prep-network-inventory-01.git) maked by Hank Preston, that is a guide if you need help to develop all the code related how to make an inventory.
 + Creation from [Excel File](https://pubhub.devnetcloud.com/media/pyats-getting-started/docs/quickstart/manageconnections.html#creation-from-excel-file)
