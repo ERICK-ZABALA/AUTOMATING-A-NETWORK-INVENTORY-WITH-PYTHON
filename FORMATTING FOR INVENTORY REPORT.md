@@ -265,7 +265,7 @@ network_inventory = [('core-rtr01', 'iosxr', '6.3.1', '3 days, 5 minutes', 'N/A'
 ```
 ![image](https://user-images.githubusercontent.com/38144008/222886524-67feae5b-eacb-4431-a92e-dbd9a6edd58c.png)
 
-# REFERNCES
+# REFERENCES
 
 * Download in your machine [Summer 2021 Devasc-Prep-Network-Inventory-01](https://github.com/hpreston/summer2021-devasc-prep-network-inventory-01.git) maked by Hank Preston, that is a guide if you need help to develop all the code related how to make an inventory.
 + Creation from [Excel File](https://pubhub.devnetcloud.com/media/pyats-getting-started/docs/quickstart/manageconnections.html#creation-from-excel-file)
