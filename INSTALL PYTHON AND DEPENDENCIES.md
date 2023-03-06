@@ -14,7 +14,7 @@ To install python in your development environment. you can follow these steps.
 
 Navigate to the extracted directory by running the following command:
 
-```bash
+```yaml
 [opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON]$ cd Python-3.10.2
 
 [opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON]$ ./configure --enable-optimizations
@@ -52,7 +52,7 @@ Then you can create your environment normal...
 
 Note: PyATS just available in environments over Linux.
 
-```bash
+```yaml
 [opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON]$ python3.10 -m venv inventory
 
 [opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON]$ cd inventory
