@@ -26,6 +26,26 @@ Build and install Python 3.10 using the following command:
 [opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON]$ make
 
 [opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON]$ sudo make altinstall
+
+[opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON]$ python3.10.2 --version
+Python 3.10.2
+
+```
+NOTA: if you have problem in you environment getting an response as "(main) $ python --version
+Python 3.10.4" you need to apply this command to resolve the problem.
+
+```bash
+[opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON/Python-3.10.2]$ ls /usr/local/bin/python*
+/usr/local/bin/python3.10  /usr/local/bin/python3.10-config
+[opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON/Python-3.10.2]$ sudo ln -s /usr/local/bin/python3.10 /usr/local/bin/python3.10.2
+[opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON/Python-3.10.2]$ python --version
+Python 3.10.4
+[opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON/Python-3.10.2]$ python3.10 --version
+Python 3.10.4
+[opc@jenkins-master 00_AUTOMATING_A_NETWORK_INVENTORY_WITH_PYTHON/Python-3.10.2]$ python3.10.2 --version
+Python 3.10.2
+
+Then you can create your environment normal...
 ```
 
 # CREATE VENV PYTHON 3.10.2 WITH PyATS
