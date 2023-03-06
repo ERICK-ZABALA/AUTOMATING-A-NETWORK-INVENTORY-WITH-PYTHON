@@ -1,6 +1,6 @@
 
 # [![image]( https://user-images.githubusercontent.com/38144008/222942190-0b3464ca-a7e4-4ade-9a69-a6c674808467.png)](https://www.youtube.com/watch?v=OMyOkqTOWWc)
-[![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/ERICK-ZABALA/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON)
+[![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/ERICK-ZABALA/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON) [![Run in Cisco Cloud IDE](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-runable-icon.svg)](https://developer.cisco.com/devenv/?id=devenv-vscode-base&GITHUB_SOURCE_REPO=https://github.com/ERICK-ZABALA/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON)
 # AUTOMATING A NETWORK INVENTORY WITH PYTHON
 
 Automating a network inventory with Python pyats involves using the pyATS framework to simplify and accelerate the process of collecting and organizing information about network devices. By leveraging the power of Python programming, network administrators can create customized scripts that automate the collection of device data, enabling them to quickly and accurately generate an inventory of all devices on their network.
