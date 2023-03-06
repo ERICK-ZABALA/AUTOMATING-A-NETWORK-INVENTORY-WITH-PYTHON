@@ -5,10 +5,10 @@
 
 Automating a network inventory with Python pyats involves using the pyATS framework to simplify and accelerate the process of collecting and organizing information about network devices. By leveraging the power of Python programming, network administrators can create customized scripts that automate the collection of device data, enabling them to quickly and accurately generate an inventory of all devices on their network.
 
-+ Click to Dino to check all video!!! 
++ Click to Dino to check the video!!! 
 
-+ how can we talk to the devices?
-+ what tool / language will we use?
++ How can we talk to the devices?
++ What tool / language will we use?
 + How do we create the list of devices to work with?
 + How will we share our code for others to use?
 + How do we protect any “secrets” (username/password)
