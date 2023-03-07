@@ -60,7 +60,7 @@ Open a terminal and navigate to the location where you saved the file.
 
 Run the following command to make the file executable:
 
-`[opc@jenkins-master ]$ chmod +x vpn_connect.sh`
+`[opc@jenkins-master ]$ sudo chmod +x vpn_connect.sh`
 
 `[opc@jenkins-master ]$./vpn_connect.sh`
 
