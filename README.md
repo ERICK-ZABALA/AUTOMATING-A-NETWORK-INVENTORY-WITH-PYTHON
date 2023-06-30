@@ -13,6 +13,10 @@ Automating a network inventory with Python pyats involves using the pyATS framew
 + How will we share our code for others to use?
 + How do we protect any “secrets” (username/password)
 
+# PROOF OF CONCEPT
+
+https://github.com/ERICK-ZABALA/AUTOMATING-A-NETWORK-INVENTORY-WITH-PYTHON/assets/38144008/4199ce29-fcaa-402a-b23a-70807b772fbf
+
 # METHOD CLI
 
 * Library to interact: PyATS
